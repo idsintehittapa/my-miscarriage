@@ -64,7 +64,17 @@ export const Share = () => {
         <StyledNameInput
           type="text">
         </StyledNameInput>
-        <label for="weeks"> weeks</label>
+        <label for="weeks"> When weeks</label>
+        <StyledSelectInput id="weeks" name="weeks ">
+          <option value="week 6">Week 6</option>
+          <option value="week 7">Week 7</option>
+          <option value="week 8">Week 8</option>
+          <option value="week 9">Week 9</option>
+          <option value="week 10">Week 10</option>
+          <option value="week 11">Week 11</option>
+          <option value="week 12">Week 12</option>
+        </StyledSelectInput>
+        <label for="weeks"> When noticed?</label>
         <StyledSelectInput id="weeks" name="weeks ">
           <option value="week 6">Week 6</option>
           <option value="week 7">Week 7</option>
