@@ -108,13 +108,6 @@ export const Share = () => {
         <label>
           <input type="radio" name="editList" value="No" /> No
         </label>
-        <p>Did your period pain change after the miscarriage?</p>
-        <label>
-          <input type="radio" name="editList" value="yes" /> Yes
-        </label>
-        <label>
-          <input type="radio" name="editList" value="No" /> No
-        </label>
         <p>Did your period change after the miscarriage?</p>
         <label>
           <input type="radio" name="editList" value="increased" /> Increased
@@ -124,6 +117,13 @@ export const Share = () => {
         </label>
         <label>
           <input type="radio" name="editList" value="Unchanged" /> Unchanged
+        </label>
+        <p>Did your period pain change after the miscarriage?</p>
+        <label>
+          <input type="radio" name="editList" value="yes" /> Yes
+        </label>
+        <label>
+          <input type="radio" name="editList" value="No" /> No
         </label>
       <label for="message"></label>
       <p>Wanna tell us your story?</p>

@@ -23,6 +23,9 @@ export const StartPage = () => {
       <h3> "the spontaneous or unplanned expulsion of a fetus from the womb before it is able to
       survive independently."
       </h3>
+      <h4>
+        Please note that these stories are not censored and contains language that can be triggering.
+      </h4>
     </Main>
   )
 }
