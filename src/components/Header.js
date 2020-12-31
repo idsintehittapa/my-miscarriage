@@ -5,6 +5,7 @@ import styled from 'styled-components/macro'
 import { StartPage } from 'pages/StartPage'
 import { About } from '../pages/About'
 import { Share } from '../pages/Share'
+import { Testimonies } from '../pages/Testimonies'
 
 // Q: How making this update not inside the header? - check damien's video
 // it does so if you go into the path directly but not when clicking on links..
@@ -33,14 +34,16 @@ const Nav = styled.nav`
 const Ul = styled.ul`
   padding: 0;
   margin: 20px;
+  list-style-type: none;
 `
 
-const Li = styled.ul`
-padding-left: 16px; 
+const Li = styled.li`
+  padding-left: 16px; 
+
 `
 
 const StyledLink = styled(Link)`
-  text-decoration: none;
+text-decoration: none;
 
   &:hover, &:focus {
     background: #4dbfed;
@@ -48,7 +51,6 @@ const StyledLink = styled(Link)`
   }
 
   &:visited, &:link, &:active {
-    text-decoration: none;
     color: #000
 }
 `
@@ -64,6 +66,9 @@ export const Header = () => {
             <StyledLink to="/about">About</StyledLink>
           </Li>
           <Li>
+            <StyledLink to="/testimonies">Testimonies</StyledLink>
+          </Li>
+          <Li>
             <StyledLink to="/share">Share</StyledLink>
           </Li>
           <Li>
@@ -77,6 +82,9 @@ export const Header = () => {
       <Switch>
         <Route path="/about">
           <About />
+        </Route>
+        <Route path="/Testimonies">
+          <Testimonies />
         </Route>
         <Route path="/share">
           <Share />

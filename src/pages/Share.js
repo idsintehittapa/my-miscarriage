@@ -11,7 +11,7 @@ const Container = styled.section`
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-  background-color: coral;
+  // background-color: coral;
 `
 
 const StyledNameInput = styled.input`

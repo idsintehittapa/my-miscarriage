@@ -24,10 +24,12 @@ const H3 = styled.h3`
 const ContainerText = styled(Container)`
   max-width: 800px;
 `
+const P = styled.p`
+text-align: justify;
+`
 
-const H4 = styled.p`
+const H4 = styled(P)`
   font-size: 1.5em;
-  text-align: left;
 `
 
 export const About = () => {
@@ -43,34 +45,34 @@ export const About = () => {
 
       <ContainerText>
       <H4>Some header to the left!</H4>
-        <p>About 30% of all pregnancies end in a miscarriage. Early miscarriages occur before 12 weeks, 
+        <P>About 30% of all pregnancies end in a miscarriage. Early miscarriages occur before 12 weeks, 
           and they are usually due to something going wrong in early fetal development, 
           leading to an ejection. Although a miscarriage is very tragic, it is usually not something 
-          that could have been changed or prevented; it is the body's way of ending an undeveloped pregnancy.</p>
+          that could have been changed or prevented; it is the body's way of ending an undeveloped pregnancy.</P>
           
-        <p>A miscarriage often begins with more or less heavy bleeding. Pain is also common. 
+        <P>A miscarriage often begins with more or less heavy bleeding. Pain is also common. 
           Some early miscarriages are taken care of by the body, but sometimes medical treatment 
           or dilatation and curettage may be necessary to end the miscarriage. After the miscarriage, 
           it usually takes about a month before menstruation returns. The first menstruation after a 
           miscarriage may be heavier than usual, however, the flow and intervals usually return to 
-          normal the next cycle. </p>
+          normal the next cycle. </P>
 
         <H4>Some header to the left!</H4>
-        <p>By talking about our miscarriages, we can break the taboo, share experiences 
+        <P>By talking about our miscarriages, we can break the taboo, share experiences 
           to support and help someone going through it. There is scarce information covering 
           what one could experience before, during, and after a miscarriage. Could it hurt? 
           For how long could I bleed? Could the period change afterward? Etc.
-        </p>
+        </P>
 
         <H4>Some header to the left!</H4>
-        <p> MM is a platform where anonymous testimonies are shared. These have been collected 
+        <P> MM is a platform where anonymous testimonies are shared. These have been collected 
           from open social media platforms or shared. Have you had a miscarriage? You are far 
           from alone. Please share your experience and break the silence culture!
-        </p>
+        </P>
 
-        <p> The page does not distinguish between miscarriages/missed abortions/missed miscarriage/
+        <P> The page does not distinguish between miscarriages/missed abortions/missed miscarriage/
           and, or silent miscarriage.
-        </p>
+        </P>
       </ContainerText>
     </>
   )
