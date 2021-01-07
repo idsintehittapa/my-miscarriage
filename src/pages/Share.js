@@ -92,6 +92,15 @@ export const Share = () => {
           <option value="week 10">Week 10</option>
           <option value="week 11">Week 11</option>
           <option value="week 12">Week 12</option>
+          <option value="week 12">Week 13</option>
+          <option value="week 12">Week 14</option>
+          <option value="week 12">Week 15</option>
+          <option value="week 12">Week 16</option>
+          <option value="week 12">Week 17</option>
+          <option value="week 12">Week 18</option>
+          <option value="week 12">Week 19</option>
+          <option value="week 12">Week 20</option>
+          <option value="week 12">I don't know</option>
         </StyledSelectInput>
         <p>Experienced Physical Pain level:</p>
         <label>
