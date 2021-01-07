@@ -64,7 +64,7 @@ export const Share = () => {
         <StyledNameInput
           type="text">
         </StyledNameInput>
-        <label for="weeks"> When weeks</label>
+        <label for="weeks"> When weeks*</label>
         <StyledSelectInput id="weeks" name="weeks ">
           <option value="week 6">Week 6</option>
           <option value="week 7">Week 7</option>
@@ -73,6 +73,15 @@ export const Share = () => {
           <option value="week 10">Week 10</option>
           <option value="week 11">Week 11</option>
           <option value="week 12">Week 12</option>
+          <option value="week 12">Week 13</option>
+          <option value="week 12">Week 14</option>
+          <option value="week 12">Week 15</option>
+          <option value="week 12">Week 16</option>
+          <option value="week 12">Week 17</option>
+          <option value="week 12">Week 18</option>
+          <option value="week 12">Week 19</option>
+          <option value="week 12">Week 20</option>
+          <option value="week 12">I don't know</option>
         </StyledSelectInput>
         <label for="weeks"> When noticed?</label>
         <StyledSelectInput id="weeks" name="weeks ">
@@ -84,7 +93,7 @@ export const Share = () => {
           <option value="week 11">Week 11</option>
           <option value="week 12">Week 12</option>
         </StyledSelectInput>
-        <p>Experienced Physical Painlevel:</p>
+        <p>Experienced Physical Pain level:</p>
         <label>
           <input type="radio" name="editList" value="Painless" /> Painless
         </label>
@@ -101,14 +110,14 @@ export const Share = () => {
           <option value="50" label="Pain"></option>
           <option value="100" label="Very painful"></option>
         </datalist>
-        <p>Did you get help from the hosptial?</p>
+        <p>Did you get help from the hospital?</p>
         <label>
           <input type="radio" name="editList" value="yes" /> Yes
         </label>
         <label>
           <input type="radio" name="editList" value="No" /> No
         </label>
-        <p>Did your period change after the miscarriage?</p>
+        <p>Did the volume of your period change after the miscarriage?</p>
         <label>
           <input type="radio" name="editList" value="increased" /> Increased
         </label>
@@ -117,6 +126,16 @@ export const Share = () => {
         </label>
         <label>
           <input type="radio" name="editList" value="Unchanged" /> Unchanged
+        </label>
+        <p>Did your period length change after the miscarriage?</p>
+        <label>
+          <input type="radio" name="editList" value="Fewer days" /> Yes
+        </label>
+        <label>
+          <input type="radio" name="editList" value="Additional days" /> No
+        </label>
+        <label>
+          <input type="radio" name="editList" value="Unchanged" /> No
         </label>
         <p>Did your period pain change after the miscarriage?</p>
         <label>
