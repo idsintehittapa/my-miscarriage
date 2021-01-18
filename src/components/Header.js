@@ -58,42 +58,42 @@ text-decoration: none;
 export const Header = () => {
   return (
     <Container>
-    <Router>
-    <PlusMenu>+</PlusMenu>
-      <Nav>
-        <Ul>
-          <Li>
-            <StyledLink to="/about">About</StyledLink>
-          </Li>
-          <Li>
-            <StyledLink to="/testimonies">Testimonies</StyledLink>
-          </Li>
-          <Li>
-            <StyledLink to="/share">Share</StyledLink>
-          </Li>
-          <Li>
-            <StyledLink to="/">Home</StyledLink>
-          </Li>
-        </Ul>
-      </Nav>
+      <Router>
+        <PlusMenu>+</PlusMenu>
+        <Nav>
+          <Ul>
+            <Li>
+              <StyledLink to="/about">About</StyledLink>
+            </Li>
+            <Li>
+              <StyledLink to="/testimonies">Testimonies</StyledLink>
+            </Li>
+            <Li>
+              <StyledLink to="/share">Share</StyledLink>
+            </Li>
+            <Li>
+              <StyledLink to="/">Home</StyledLink>
+            </Li>
+          </Ul>
+        </Nav>
 
-      {/* A <Switch> looks through its children <Route>s and
+        {/* A <Switch> looks through its children <Route>s and
           renders the first one that matches the current URL. */}
-      <Switch>
-        <Route path="/about">
-          <About />
-        </Route>
-        <Route path="/Testimonies">
-          <Testimonies />
-        </Route>
-        <Route path="/share">
-          <Share />
-        </Route>
-        <Route exact path="/">
-          <StartPage />
-        </Route>
-      </Switch>
-  </Router>
-  </Container>
-)
+        <Switch>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/Testimonies">
+            <Testimonies />
+          </Route>
+          <Route path="/share">
+            <Share />
+          </Route>
+          <Route exact path="/">
+            <StartPage />
+          </Route>
+        </Switch>
+      </Router>
+    </Container>
+  )
 }

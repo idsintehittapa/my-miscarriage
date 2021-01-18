@@ -2,6 +2,7 @@ import styled from 'styled-components/macro'
 
 export const Container = styled.section`
   display: flex;
+  margin: 10px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -15,6 +16,9 @@ export const Form = styled.form`
 
 export const StyledNameInput = styled.input`
   width: 200px;
+`
+export const Paragraph = styled.p`
+  font-weight: 900
 `
 
 export const StyledSelectInput = styled.select`
@@ -31,15 +35,13 @@ export const StyledButton = styled.button`
   font-family: Roboto, sans-serif;
   width: 64px;
   height: 44px;
-  // position: absolute;
-  overflow: hidden;   // what does overflow mean?
   border-radius: 4px;
   border: none;
   outline: none;
   padding: 0 8px 0 8px;
   box-sizing: content-box;
   -webkit-font-smoothing: antialiased;
-  font-size: .875rem;
+  font-size: .875em;
   font-weight: 500;
   letter-spacing: .0892857143em;
   text-transform: uppercase;
