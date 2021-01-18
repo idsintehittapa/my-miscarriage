@@ -11,12 +11,6 @@ import { sendShare } from '../paths/Api-paths'
 // } from '../styles/Styles'
 
 // _________Testimony POST
-// empty fields with useState
-
-// handle submit
-
-// fetch
-
 export const Share = () => {
   const [name, setName] = useState('')
   const [when_weeks, setWhen_weeks] = useState('')
@@ -41,10 +35,8 @@ export const Share = () => {
     })
       .then((res) => {
         setName('') // this is stupid, it has to be a smarter way of doing this
-        setWhen_weeks('') // mapping
-        setWhen_weeks_noticed('')
-        setPhysical_pain('')
-        setStory('')
+        setWhen_weeks('') // mapping?
+        setStory(null)
         console.log(res)
         // success
         if (res.status === 201) {
@@ -54,11 +46,15 @@ export const Share = () => {
         } else throw new Error(res.status)
       })
       // _________This needs to be looked at
-      .catch((error) => console.log(error))
-      // .catch((error) => {
-      //   error.json({ message: 'LOGIN_FAILED', errors: error })
-      // })
-  }
+      .catch((error) => {
+        console.log(error)
+      })
+        // error({ message: 'LOGIN_FAILED', errors: error })
+        // )
+      
+    // .catch((error) => {
+    //   error.json({ message: 'LOGIN_FAILED', errors: error })
+    // })
 
   return (
     <>
@@ -77,7 +73,6 @@ export const Share = () => {
             required
             value={when_weeks}
             onChange={(event) => setWhen_weeks(event.target.value)}>
-            <option value="-">week</option>
             <option value="6">Week 6</option>
             <option value="7">Week 7</option>
             <option value="8">Week 8</option>
@@ -100,7 +95,6 @@ export const Share = () => {
             id="weeks_noticed"
             value={when_weeks_noticed}
             onChange={(event) => setWhen_weeks_noticed(event.target.value)}>
-            <option value="-">week</option>
             <option value="6">Week 6</option>
             <option value="7">Week 7</option>
             <option value="8">Week 8</option>
@@ -136,36 +130,7 @@ export const Share = () => {
             type="radio"
             value={physical_pain}
             onChange={(event) => setPhysical_pain(event.target.value)} /> Severe Pain
-          {/* <label htmlFor="weeks"> When noticed?</label>
-          <select id="weeks" name="weeks ">
-            <option value="week 6">Week 6</option>
-            <option value="week 7">Week 7</option>
-            <option value="week 8">Week 8</option>
-            <option value="week 9">Week 9</option>
-            <option value="week 10">Week 10</option>
-            <option value="week 11">Week 11</option>
-            <option value="week 12">Week 12</option>
-            <option value="week 12">Week 13</option>
-            <option value="week 12">Week 14</option>
-            <option value="week 12">Week 15</option>
-            <option value="week 12">Week 16</option>
-            <option value="week 12">Week 17</option>
-            <option value="week 12">Week 18</option>
-            <option value="week 12">Week 19</option>
-            <option value="week 12">Week 20</option>
-            <option value="week 12">I do not know</option>
-          </select>
-          <p>Experienced Physical Pain level:</p>
-          <label>
-            <input type="radio" name="editList" value="Painless" /> Painless
-          </label>
-          <label>
-            <input type="radio" name="editList" value="painful" /> Painful
-          </label>
-          <label>
-            <input type="radio" name="editList" value="severepain" /> Severe Pain
-          </label>
-          <p>Experienced  Mental Pain level:</p>
+          {/* <p>Experienced  Mental Pain level:</p>
           <input type="range" list="tickmarks" />
           <datalist id="tickmarks">
             <option value="0" label="Painless" />
@@ -206,13 +171,14 @@ export const Share = () => {
           <label>
             <input type="radio" name="editList" value="No" /> No
           </label>
-          <label htmlFor="message"></label> */} */}
+          <label htmlFor="message"></label> */} */} */}
           <p>Wanna tell us your story?</p>
           <textarea
             value={story}
             onChange={(event) => setStory(event.target.value)}
             placeholder="Share your miscarriage testimony in more detail here..." />
           <button
+            disabled={!when_weeks}
             type="submit"
             onClick={handleSubmit}>
             Submit
