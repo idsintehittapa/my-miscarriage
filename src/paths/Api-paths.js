@@ -1,2 +1,2 @@
 
-export const sendShare = 'http://localhost:3000/testimonies'
+export const sendShare = 'http://localhost:8080/testimonies'
