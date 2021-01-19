@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { sendShare } from '../paths/Api-paths'
+import { Helmet } from 'react-helmet'
 
 import {
   Container,
@@ -19,18 +20,19 @@ import {
 
 // _________Testimony POST
 export const Share = () => {
+  const TITLE = 'Share'
+
   const [name, setName] = useState('')
   const [when_weeks, setWhen_weeks] = useState('')
   const [when_weeks_noticed, setWhen_weeks_noticed] = useState('')
-  const [physical_pain, setPhysical_pain] = useState('')
-  const [mental_pain, setMental_pain] = useState('')
-  const [hospital, setHospital] = useState('')
-  const [period_volume, setPeriod_volume] = useState('')
-  const [period_length, setPeriod_length] = useState('')
-  const [period_pain, setPeriod_pain] = useState('')
+  const [physical_pain, setPhysical_pain] = useState(null)
+  const [mental_pain, setMental_pain] = useState(null)
+  const [hospital, setHospital] = useState(null)
+  const [period_volume, setPeriod_volume] = useState(null)
+  const [period_length, setPeriod_length] = useState(null)
+  const [period_pain, setPeriod_pain] = useState(null)
   const [story, setStory] = useState('')
 
-  // a submit function witch POSTs the text input - this goes on the button
   const handleSubmit = (event) => {
     event.preventDefault()
 
@@ -78,9 +80,13 @@ export const Share = () => {
 
   return (
     <>
+      <Helmet>
+        <title>{TITLE}</title>
+      </Helmet>
       <Container>
         <h2>This is the sharing part</h2>
         <Form onSubmit={(event) => event.preventDefault()}>
+          {/* not sure if this onSubmit is necessary */}
           <label htmlFor="name"> Your name/alias</label>
           <input
             id="name"
@@ -228,6 +234,7 @@ export const Share = () => {
           <Paragraph>Wanna tell us your story?</Paragraph>
           <StyledTextArea
             value={story}
+            // pattern={"/^(?!\s+$)[A-Za-zăâîșțĂÂÎȘȚ\s-]+$/^^^^^^^^"}
             onChange={(event) => setStory(event.target.value)}
             placeholder="Share your miscarriage testimony in more detail here..." />
           <StyledButton

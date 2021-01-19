@@ -1,5 +1,7 @@
 import React from 'react'
+import { Helmet } from 'react-helmet'
 import styled from 'styled-components/macro'
+import { StyledButton } from 'styles/Styles'
 
 const Main = styled.main`
   display: flex;
@@ -16,16 +18,22 @@ const Title = styled.h1`
 `
 
 export const StartPage = () => {
+  const TITLE = 'My Miscarriage'
   return (
-    <Main>
-      <Title> miscarriage / mɪsˈkarɪdʒ</Title>
-      <h2> noun </h2>
-      <h3> "the spontaneous or unplanned expulsion of a fetus from the womb before it is able to
-      survive independently."
-      </h3>
-      <h4>
-        Please note that these stories are not censored and contains language that can be triggering.
-      </h4>
-    </Main>
+    <>
+      <Helmet>
+        <title>{TITLE}</title>
+      </Helmet>
+      <Main>
+        <Title> miscarriage / mɪsˈkarɪdʒ</Title>
+        <h2> noun </h2>
+        <h3> "the spontaneous or unplanned expulsion of a fetus from the womb before it is able to
+        survive independently."
+        </h3>
+        <h4> Please note that these stories are not censored and contains
+          language that can be triggering.
+        </h4>
+      </Main>
+    </>
   )
 }
