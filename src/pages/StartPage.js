@@ -1,7 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import styled from 'styled-components/macro'
-import { StyledButton } from 'styles/Styles'
 
 const Main = styled.main`
   display: flex;

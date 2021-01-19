@@ -1,6 +1,8 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 
+import { Card } from '../lib/Card'
+
 export const Testimonies = () => {
   const TITLE = 'Testimonies'
   return (
@@ -8,9 +10,7 @@ export const Testimonies = () => {
       <Helmet>
         <title>{TITLE}</title>
       </Helmet>
-      <div>
-        here there will be cards related to weeks from API
-      </div>
+      <Card title="week x" secondaryText="jada"/>
     </>
   )
 }
