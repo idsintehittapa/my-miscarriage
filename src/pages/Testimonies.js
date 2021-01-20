@@ -1,5 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
+import {Grid} from '@material-ui/core'
 
 import { Card } from '../lib/Card'
 import { Container } from '../styles/Styles'
@@ -79,15 +80,11 @@ export const Testimonies = () => {
       <Helmet>
         <title>{TITLE}</title>
       </Helmet>
-      <Container>
+      <Grid item xs={6}>
         {cardInfo.map((cardInfo, key) => (
-          // <Card coverImg={"https://www.fillmurray.com/300/200"} title="week x" secondaryText="jada" />
-          // <Card coverImg={cardInfo[0].Img} title={cardInfo[0].Week} secondaryText="1" />
-          // <Card coverImg={cardInfo[1].Img} title={cardInfo[1].Week} secondaryText="2" />
-          // <Card coverImg={cardInfo[2].Img} title={cardInfo[2].Week} secondaryText="3" /> */}
           <Card key={key} coverImg={cardInfo.Img} title={cardInfo.Week} secondaryText="2" />
         ))}
-      </Container>
+      </Grid>
 
     </>
   )

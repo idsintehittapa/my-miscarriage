@@ -8,7 +8,7 @@ const Container = styled.section`
   border-radius: 6px; 
   background: #e0e0e0;
   margin: 10px;
-  max-width: 350px;
+  // max-width: 350px;
 `
 
 const Title = styled.h1`
