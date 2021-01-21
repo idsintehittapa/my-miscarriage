@@ -1,22 +1,24 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import { Grid } from '@material-ui/core'
+import { Route, Link } from 'react-router-dom'
 
 import { Card } from '../lib/Card'
-import { Container } from '../styles/Styles'
+import { GridLayout } from '../styles/Styles'
+import { TestimonyWeek } from './TestimonyWeek'
 
+// all images has to be tha same size, so I need a wrapper later
 const cardInfo = [
   {
     Week: 'Week 6',
-    Img: 'https://www.fillmurray.com/300/200'
+    Img: require('../assets/isa1.png') // unsure this will work live? or that required is a good approach here
   },
   {
     Week: 'Week 7',
-    Img: 'https://www.fillmurray.com/300/200'
+    Img: require('../assets/14050.jpg')
   },
   {
     Week: 'Week 8',
-    Img: 'https://www.fillmurray.com/300/200'
+    Img: require('../assets/isa2.png')
   },
   {
     Week: 'Week 9',
@@ -74,26 +76,24 @@ const cardInfo = [
 ]
 
 export const Testimonies = () => {
+
   const TITLE = 'Testimonies'
   return (
     <>
       <Helmet>
         <title>{TITLE}</title>
       </Helmet>
-      <Grid
-        container
-        // justify="center"
-        direction="row"
-        wrap="wrap"
-        spacing={5}>
-        <Grid item xs={12} sm={6} md={6} lg={4}>
-          <div>
-            {cardInfo.map((cardInfo, key) => (
-              <Card key={key} coverImg={cardInfo.Img} title={cardInfo.Week} secondaryText="2" />
-            ))}
-          </div>
-        </Grid>
-      </Grid>
+      <Link to="/testimonies/testimony">
+        <GridLayout>
+          {cardInfo.map((weeks, key) => (
+            <Card key={key} coverImg={weeks.Img} title={weeks.Week} secondaryText="2" />
+          ))}
+        </GridLayout>
+      </Link>
+
+      <Route path="/testimonies/testimony">
+        <TestimonyWeek />
+      </Route>
 
     </>
   )

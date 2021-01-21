@@ -56,3 +56,17 @@ export const StyledButton = styled.button`
   box-shadow: 5px 5px 2px black;
 `
 // _________Testimonies
+export const GridLayout = styled.section`
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+  }
+
+  @media (min-width: 1224px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+`
