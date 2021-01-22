@@ -6,7 +6,7 @@ const Container = styled.section`
   0px 1px 1px 0px rgba(0, 0, 0, 0.14),
   0px 1px 3px 0px rgba(0, 0, 0, 0.12);
   border-radius: 6px; 
-  background: #e0e0e0;
+  background: #d0dbd0;
   margin: 10px;
   // max-width: 350px;
 `
@@ -22,7 +22,6 @@ const TimeStamp = styled.p`
 
 const SecondaryText = styled.p`
   margin: 0;
-  color: #6b6b6b
 `
 const CoverImg = styled.img`
   width: 100%;

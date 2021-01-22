@@ -18,7 +18,7 @@ const cardInfo = [
   },
   {
     Week: 'Week 8',
-    Img: require('../assets/isa2.png')
+    Img: 'https://www.fillmurray.com/300/200'
   },
   {
     Week: 'Week 9',
@@ -84,7 +84,7 @@ export const Testimonies = () => {
         <title>{TITLE}</title>
       </Helmet>
       <Link to="/testimonies/testimony">
-      {/* <Link to={`/books/${book.bookID}`}>
+        {/* <Link to={`/books/${book.bookID}`}>
       <Link to={`/testimonies${?when_weeks=}`}> */}
         <GridLayout>
           {cardInfo.map((weeks, key) => (
