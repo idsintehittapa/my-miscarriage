@@ -87,64 +87,67 @@ export const Share = () => {
         <h2>This is the sharing part</h2>
         <Form onSubmit={(event) => event.preventDefault()}>
           {/* not sure if this onSubmit is necessary */}
-          <label htmlFor="name"> Your name/alias</label>
-          <input
-            id="name"
-            value={name}
-            type="text"
-            onChange={(event) => setName(event.target.value)} />
-          <label htmlFor="weeks"> When weeks*</label>
-          <select
-            id="weeks"
-            required
-            value={when_weeks}
-            onChange={(event) => setWhen_weeks(event.target.value)}>
-            <option value="-">week</option>
-            <option value="6">Week 6</option>
-            <option value="7">Week 7</option>
-            <option value="8">Week 8</option>
-            <option value="9">Week 9</option>
-            <option value="10">Week 10</option>
-            <option value="11">Week 11</option>
-            <option value="12">Week 12</option>
-            <option value="13">Week 13</option>
-            <option value="14">Week 14</option>
-            <option value="15">Week 15</option>
-            <option value="16">Week 16</option>
-            <option value="17">Week 17</option>
-            <option value="18">Week 18</option>
-            <option value="19">Week 19</option>
-            <option value="20">Week 20</option>
-            <option value="5">I do not know</option>
-          </select>
-          <label htmlFor="weeks_noticed"> When noticed?</label>
-          <select
-            id="weeks_noticed"
-            value={when_weeks_noticed}
-            onChange={(event) => setWhen_weeks_noticed(event.target.value)}>
-            <option value="-">week</option>
-            <option value="6">Week 6</option>
-            <option value="7">Week 7</option>
-            <option value="8">Week 8</option>
-            <option value="9">Week 9</option>
-            <option value="10">Week 10</option>
-            <option value="11">Week 11</option>
-            <option value="12">Week 12</option>
-            <option value="13">Week 13</option>
-            <option value="14">Week 14</option>
-            <option value="15">Week 15</option>
-            <option value="16">Week 16</option>
-            <option value="17">Week 17</option>
-            <option value="18">Week 18</option>
-            <option value="19">Week 19</option>
-            <option value="20">Week 20</option>
-            <option value="21">Week 21</option>
-            <option value="22">Week 22</option>
-            <option value="23">Week 23</option>
-            <option value="24">Week 24</option>
-            <option value="25">Week 25</option>
-            <option value="5">I do not know</option>
-          </select>
+          <label htmlFor="name"> Your name/alias
+            <input
+              id="name"
+              value={name}
+              type="text"
+              onChange={(event) => setName(event.target.value)} />
+          </label>
+          <label htmlFor="weeks"> When weeks*
+            <select
+              id="weeks"
+              required
+              value={when_weeks}
+              onChange={(event) => setWhen_weeks(event.target.value)}>
+              <option value="-">week</option>
+              <option value="6">Week 6</option>
+              <option value="7">Week 7</option>
+              <option value="8">Week 8</option>
+              <option value="9">Week 9</option>
+              <option value="10">Week 10</option>
+              <option value="11">Week 11</option>
+              <option value="12">Week 12</option>
+              <option value="13">Week 13</option>
+              <option value="14">Week 14</option>
+              <option value="15">Week 15</option>
+              <option value="16">Week 16</option>
+              <option value="17">Week 17</option>
+              <option value="18">Week 18</option>
+              <option value="19">Week 19</option>
+              <option value="20">Week 20</option>
+              <option value="5">I do not know</option>
+            </select>
+          </label>
+          <label htmlFor="weeks_noticed"> When noticed?
+            <select
+              id="weeks_noticed"
+              value={when_weeks_noticed}
+              onChange={(event) => setWhen_weeks_noticed(event.target.value)}>
+              <option value="-">week</option>
+              <option value="6">Week 6</option>
+              <option value="7">Week 7</option>
+              <option value="8">Week 8</option>
+              <option value="9">Week 9</option>
+              <option value="10">Week 10</option>
+              <option value="11">Week 11</option>
+              <option value="12">Week 12</option>
+              <option value="13">Week 13</option>
+              <option value="14">Week 14</option>
+              <option value="15">Week 15</option>
+              <option value="16">Week 16</option>
+              <option value="17">Week 17</option>
+              <option value="18">Week 18</option>
+              <option value="19">Week 19</option>
+              <option value="20">Week 20</option>
+              <option value="21">Week 21</option>
+              <option value="22">Week 22</option>
+              <option value="23">Week 23</option>
+              <option value="24">Week 24</option>
+              <option value="25">Week 25</option>
+              <option value="5">I do not know</option>
+            </select>
+          </label>
           <Paragraph>Experienced Physical Pain level:</Paragraph>
           <input
             type="radio"

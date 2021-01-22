@@ -1,5 +1,11 @@
 import styled from 'styled-components/macro'
 
+// _________Header
+
+export const Title = styled.h2`
+  font-size: 1.8em;
+`
+
 export const Container = styled.section`
   display: flex;
   margin: 10px;

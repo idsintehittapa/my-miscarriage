@@ -36,7 +36,7 @@ export const Card = ({ title, secondaryText, coverImg, name, createdAt }) => {
     <Container>
       {coverImg && <CoverImg src={coverImg} />}
       <Content>
-        {title && <Title>{title}</Title>}
+        {title && <Title>Week {title}</Title>}
         {createdAt && <TimeStamp>{createdAt}</TimeStamp>}
         {secondaryText && <SecondaryText>{secondaryText}</SecondaryText>}
         {name && <SecondaryText>{name}</SecondaryText>}

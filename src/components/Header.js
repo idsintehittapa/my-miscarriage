@@ -1,17 +1,12 @@
 import React from 'react'
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components/macro'
-
-import { StartPage } from 'pages/StartPage'
-import { About } from '../pages/About'
-import { Share } from '../pages/Share'
-import { Testimonies } from '../pages/Testimonies'
 
 // Q: How making this update not inside the header? - check damien's video
 // it does so if you go into the path directly but not when clicking on links..
 // is it because it's outside of main
 
-const Container = styled.header`
+const HeaderContainer = styled.header`
 `
 
 const PlusMenu = styled.div`
@@ -57,43 +52,30 @@ text-decoration: none;
 
 export const Header = () => {
   return (
-    <Container>
-      <Router>
-        <PlusMenu>+</PlusMenu>
-        <Nav>
-          <Ul>
-            <Li>
-              <StyledLink to="/about">About</StyledLink>
-            </Li>
-            <Li>
-              <StyledLink to="/testimonies">Testimonies</StyledLink>
-            </Li>
-            <Li>
-              <StyledLink to="/share">Share</StyledLink>
-            </Li>
-            <Li>
-              <StyledLink to="/">Home</StyledLink>
-            </Li>
-          </Ul>
-        </Nav>
+    <HeaderContainer>
+      <PlusMenu>+</PlusMenu>
+      <Nav>
+        <Ul>
+          <Li>
+            <StyledLink to="/about">About</StyledLink>
+          </Li>
+          <Li>
+            <StyledLink to="/testimonies">Testimonies</StyledLink>
+          </Li>
+          <Li>
+            <StyledLink to="/share">Share</StyledLink>
+          </Li>
+          <Li>
+            <StyledLink to="/sign">Moderator sign in/up</StyledLink>
+          </Li>
+          <Li>
+            <StyledLink to="/">Home</StyledLink>
+          </Li>
+        </Ul>
+      </Nav>
 
-        {/* A <Switch> looks through its children <Route>s and
+      {/* A <Switch> looks through its children <Route>s and
           renders the first one that matches the current URL. */}
-        <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/Testimonies">
-            <Testimonies />
-          </Route>
-          <Route path="/share">
-            <Share />
-          </Route>
-          <Route exact path="/">
-            <StartPage />
-          </Route>
-        </Switch>
-      </Router>
-    </Container>
+    </HeaderContainer>
   )
 }

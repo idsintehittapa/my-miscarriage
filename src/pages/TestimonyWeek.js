@@ -14,18 +14,20 @@ import { GridLayout } from '../styles/Styles'
 // but how do I make it so it first only filters out weeks and then id related to that
 // week?
 
-export const TestimonyWeek = () => {
+export const TestimonyWeek = (request) => {
   const [testimony, setTestimony] = useState([])
 
+  const { week } = request.match.params
+
   useEffect(() => {
-    fetch(importTestimonies)
+    fetch(`http://localhost:8080/testimonies?when_weeks=${week}`)
       .then((response) => response.json())
       .then((json) => setTestimony(json.allTestimonies))
-  }, [])
+  }, [week])
 
   return (
     <div>
-      <h1> Week X </h1>
+      <h1> Week { week } </h1>
       {/* {testimony.length} */}
       {/* {testimony.map((week) => week.when_weeks)} */}
       <GridLayout>
