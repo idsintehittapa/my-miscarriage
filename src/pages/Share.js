@@ -93,6 +93,7 @@ export const Share = () => {
             value={name}
             type="text"
             onChange={(event) => setName(event.target.value)} />
+          {/* ADD ANONYMOUS for default in front-end */}
           <label htmlFor="weeks"> When weeks*</label>
           <select
             id="weeks"

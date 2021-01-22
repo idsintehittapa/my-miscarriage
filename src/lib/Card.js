@@ -15,6 +15,10 @@ const Title = styled.h1`
   margin: 0;
   font-size: 2.2em;
 `
+const TimeStamp = styled.p`
+  font-size: 0.8em;
+  color: rgba(67, 67, 67, 0.8)
+`
 
 const SecondaryText = styled.p`
   margin: 0;
@@ -28,13 +32,15 @@ const Content = styled.div`
   padding: 20px;
 `
 
-export const Card = ({ title, secondaryText, coverImg }) => {
+export const Card = ({ title, secondaryText, coverImg, name, createdAt }) => {
   return (
     <Container>
       {coverImg && <CoverImg src={coverImg} />}
       <Content>
         {title && <Title>{title}</Title>}
+        {createdAt && <TimeStamp>{createdAt}</TimeStamp>}
         {secondaryText && <SecondaryText>{secondaryText}</SecondaryText>}
+        {name && <SecondaryText>{name}</SecondaryText>}
       </Content>
     </Container>
   )

@@ -15,14 +15,31 @@ import { GridLayout } from '../styles/Styles'
 // week?
 
 export const TestimonyWeek = () => {
+  const [testimony, setTestimony] = useState([])
 
-  fetch(importTestimonies)
-    .then((response) => response.json())
-    .then((json) => console.log(json.allTestimonies))
+  useEffect(() => {
+    fetch(importTestimonies)
+      .then((response) => response.json())
+      .then((json) => setTestimony(json.allTestimonies))
+  }, [])
 
   return (
     <div>
-      test
+      <h1> Week X </h1>
+      {/* {testimony.length} */}
+      {/* {testimony.map((week) => week.when_weeks)} */}
+      <GridLayout>
+        {testimony.map((week, key) => (
+          <Card
+            key={key}
+            title={week.when_weeks}
+            createdAt={week.createdAt}
+            secondaryText={week.name} />
+          // <p tabIndex='0' className='time'>{message.name ? message.name : "Anonymous"}</p>
+          // <p tabIndex='0' className='time'>{moment(message.createdAt).fromNow()}</p>
+          // ADD ANONYMOUS for default in front-end
+        ))}
+      </GridLayout>
     </div>
   )
 }
