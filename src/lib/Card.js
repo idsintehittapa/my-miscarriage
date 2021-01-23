@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-const Container = styled.section`
+const CardContainer = styled.section`
   box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
   0px 1px 1px 0px rgba(0, 0, 0, 0.14),
   0px 1px 3px 0px rgba(0, 0, 0, 0.12);
@@ -11,7 +11,7 @@ const Container = styled.section`
   // max-width: 350px;
 `
 
-const Title = styled.h1`
+const CardTitle = styled.h1`
   margin: 0;
   font-size: 2.2em;
 `
@@ -33,14 +33,14 @@ const Content = styled.div`
 
 export const Card = ({ title, secondaryText, coverImg, name, createdAt }) => {
   return (
-    <Container>
+    <CardContainer>
       {coverImg && <CoverImg src={coverImg} />}
       <Content>
-        {title && <Title>Week {title}</Title>}
+        {title && <CardTitle>Week {title}</CardTitle>}
         {createdAt && <TimeStamp>{createdAt}</TimeStamp>}
         {secondaryText && <SecondaryText>{secondaryText}</SecondaryText>}
         {name && <SecondaryText>{name}</SecondaryText>}
       </Content>
-    </Container>
+    </CardContainer>
   )
 }

@@ -3,7 +3,7 @@ import styled from 'styled-components/macro'
 // _________Header
 
 export const Title = styled.h2`
-  font-size: 1.8em;
+  font-size: 2.8em;
 `
 
 export const Container = styled.section`
@@ -75,4 +75,9 @@ export const GridLayout = styled.section`
   @media (min-width: 1224px) {
     grid-template-columns: 1fr 1fr 1fr;
   }
+`
+
+export const GridLayoutSmall = styled.section`
+display: grid;
+grid-template-columns: 1fr repeat(5, 1fr);
 `

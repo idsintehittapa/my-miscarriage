@@ -82,17 +82,13 @@ export const Testimonies = () => {
       <Helmet>
         <title>{TITLE}</title>
       </Helmet>
-        {/* <Link to={`/books/${book.bookID}`}>
-      <Link to={`/testimonies${?when_weeks=}`}> */}
-        <GridLayout>
-          {cardInfo.map((weeks, key) => (
-            <Link key={key} to={`/testimonies/${weeks.Week}`}>
+      <GridLayout>
+        {cardInfo.map((weeks, key) => (
+          <Link key={key} to={`/testimonies/${weeks.Week}`}>
             <Card key={key} coverImg={weeks.Img} title={weeks.Week} secondaryText="2" />
-            </Link>
-          ))}
-        </GridLayout>
-      
-
+          </Link>
+        ))}
+      </GridLayout>
     </>
   )
 }

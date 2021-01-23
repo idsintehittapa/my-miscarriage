@@ -4,7 +4,12 @@ import React, { useEffect, useState } from 'react'
 
 import { importTestimonies } from '../paths/Api-paths'
 import { Card } from '../lib/Card'
-import { GridLayout } from '../styles/Styles'
+import {
+  Container,
+  GridLayout,
+  GridLayoutSmall,
+  Title
+} from '../styles/Styles'
 
 // useEffect()
 // so here it should be a fetch connected to week..
@@ -26,22 +31,36 @@ export const TestimonyWeek = (request) => {
   }, [week])
 
   return (
-    <div>
-      <h1> Week { week } </h1>
-      {/* {testimony.length} */}
-      {/* {testimony.map((week) => week.when_weeks)} */}
-      <GridLayout>
-        {testimony.map((week, key) => (
-          <Card
-            key={key}
-            title={week.when_weeks}
-            createdAt={week.createdAt}
-            secondaryText={week.name} />
-          // <p tabIndex='0' className='time'>{message.name ? message.name : "Anonymous"}</p>
-          // <p tabIndex='0' className='time'>{moment(message.createdAt).fromNow()}</p>
-          // ADD ANONYMOUS for default in front-end
-        ))}
-      </GridLayout>
-    </div>
+    <>
+      <Container>
+        <Title> Week {week} </Title>
+        {/* {testimony.length} */}
+        {/* {testimony.map((week) => week.when_weeks)} */}
+        <GridLayout>
+          {testimony.map((weeks, key) => (
+            <Card
+              key={key}
+              title={weeks.when_weeks}
+              createdAt={weeks.createdAt}
+              secondaryText={weeks.name} />
+            // <p tabIndex='0' className='time'>{message.name ? message.name : "Anonymous"}</p>
+            // <p tabIndex='0' className='time'>{moment(message.createdAt).fromNow()}</p>
+            // ADD ANONYMOUS for default in front-end
+          ))}
+        </GridLayout>
+      </Container>
+      {/* this is nit working yet */}
+      <Container>
+        <h3>Jump to another Week of testimonies</h3>
+        <GridLayoutSmall>
+          {testimony.map((weeks, key) => (
+            <Card>
+              key={key}
+              title={weeks.when_weeks}
+            </Card>
+          ))}
+        </GridLayoutSmall>
+      </Container>
+    </>
   )
 }
