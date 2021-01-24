@@ -5,6 +5,10 @@ const Container = styled.footer`
   display: flex;
   flex-direction: column;
   padding: 20px;
+  position:absolute;
+  // left:0;
+  // bottom:0;
+  // right:0;
 `
 
 export const Footer = () => {

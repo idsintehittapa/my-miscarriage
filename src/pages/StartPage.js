@@ -1,21 +1,14 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import styled from 'styled-components/macro'
+import { FullPage, Slide } from 'react-full-page';
 
-
-const Main = styled.main`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 80vh;
-  justify-content: center;
-  align-items: center;
-`
-
-const Title = styled.h1`
-  font-size: 3.5em;
-  text-align: center;
-`
+import { About } from '../pages/About'
+import { Contact } from '../pages/Contact'
+import {
+  Main,
+  TitleStarterPage,
+  StarterWrapper
+} from '../styles/Styles'
 
 export const StartPage = () => {
   const TITLE = 'My Miscarriage'
@@ -24,16 +17,27 @@ export const StartPage = () => {
       <Helmet>
         <title>{TITLE}</title>
       </Helmet>
-      <Main>
-        <Title> miscarriage / mɪsˈkarɪdʒ</Title>
-        <h2> noun </h2>
-        <h3> "the spontaneous or unplanned expulsion of a fetus from the womb before it is able to
-        survive independently."
-        </h3>
-        <h4> Please note that these stories are not censored and contains
-          language that can be triggering.
-        </h4>
-      </Main>
+      <StarterWrapper>
+        <FullPage controls controlsProps={{ className: 'class-name' }}>
+          <Slide>
+            <Main>
+              <TitleStarterPage> miscarriage / mɪsˈkarɪdʒ</TitleStarterPage>
+              <h2> noun </h2>
+              <h3>
+                <q>he spontaneous or unplanned expulsion of a fetus from the
+                womb before it is able to survive independently.
+                </q>
+              </h3>
+              <h4> Please note that these stories are not censored and contains
+              language that can be triggering.
+              </h4>
+            </Main>
+          </Slide>
+          <Slide>
+            <About />
+          </Slide>
+        </FullPage>
+      </StarterWrapper>
     </>
   )
 }

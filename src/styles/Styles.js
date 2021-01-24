@@ -1,17 +1,62 @@
 import styled from 'styled-components/macro'
 
-// _________Header
-
-export const Title = styled.h2`
-  font-size: 2.8em;
-`
-
+// _________Reusable styles
 export const Container = styled.section`
   display: flex;
   margin: 10px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
+  max-width: 1000px;
+`
+
+export const H2 = styled.h2`
+  // font-size: 2em;
+  // text-align: center;
+`
+
+export const Quote = styled.q`
+  // font-size: 1.8em;
+  // text-align: center;
+  // font-style: oblique;
+`
+export const P = styled.p`
+text-align: justify;
+`
+
+export const H4 = styled(P)`
+`
+
+// _________Header
+
+export const Title = styled.h2`
+  font-size: 2.8em;
+`
+
+// _________StarterPage
+export const Main = styled.main`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 80vh;
+  justify-content: center;
+  align-items: center;
+`
+export const TitleStarterPage = styled.h1`
+  font-size: 3.5em;
+  text-align: center;
+`
+
+export const StarterWrapper = styled.section`
+display: flex;
+min-height: 300vh;
+flex-direction: column;
+justify-content: space-between;
+`
+// _________ABOUT
+export const ContainerText = styled(Container)`
+  max-width: 800px;
 `
 
 export const Form = styled.form`

@@ -59,7 +59,7 @@ export const Header = () => {
       <Nav>
         <Ul>
           <Li>
-            <StyledLink to="/about">About</StyledLink>
+            <StyledLink to="/">Home</StyledLink>
           </Li>
           <Li>
             <StyledLink to="/testimonies">Testimonies</StyledLink>
@@ -68,10 +68,10 @@ export const Header = () => {
             <StyledLink to="/share">Share</StyledLink>
           </Li>
           <Li>
-            <StyledLink to="/sign">Moderator sign in/up</StyledLink>
+            <StyledLink to="/contact">Contact</StyledLink>
           </Li>
           <Li>
-            <StyledLink to="/">Home</StyledLink>
+            <StyledLink to="/sign">Moderator</StyledLink>
           </Li>
         </Ul>
       </Nav>
