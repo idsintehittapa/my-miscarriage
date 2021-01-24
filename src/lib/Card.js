@@ -6,7 +6,7 @@ const CardContainer = styled.section`
   0px 1px 1px 0px rgba(0, 0, 0, 0.14),
   0px 1px 3px 0px rgba(0, 0, 0, 0.12);
   border-radius: 6px; 
-  background: #d0dbd0;
+  background: rgba(123, 163, 176, 0.5);
   margin: 10px;
   // max-width: 350px;
 `

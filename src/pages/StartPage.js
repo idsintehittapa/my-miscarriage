@@ -2,6 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import styled from 'styled-components/macro'
 
+
 const Main = styled.main`
   display: flex;
   flex-direction: column;

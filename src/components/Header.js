@@ -20,6 +20,8 @@ const PlusMenu = styled.div`
 
 const Nav = styled.nav`
   display: none;
+  position: -webkit-sticky;
+  position: sticky;
 
   @media (min-width: 768px) {
     display: flex;
