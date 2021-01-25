@@ -1,5 +1,7 @@
 import styled from 'styled-components/macro'
 
+import img from '../assets/usgs-eFbxYl9M_lc-unsplash.jpg'
+
 // _________Reusable styles
 export const Container = styled.section`
   display: flex;
@@ -35,6 +37,15 @@ export const Title = styled.h2`
 `
 
 // _________StarterPage
+
+export const Test = styled.section`
+  background: linear-gradient(rgba(255,255,255,.8), rgba(255,255,255,.7)), url(${img});
+  // background-image: url(${img});
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+`
+
 export const Main = styled.main`
   display: flex;
   flex-direction: column;

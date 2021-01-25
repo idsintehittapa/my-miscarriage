@@ -2,11 +2,12 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import { FullPage, Slide } from 'react-full-page';
 
-import { About } from '../pages/About'
+import { About } from './About'
 import {
   Main,
   TitleStarterPage,
-  StarterWrapper
+  StarterWrapper,
+  Test
 } from '../styles/Styles'
 
 export const StartPage = () => {
@@ -16,27 +17,31 @@ export const StartPage = () => {
       <Helmet>
         <title>{TITLE}</title>
       </Helmet>
-      <StarterWrapper>
-        <FullPage controls controlsProps={{ className: 'class-name' }}>
-          <Slide>
-            <Main>
-              <TitleStarterPage> miscarriage / mɪsˈkarɪdʒ</TitleStarterPage>
-              <h2> noun </h2>
-              <h3>
-                <q>The spontaneous or unplanned expulsion of a fetus from the
+        <StarterWrapper>
+        <Test>
+          <FullPage controls controlsProps={{ className: 'class-name' }}>
+            <Slide>
+              <Main>
+                <TitleStarterPage> miscarriage</TitleStarterPage>
+                <h2> noun [ˌmɪsˈkærɪdʒ] </h2>
+                <h3> The spontaneous or unplanned expulsion of a fetus from the
                 womb before it is able to survive independently.
-                </q>
               </h3>
-              <h4> Please note that these stories are not censored and contains
-              language that can be triggering.
+                <h4> This page represent testimonies of experienced miscarriages.
+        The content is not intended as a substitute for professional
+        medical advice, diagnosis, or treatment. Always seek the advice of your
+        physician or other qualified health provider with any questions
+        you may have regarding a medical condition. Please note that these stories are not censored and contains
+                language that can be triggering.
               </h4>
-            </Main>
-          </Slide>
-          <Slide>
-            <About />
-          </Slide>
-        </FullPage>
-      </StarterWrapper>
+              </Main>
+            </Slide>
+            <Slide>
+              <About />
+            </Slide>
+          </FullPage>
+          </Test>
+        </StarterWrapper>
     </>
   )
 }

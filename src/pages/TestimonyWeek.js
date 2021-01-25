@@ -1,5 +1,6 @@
 
 import React, { useEffect, useState } from 'react'
+import moment from 'moment'
 // import { Link } from 'react-router-dom'
 
 import { importTestimonies } from '../paths/Api-paths'
@@ -11,13 +12,7 @@ import {
   Title
 } from '../styles/Styles'
 
-// useEffect()
-// so here it should be a fetch connected to week..
-// can this also be props then somehow?
-
-// for specific week related to week {/* <Link to={`/movies/${id}`}> */}
-// but how do I make it so it first only filters out weeks and then id related to that
-// week?
+// opening a card to read it!
 
 export const TestimonyWeek = (request) => {
   const [testimony, setTestimony] = useState([])
@@ -43,17 +38,15 @@ export const TestimonyWeek = (request) => {
     <>
       <Container>
         <Title> Week {week} </Title>
-        {/* {testimony.length} */}
-        {/* {testimony.map((week) => week.when_weeks)} */}
         <GridLayout>
           {testimony.map((weeks, key) => (
             <Card
               key={key}
               title={weeks.when_weeks}
-              createdAt={weeks.createdAt}
+              createdAt={moment(weeks.createdAt).format('ll')}
               secondaryText={weeks.name} />
+            // secondaryText={weeks.name ? week.name : 'Anonymous'} />
             // <p tabIndex='0' className='time'>{message.name ? message.name : "Anonymous"}</p>
-            // <p tabIndex='0' className='time'>{moment(message.createdAt).fromNow()}</p>
             // ADD ANONYMOUS for default in front-end
           ))}
         </GridLayout>

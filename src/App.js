@@ -9,7 +9,7 @@ import { Testimonies } from './pages/Testimonies'
 import { SignLogIn } from './pages/SignLogIn'
 import { TestimoniesModerator } from './pages/TestimoniesModerator'
 import { TestimonyWeek } from './pages/TestimonyWeek'
-import { Footer } from './components/Footer'
+// import { Footer } from './components/Footer'
 
 
 export const App = () => {
@@ -25,7 +25,7 @@ export const App = () => {
         <Route component={TestimoniesModerator} path="/moderator/posts" exact />
         <Route component={Contact} path="/contact" exact />
       </Switch>
-      <Footer />
+      {/* <Footer /> */}
     </BrowserRouter>
   )
 }
