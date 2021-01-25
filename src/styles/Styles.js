@@ -50,7 +50,7 @@ export const TitleStarterPage = styled.h1`
 
 export const StarterWrapper = styled.section`
 display: flex;
-min-height: 300vh;
+min-height: 176vh;
 flex-direction: column;
 justify-content: space-between;
 `

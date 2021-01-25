@@ -14,7 +14,7 @@ import {
 // sign in
 
 export const SignLogIn = () => {
-  const TITLE = 'Log/sign'
+  const TITLE = 'Moderator'
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')

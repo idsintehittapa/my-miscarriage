@@ -21,6 +21,7 @@ import {
 
 export const TestimonyWeek = (request) => {
   const [testimony, setTestimony] = useState([])
+  const [page, setPage] = useState(1)
 
   const { week } = request.match.params
 
@@ -29,6 +30,14 @@ export const TestimonyWeek = (request) => {
       .then((response) => response.json())
       .then((json) => setTestimony(json.allTestimonies))
   }, [week])
+
+  const pageForward = () => {
+    setPage(page + 1)
+  }
+
+  const pageBackward = () => {
+    setPage(page - 1)
+  }
 
   return (
     <>
@@ -49,6 +58,11 @@ export const TestimonyWeek = (request) => {
           ))}
         </GridLayout>
       </Container>
+      <div className="page-buttons-container">
+        <p>{`Page ${page} / ${page}`}</p>
+        <button type="button" onClick={pageBackward} disabled={page === 1}>Previous Page</button>
+        <button type="button" onClick={pageForward} disabled={page === 10}>Next Page</button>
+      </div>
       {/* this is nit working yet */}
       <Container>
         <h3>Jump to another Week of testimonies</h3>

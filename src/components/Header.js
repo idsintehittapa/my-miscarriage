@@ -71,7 +71,7 @@ export const Header = () => {
             <StyledLink to="/contact">Contact</StyledLink>
           </Li>
           <Li>
-            <StyledLink to="/sign">Moderator</StyledLink>
+            <StyledLink to="/moderator">Moderator</StyledLink>
           </Li>
         </Ul>
       </Nav>

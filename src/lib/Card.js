@@ -23,6 +23,9 @@ const TimeStamp = styled.p`
 const SecondaryText = styled.p`
   margin: 0;
 `
+const StoryText = styled.p`
+  margin: 5px;
+`
 const CoverImg = styled.img`
   width: 100%;
   border-radius: 6px 6px 0 0;
@@ -31,7 +34,7 @@ const Content = styled.div`
   padding: 20px;
 `
 
-export const Card = ({ title, secondaryText, coverImg, name, createdAt }) => {
+export const Card = ({ title, secondaryText, coverImg, name, createdAt, post, story }) => {
   return (
     <CardContainer>
       {coverImg && <CoverImg src={coverImg} />}
@@ -39,7 +42,9 @@ export const Card = ({ title, secondaryText, coverImg, name, createdAt }) => {
         {title && <CardTitle>Week {title}</CardTitle>}
         {createdAt && <TimeStamp>{createdAt}</TimeStamp>}
         {secondaryText && <SecondaryText>{secondaryText}</SecondaryText>}
+        {story && <StoryText>{story}</StoryText>}
         {name && <SecondaryText>{name}</SecondaryText>}
+        {post && <SecondaryText>{post}</SecondaryText>}
       </Content>
     </CardContainer>
   )

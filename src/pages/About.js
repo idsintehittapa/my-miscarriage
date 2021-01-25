@@ -1,5 +1,5 @@
 import React from 'react'
-import { Helmet } from 'react-helmet'
+// import { Helmet } from 'react-helmet'
 
 import {
   Main,
@@ -12,7 +12,7 @@ import {
 } from '../styles/Styles'
 
 export const About = () => {
-  const TITLE = 'About'
+  // const TITLE = 'About'
   return (
     <>
       {/* <Helmet>
@@ -39,14 +39,15 @@ export const About = () => {
           or dilatation and curettage may be necessary to end the miscarriage. After the miscarriage,
           it usually takes about a month before menstruation returns. The first menstruation after a
           miscarriage may be heavier than usual, however, the flow and intervals usually return to
-          normal the next cycle. </P>
+          normal the next cycle.
+          </P>
 
           <H4>Some header to the left!</H4>
           <P>By talking about our miscarriages, we can break the taboo, share experiences
           to support and help someone going through it. There is scarce information covering
           what one could experience before, during, and after a miscarriage. Could it hurt?
           For how long could I bleed? Could the period change afterward? Etc.
-        </P>
+          </P>
 
           <H4>Some header to the left!</H4>
           <P> MM is a platform where anonymous testimonies are shared. These have been collected

@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet'
 import { FullPage, Slide } from 'react-full-page';
 
 import { About } from '../pages/About'
-import { Contact } from '../pages/Contact'
 import {
   Main,
   TitleStarterPage,
@@ -24,7 +23,7 @@ export const StartPage = () => {
               <TitleStarterPage> miscarriage / mɪsˈkarɪdʒ</TitleStarterPage>
               <h2> noun </h2>
               <h3>
-                <q>he spontaneous or unplanned expulsion of a fetus from the
+                <q>The spontaneous or unplanned expulsion of a fetus from the
                 womb before it is able to survive independently.
                 </q>
               </h3>
