@@ -6,8 +6,24 @@ import { Link } from 'react-router-dom'
 // import 'slick-carousel/slick/slick.css'
 // import 'slick-carousel/slick/slick-theme.css'
 
+import styled from 'styled-components/macro'
 import { cardInfo } from '../data/TestimonyCardData'
 import { Card } from '../lib/Card'
+// import { StyledSlider } from '../styles/Styles'
+
+const StyledSlider = styled(Slider)`
+  .slick-list {
+    padding: 0 !important;
+  }
+  .slick-track {
+    padding: 0 !important;
+    // top: 35px;
+  }
+  .slick-dots {
+    // bottom: 5px;
+    margin: 10px;
+  }
+`;
 
 export const Carousel = () => {
   const settings = {
@@ -25,14 +41,14 @@ export const Carousel = () => {
   }
   return (
     <>
-      <Slider {...settings}>
+      <StyledSlider {...settings}>
         {cardInfo.map((weeks, key) => (
           <Link key={key} to={`/testimonies/${weeks.Week}`}>
-            <Card key={key} title={weeks.Week} />
+            <Card key={key} carouselTitle={weeks.Week} />
           </Link>
         ))}
 
-      </Slider>
+      </StyledSlider>
     </>
   )
 }

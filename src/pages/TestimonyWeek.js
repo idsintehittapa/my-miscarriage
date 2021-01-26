@@ -53,13 +53,13 @@ export const TestimonyWeek = (request) => {
             // ADD ANONYMOUS for default in front-end
           ))}
         </GridLayout>
+        <div>
+          <p>{`Page ${page} / ${page}`}</p>
+          <button type="button" onClick={pageBackward} disabled={page === 1}>Previous Page</button>
+          <button type="button" onClick={pageForward} disabled={page === 10}>Next Page</button>
+        </div>
+        <h3>Jump to another Week of testimonies</h3>
       </Container>
-      <div>
-        <p>{`Page ${page} / ${page}`}</p>
-        <button type="button" onClick={pageBackward} disabled={page === 1}>Previous Page</button>
-        <button type="button" onClick={pageForward} disabled={page === 10}>Next Page</button>
-      </div>
-      <h3>Jump to another Week of testimonies</h3>
       <Carousel />
     </>
   )

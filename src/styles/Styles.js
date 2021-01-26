@@ -138,7 +138,4 @@ display: grid;
 grid-template-columns: 1fr repeat(5, 1fr);
 `
 
-// TestimonyWeek
-export const SliderContainer = styled.section`
-  
-`
+// _________Carousel
