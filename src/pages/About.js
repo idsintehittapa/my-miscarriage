@@ -20,7 +20,6 @@ export const About = () => {
       </Helmet> */}
       <Main>
         <Container>
-          <H2>What about it?</H2>
           <Quote>If you do not mention it yourself, nobody talks about miscarriage.
           Now that I have told friends and family,
           many have been through the same thing; but it is not something we talk openly about?

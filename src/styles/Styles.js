@@ -1,6 +1,6 @@
 import styled from 'styled-components/macro'
 
-import img from '../assets/usgs-eFbxYl9M_lc-unsplash.jpg'
+import img from '../assets/1.jpg'
 
 // _________Reusable styles
 export const Container = styled.section`

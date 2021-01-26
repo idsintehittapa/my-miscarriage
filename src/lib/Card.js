@@ -11,7 +11,7 @@ const CardContainer = styled.section`
   // max-width: 350px;
 `
 
-const CardTitle = styled.h1`
+const CardTitle = styled.h3`
   margin: 0;
   font-size: 2.2em;
 `
