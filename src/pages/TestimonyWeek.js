@@ -1,14 +1,18 @@
 
 import React, { useEffect, useState } from 'react'
 import moment from 'moment'
+
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 // import { Link } from 'react-router-dom'
 
-import { importTestimonies } from '../paths/Api-paths'
+// import { importTestimonies } from '../paths/Api-paths'
+import { Carousel } from '../components/Carousel'
 import { Card } from '../lib/Card'
+
 import {
   Container,
   GridLayout,
-  GridLayoutSmall,
   Title
 } from '../styles/Styles'
 
@@ -33,7 +37,6 @@ export const TestimonyWeek = (request) => {
   const pageBackward = () => {
     setPage(page - 1)
   }
-
   return (
     <>
       <Container>
@@ -51,23 +54,13 @@ export const TestimonyWeek = (request) => {
           ))}
         </GridLayout>
       </Container>
-      <div className="page-buttons-container">
+      <div>
         <p>{`Page ${page} / ${page}`}</p>
         <button type="button" onClick={pageBackward} disabled={page === 1}>Previous Page</button>
         <button type="button" onClick={pageForward} disabled={page === 10}>Next Page</button>
       </div>
-      {/* this is nit working yet */}
-      <Container>
-        <h3>Jump to another Week of testimonies</h3>
-        <GridLayoutSmall>
-          {testimony.map((weeks, key) => (
-            <Card>
-              key={key}
-              title={weeks.when_weeks}
-            </Card>
-          ))}
-        </GridLayoutSmall>
-      </Container>
+      <h3>Jump to another Week of testimonies</h3>
+      <Carousel />
     </>
   )
 }
