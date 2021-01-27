@@ -155,8 +155,29 @@ export const DetailWrapper = styled.section`
   max-width: 1000px;
   height: 80vh;
   margin: 0 auto;
-  background: linear-gradient(rgba(255,255,255,.8), rgba(255,255,255,.7)), url(${imgDetail});
+  background: linear-gradient(rgba(255,255,255,.2), rgba(255,255,255,.2)), url(${imgDetail});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+`
+export const Details = styled.div`
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+  0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+  0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  border-radius: 6px; 
+  background: rgba(255, 255, 255, 0.9);
+  margin: 10px;
+  padding: 20px;
+`
+export const DetailsTitle = styled.h2`
+  font-size: 1.6em;
+  text-align: center;
+  text-transform: uppercase;
+`
+export const CreatedAt = styled.p`
+  font-size: 0.8em;
+  color: rgba(67, 67, 67, 0.8)
+`
+
+export const Question = styled.p`
 `
