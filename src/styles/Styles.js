@@ -1,6 +1,8 @@
 import styled from 'styled-components/macro'
 
 import img from '../assets/1.jpg'
+import imgDetail from '../assets/2.jpg'
+import { ReactComponent as Icon } from '../assets/X.svg'
 
 // _________Reusable styles
 export const Container = styled.section`
@@ -138,4 +140,23 @@ display: grid;
 grid-template-columns: 1fr repeat(5, 1fr);
 `
 
-// _________Carousel
+// _________TestimonyDetails
+
+export const Svg = styled(Icon)`
+  width: 24px; 
+  height: 24px;
+`
+export const IconWrapper = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 10px 50px 0;
+`
+export const DetailWrapper = styled.section`
+  max-width: 1000px;
+  height: 80vh;
+  margin: 0 auto;
+  background: linear-gradient(rgba(255,255,255,.8), rgba(255,255,255,.7)), url(${imgDetail});
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+`

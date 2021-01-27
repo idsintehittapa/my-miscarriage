@@ -1,27 +1,29 @@
 import React, { useEffect, useState } from 'react'
+import { Route } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 // import { Helmet } from 'react-helmet'
 import moment from 'moment'
 import { useParams } from 'react-router-dom'
 
 import { Card } from '../lib/Card'
+import { Footer } from '../components/Footer'
 
 import {
-  GridLayout
+  DetailWrapper,
+  IconWrapper,
+  Container,
+  Svg
 } from '../styles/Styles'
 
 export const TestimonyDetails = () => {
   const [testimony, setTestimony] = useState([])
   const { id } = useParams()
-  console.log(id)
-
-  // const { week } = request.match.params
 
   useEffect(() => {
-    // fetch(`http://localhost:8080/testimonies/${week._id}`)
     fetch(`http://localhost:8080/testimonies/${id}`)
       .then((response) => response.json())
       .then((json) => setTestimony(json))
-      console.log(testimony)
+    console.log(testimony)
     // eslint-disable-next-line
   }, [])
 
@@ -30,13 +32,22 @@ export const TestimonyDetails = () => {
       {/* <Helmet>
         <title>{TITLE}</title>
       </Helmet> */}
-      <GridLayout>
-        {/* <Card {...testimony} /> */}
+      <DetailWrapper>
+        <IconWrapper>
+          <Route path='/testimonies/week/:week/:id'>
+            <Link to={`/testimonies/week/${testimony.when_weeks}`}>
+              <Svg />
+            </Link>
+          </Route>
+        </IconWrapper>
+        <Container>
           <Card
             detailTitle={`${testimony.name}'s testimony`}
             createdAt={moment(testimony.createdAt).format('ll')}
             story={testimony.story} />
-      </GridLayout>
+        </Container>
+      </DetailWrapper>
+      <Footer />
     </>
   )
 }

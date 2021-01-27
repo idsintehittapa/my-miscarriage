@@ -75,9 +75,6 @@ export const Header = () => {
           </Li>
         </Ul>
       </Nav>
-
-      {/* A <Switch> looks through its children <Route>s and
-          renders the first one that matches the current URL. */}
     </HeaderContainer>
   )
 }
