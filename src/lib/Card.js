@@ -23,6 +23,12 @@ const CarouselTitle = styled.p`
   color: #000;
 `
 
+const DetailTitle = styled.h3`
+  font-size: 1.2em;
+  color: #000;
+  text-transform: uppercase;
+`
+
 const TimeStamp = styled.p`
   font-size: 0.8em;
   color: rgba(67, 67, 67, 0.8)
@@ -32,7 +38,7 @@ const SecondaryText = styled.p`
   margin: 0;
 `
 const StoryText = styled.p`
-  margin: 5px;
+  color: #000;
 `
 const CoverImg = styled.img`
   width: 100%;
@@ -43,14 +49,17 @@ const Content = styled.div`
 `
 
 export const Card = ({ title, carouselTitle,
+  detailTitle,
   secondaryText, coverImg,
   name, createdAt,
-  post, story }) => {
+  post, story
+}) => {
   return (
     <CardContainer>
       {coverImg && <CoverImg src={coverImg} />}
       <Content>
         {title && <CardTitle>Week {title}</CardTitle>}
+        {detailTitle && <DetailTitle>{detailTitle}</DetailTitle>}
         {carouselTitle && <CarouselTitle>Week {carouselTitle}</CarouselTitle>}
         {createdAt && <TimeStamp>{createdAt}</TimeStamp>}
         {secondaryText && <SecondaryText>{secondaryText}</SecondaryText>}

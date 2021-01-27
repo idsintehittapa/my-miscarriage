@@ -52,9 +52,9 @@ export const TestimonyWeek = (request) => {
             <Link key={key} to={`/testimonies/week/${weeks.when_weeks}/${weeks._id}`}>
               <Card
                 key={key}
-                title={weeks.when_weeks}
+                detailTitle={`${weeks.name}'s testimony`}
                 createdAt={moment(weeks.createdAt).format('ll')}
-                secondaryText={weeks.name} />
+                story={weeks.story} />
               {/* // secondaryText={weeks.name ? week.name : 'Anonymous'} /> */}
               {/* <p tabIndex='0' className='time'>{message.name ? message.name : "Anonymous"}</p> */}
               {/* // ADD ANONYMOUS for default in front-end */}
