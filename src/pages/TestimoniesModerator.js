@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet'
 import moment from 'moment'
+import { Link } from 'react-router-dom'
 
 import { Card } from '../lib/Card'
 import { GridLayout } from '../styles/Styles'
@@ -33,13 +34,16 @@ export const TestimoniesModerator = () => {
       </Helmet>
       <GridLayout>
         {post.map((weeks, key) => (
-          <Card
-            key={key}
-            title={weeks.when_weeks}
-            createdAt={moment(weeks.createdAt).format('ll')}
-            secondaryText={`By ${weeks.name}`}
-            story={weeks.story}
-            post={`Status: ${weeks.post}`} />
+          <Link key={key} to={`/moderators/post/${weeks._id}`}>
+            <Card
+              key={key}
+              title={weeks.when_weeks}
+              createdAt={moment(weeks.createdAt).format('ll')}
+              secondaryText={`By ${weeks.name}`}
+              story={weeks.story}
+              post={`Status: ${weeks.post}`}
+            />
+          </Link>
         ))}
       </GridLayout>
       <div className="page-buttons-container">
