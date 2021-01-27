@@ -1,6 +1,7 @@
 
 import React, { useEffect, useState } from 'react'
 import moment from 'moment'
+import { Link } from 'react-router-dom'
 
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
@@ -48,14 +49,16 @@ export const TestimonyWeek = (request) => {
         <Title> Week {week} </Title>
         <GridLayout>
           {testimony.map((weeks, key) => (
-            <Card
-              key={key}
-              title={weeks.when_weeks}
-              createdAt={moment(weeks.createdAt).format('ll')}
-              secondaryText={weeks.name} />
-            // secondaryText={weeks.name ? week.name : 'Anonymous'} />
-            // <p tabIndex='0' className='time'>{message.name ? message.name : "Anonymous"}</p>
-            // ADD ANONYMOUS for default in front-end
+            <Link key={key} to={`/testimonies/week/${weeks.when_weeks}/${weeks._id}`}>
+              <Card
+                key={key}
+                title={weeks.when_weeks}
+                createdAt={moment(weeks.createdAt).format('ll')}
+                secondaryText={weeks.name} />
+              {/* // secondaryText={weeks.name ? week.name : 'Anonymous'} /> */}
+              {/* <p tabIndex='0' className='time'>{message.name ? message.name : "Anonymous"}</p> */}
+              {/* // ADD ANONYMOUS for default in front-end */}
+            </Link>
           ))}
         </GridLayout>
         <div>

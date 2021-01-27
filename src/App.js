@@ -18,7 +18,7 @@ export const App = () => {
       <Switch>
         <Route component={StartPage} path="/" exact />
         <Route component={Testimonies} path="/testimonies" exact />
-        <Route component={TestimonyWeek} path="/testimonies/:week" exact />
+        <Route component={TestimonyWeek} path="/testimonies/week/:week" exact />
         <Route component={Share} path="/share" exact />
         <Route component={SignLogIn} path="/moderator" exact />
         <Route component={TestimoniesModerator} path="/moderator/posts" exact />

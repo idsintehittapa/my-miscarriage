@@ -43,7 +43,7 @@ export const Carousel = () => {
     <>
       <StyledSlider {...settings}>
         {cardInfo.map((weeks, key) => (
-          <Link key={key} to={`/testimonies/${weeks.Week}`}>
+          <Link key={key} to={`/testimonies/week/${weeks.Week}`}>
             <Card key={key} carouselTitle={weeks.Week} />
           </Link>
         ))}
