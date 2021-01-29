@@ -4,7 +4,10 @@ import React, { useEffect, useState } from 'react'
 import moment from 'moment'
 import { useParams } from 'react-router-dom'
 
+import { TextField } from '@material-ui/core';
+
 import {
+  Form,
   DetailWrapper,
   IconWrapper,
   Container,
@@ -18,6 +21,13 @@ import {
 export const ModeratorInspect = () => {
   const [testimony, setTestimony] = useState([])
   const { id } = useParams()
+
+  // I don't have any if/throw error messages - I need to add that
+  // Also I guess I need to add these?
+  // fetch(SESSIONS_URL, {
+  //   method: 'POST',
+  //   body: JSON.stringify({ email, password }),
+  //   headers: { 'Content-Type': 'application/json' },
 
   useEffect(() => {
     fetch(`http://localhost:8080/testimonies/${id}`)
@@ -41,22 +51,21 @@ export const ModeratorInspect = () => {
               </IconWrapper>
               <DetailsTitle>{`${testimony.name}'s testimony`}</DetailsTitle>
               <CreatedAt>{moment(testimony.createdAt).format('ll')}</CreatedAt>
-              <p>When did you notice your miscarriage?</p>
-              <p>{`Week ${testimony.when_weeks_noticed}`}</p>
-              <p>Describe your experienced physical pain level</p>
-              <p>{testimony.physical_pain}</p>
-              <p>And your experienced mental pain level?</p>
-              <p>{testimony.mental_pain}</p>
-              <p>Did you receive hospital care? </p>
-              <p>{String(testimony.hospital)}</p>
-              <p>How was your period volume effected? </p>
-              <p>{testimony.period_volume}</p>
-              <p>Your period length? </p>
-              <p>{testimony.period_length}</p>
-              <p>Did your period pain increase? </p>
-              <p>{String(testimony.period_pain)}</p>
-              <p>Share your story? </p>
-              <p>{testimony.story}</p>
+              <Form onSubmit={(event) => event.preventDefault()}>
+                {/* not sure if this onSubmit is necessary */}
+                <input
+                  type="text"
+                  defaultValue={`${testimony.name}' INPut value`} />
+                <TextField
+                  defaultValue={`${testimony.name}'s testimony`} />
+                <TextField 
+                  size="medium"
+                  rows={40}
+                  rowsMax={10}
+                  defaultValue={testimony.story} />
+                {/* // 'pending', 'approved', 'decline' */}
+              </Form>
+
             </Details>
           </Container>
         </DetailWrapper>

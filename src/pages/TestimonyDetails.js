@@ -60,8 +60,8 @@ export const TestimonyDetails = () => {
               <p>{testimony.period_volume}</p>
               <p>Your period length? </p>
               <p>{testimony.period_length}</p>
-              <p>Did your period pain increase? </p>
-              <p>{String(testimony.period_pain)}</p>
+              <p>And your period pain? </p>
+              <p>{testimony.period_pain}</p>
               <p>Share your story? </p>
               <p>{testimony.story}</p>
             </Details>

@@ -97,6 +97,7 @@ export const StyledTextArea = styled.textarea`
 // check this later https://material.io/components/buttons#text-button
 export const StyledButton = styled.button`
   font-family: Roboto, sans-serif;
+  margin: 30px 0 40px 0;
   width: 64px;
   height: 44px;
   border-radius: 4px;
@@ -162,8 +163,10 @@ export const Details = styled.div`
   0px 1px 3px 0px rgba(0, 0, 0, 0.12);
   border-radius: 6px; 
   background: rgba(255, 255, 255, 0.9);
-  margin: 10px;
+  margin: 100px 0 0 0;
   padding: 20px;
+  max-width: 1000px;
+  width: 500px;
 `
 export const Background = styled.div`
   background: linear-gradient(rgba(255,255,255,.2), rgba(255,255,255,.2)), url(${imgDetail});

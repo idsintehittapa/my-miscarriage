@@ -1,6 +1,18 @@
 import React, { useState } from 'react'
-import { sendShare } from '../paths/Api-paths'
 import { Helmet } from 'react-helmet'
+import {
+  TextField,
+  Select,
+  MenuItem,
+  InputLabel,
+  Radio,
+  RadioGroup,
+  FormControlLabel
+} from '@material-ui/core'
+import { sendShare } from '../paths/Api-paths'
+
+// import { TextField, Select } from '@material-ui/core/TextField'
+// import MenuItem from '@material-ui/core/MenuItem';
 
 import {
   Container,
@@ -12,9 +24,18 @@ import {
   StyledButton
 } from '../styles/Styles'
 
+import styled from 'styled-components/macro'
+
+const StyledInputLabel = styled(InputLabel)`
+  margin: 10px 0 15px 0;
+  // font-size: 1.1em;
+  // color: black;
+  // font-weight: 500;
+`
+
 // to do
 // - fix camel/not-camel toe
-// formik?
+// Display error messages based on validation!
 // .catch((error)
 // empty radio buttons after submitting - not working
 
@@ -36,7 +57,7 @@ export const Share = () => {
   const handleSubmit = (event) => {
     event.preventDefault()
 
-    // send a POST request
+      // I don't have any if/throw error messages - I need to add that
     fetch(sendShare, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -87,159 +108,203 @@ export const Share = () => {
         <h2>This is the sharing part</h2>
         <Form onSubmit={(event) => event.preventDefault()}>
           {/* not sure if this onSubmit is necessary */}
-          <label htmlFor="name"> Your name/alias
-            <input
-              id="name"
-              value={name}
-              type="text"
-              onChange={(event) => setName(event.target.value)} />
-          </label>
-          <label htmlFor="weeks"> When weeks*
-            <select
-              id="weeks"
-              required
-              value={when_weeks}
-              onChange={(event) => setWhen_weeks(event.target.value)}>
-              <option value="-">week</option>
-              <option value="6">Week 6</option>
-              <option value="7">Week 7</option>
-              <option value="8">Week 8</option>
-              <option value="9">Week 9</option>
-              <option value="10">Week 10</option>
-              <option value="11">Week 11</option>
-              <option value="12">Week 12</option>
-              <option value="13">Week 13</option>
-              <option value="14">Week 14</option>
-              <option value="15">Week 15</option>
-              <option value="16">Week 16</option>
-              <option value="17">Week 17</option>
-              <option value="18">Week 18</option>
-              <option value="19">Week 19</option>
-              <option value="20">Week 20</option>
-              <option value="5">I do not know</option>
-            </select>
-          </label>
-          <label htmlFor="weeks_noticed"> When noticed?
-            <select
-              id="weeks_noticed"
-              value={when_weeks_noticed}
-              onChange={(event) => setWhen_weeks_noticed(event.target.value)}>
-              <option value="-">week</option>
-              <option value="6">Week 6</option>
-              <option value="7">Week 7</option>
-              <option value="8">Week 8</option>
-              <option value="9">Week 9</option>
-              <option value="10">Week 10</option>
-              <option value="11">Week 11</option>
-              <option value="12">Week 12</option>
-              <option value="13">Week 13</option>
-              <option value="14">Week 14</option>
-              <option value="15">Week 15</option>
-              <option value="16">Week 16</option>
-              <option value="17">Week 17</option>
-              <option value="18">Week 18</option>
-              <option value="19">Week 19</option>
-              <option value="20">Week 20</option>
-              <option value="21">Week 21</option>
-              <option value="22">Week 22</option>
-              <option value="23">Week 23</option>
-              <option value="24">Week 24</option>
-              <option value="25">Week 25</option>
-              <option value="5">I do not know</option>
-            </select>
-          </label>
-          <Paragraph>Experienced Physical Pain level:</Paragraph>
-          <input
-            type="radio"
-            value="Painless"
-            name="physical_pain"
-            onChange={(event) => setPhysical_pain(event.target.value)} /> Painless
-          <input
-            type="radio"
-            value="Painful"
-            name="physical_pain"
-            onChange={(event) => setPhysical_pain(event.target.value)} /> Painful
-          <input
-            type="radio"
-            value="Severe Pain"
-            name="physical_pain"
-            onChange={(event) => setPhysical_pain(event.target.value)} /> Severe Pain
-          <Paragraph>Experienced  Mental Pain level:</Paragraph>
-          <input
-            type="radio"
-            value="Painless"
-            name="mental_pain"
-            onChange={(event) => setMental_pain(event.target.value)} /> Painless
-          <input
-            type="radio"
-            value="Painful"
-            name="mental_pain"
-            onChange={(event) => setMental_pain(event.target.value)} /> Painful
-          <input
-            type="radio"
-            value="Severe Pain"
-            name="mental_pain"
-            onChange={(event) => setMental_pain(event.target.value)} /> Severe Pain
-          <Paragraph>Did you get help from the hospital?</Paragraph>
-          <input
-            type="radio"
-            value="yes"
-            name="hospital"
-            onChange={(event) => setHospital(event.target.value)} /> Yes
-          <input
-            type="radio"
-            value="no"
-            name="hospital"
-            onChange={(event) => setHospital(event.target.value)} /> No
-          <Paragraph>Did the volume of your period change after the miscarriage?</Paragraph>
-          <input
-            type="radio"
-            value="Increased"
-            name="period_volume"
-            onChange={(event) => setPeriod_volume(event.target.value)} /> Increased
-          <input
-            type="radio"
-            value="Decreased"
-            name="period_volume"
-            onChange={(event) => setPeriod_volume(event.target.value)} />  Decreased
-          <input
-            type="radio"
-            value="Unchanged"
-            name="period_volume"
-            onChange={(event) => setPeriod_volume(event.target.value)} /> Unchanged
-          <Paragraph>Did your period length change after the miscarriage?</Paragraph>
-          <input
-            type="radio"
-            value="Additional days"
-            name="period_length"
-            onChange={(event) => setPeriod_length(event.target.value)} /> Additional days
-          <input
-            type="radio"
-            value="Fewer days"
-            name="period_length"
-            onChange={(event) => setPeriod_length(event.target.value)} /> Fewer days
-          <input
-            type="radio"
-            value="Unchanged"
-            name="period_length"
-            onChange={(event) => setPeriod_length(event.target.value)} /> Unchanged
-          <Paragraph>Did your period pain change after the miscarriage?</Paragraph>
-          <input
-            type="radio"
-            value="yes"
-            name="period_pain"
-            onChange={(event) => setPeriod_pain(event.target.value)} /> Yes
-          <input
-            type="radio"
-            value="no"
-            name="period_pain"
-            onChange={(event) => setPeriod_pain(event.target.value)} /> No
-          <Paragraph>Wanna tell us your story?</Paragraph>
-          <StyledTextArea
+          <TextField
+            size="medium"
+            required id="standard-required"
+            label="Name/Alias"
+            // inputProps={minimumNameLength}
+            value={name}
+            onChange={(event) => setName(event.target.value)} />
+          <StyledInputLabel required id="standard-required">When did you have your miscarriage?</StyledInputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            required
+            value={when_weeks}
+            onChange={(event) => setWhen_weeks(event.target.value)}>
+            <MenuItem value={6}>Week 6</MenuItem>
+            <MenuItem value={7}>Week 7</MenuItem>
+            <MenuItem value={8}>Week 8</MenuItem>
+            <MenuItem value={9}>Week 9</MenuItem>
+            <MenuItem value={10}>Week 10</MenuItem>
+            <MenuItem value={11}>Week 11</MenuItem>
+            <MenuItem value={12}>Week 12</MenuItem>
+            <MenuItem value={13}>Week 13</MenuItem>
+            <MenuItem value={14}>Week 14</MenuItem>
+            <MenuItem value={15}>Week 15</MenuItem>
+            <MenuItem value={16}>Week 16</MenuItem>
+            <MenuItem value={17}>Week 17</MenuItem>
+            <MenuItem value={18}>Week 18</MenuItem>
+            <MenuItem value={19}>Week 19</MenuItem>
+            <MenuItem value={20}>Week 20</MenuItem>
+            <MenuItem value={5}>I do not know</MenuItem>
+          </Select>
+          <StyledInputLabel required id="standard-required">When did you notice your miscarriage?</StyledInputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            required
+            value={when_weeks_noticed}
+            onChange={(event) => setWhen_weeks_noticed(event.target.value)}>
+            <MenuItem value={6}>Week 6</MenuItem>
+            <MenuItem value={7}>Week 7</MenuItem>
+            <MenuItem value={8}>Week 8</MenuItem>
+            <MenuItem value={9}>Week 9</MenuItem>
+            <MenuItem value={10}>Week 10</MenuItem>
+            <MenuItem value={11}>Week 11</MenuItem>
+            <MenuItem value={12}>Week 12</MenuItem>
+            <MenuItem value={13}>Week 13</MenuItem>
+            <MenuItem value={14}>Week 14</MenuItem>
+            <MenuItem value={15}>Week 15</MenuItem>
+            <MenuItem value={16}>Week 16</MenuItem>
+            <MenuItem value={17}>Week 17</MenuItem>
+            <MenuItem value={18}>Week 18</MenuItem>
+            <MenuItem value={19}>Week 19</MenuItem>
+            <MenuItem value={20}>Week 20</MenuItem>
+            <MenuItem value={21}>Week 21</MenuItem>
+            <MenuItem value={22}>Week 22</MenuItem>
+            <MenuItem value={23}>Week 23</MenuItem>
+            <MenuItem value={24}>Week 24</MenuItem>
+            <MenuItem value={5}>I do not know</MenuItem>
+          </Select>
+          {/* <Paragraph>Experienced Physical Pain level:</Paragraph> */}
+          <div>
+            <StyledInputLabel required id="standard-required" component="legend">Describe your experienced physical pain level</StyledInputLabel>
+            <RadioGroup>
+              <FormControlLabel
+                value="Painless"
+                control={<Radio color="default" />}
+                label="Painless"
+                onChange={(event) => setPhysical_pain(event.target.value)} />
+              <FormControlLabel
+                value="Painful"
+                control={<Radio color="default" />}
+                label="Painful"
+                onChange={(event) => setPhysical_pain(event.target.value)} />
+              <FormControlLabel
+                value="Severe Pain"
+                control={<Radio color="default" />}
+                label="Severe Pain"
+                onChange={(event) => setPhysical_pain(event.target.value)} />
+            </RadioGroup>
+            <StyledInputLabel required id="standard-required" component="legend">And your experienced mental pain level?</StyledInputLabel>
+            <RadioGroup row aria-label="position" name="position" defaultValue="top">
+              <FormControlLabel
+                value="Painless"
+                control={<Radio color="default" />}
+                label="Painless"
+                labelPlacement="bottom"
+                onChange={(event) => setMental_pain(event.target.value)} />
+              <FormControlLabel
+                value="Painful"
+                control={<Radio color="default" />}
+                label="Painful"
+                labelPlacement="bottom"
+                onChange={(event) => setMental_pain(event.target.value)} />
+              <FormControlLabel
+                value="Severe Pain"
+                control={<Radio color="default" />}
+                label="Severe Pain"
+                labelPlacement="bottom"
+                onChange={(event) => setMental_pain(event.target.value)} />
+            </RadioGroup>
+            {/* <Paragraph>Experienced  Mental Pain level:</Paragraph> */}
+            <StyledInputLabel required id="standard-required" component="legend">Did you get help from the hospital?</StyledInputLabel>
+            <RadioGroup row aria-label="position" name="position" defaultValue="top">
+              <FormControlLabel
+                value="yes"
+                control={<Radio color="default" />}
+                label="Yes"
+                labelPlacement="bottom"
+                onChange={(event) => setHospital(event.target.value)} />
+              <FormControlLabel
+                value="no"
+                control={<Radio color="default" />}
+                label="No"
+                labelPlacement="bottom"
+                onChange={(event) => setHospital(event.target.value)} />
+            </RadioGroup>
+          </div>
+
+          <StyledInputLabel required id="standard-required" component="legend">How was your period volume effected?</StyledInputLabel>
+          <RadioGroup>
+            <FormControlLabel
+              value="Increased"
+              control={<Radio color="default" />}
+              label="Increased"
+              onChange={(event) => setPeriod_volume(event.target.value)} />
+            <FormControlLabel
+              value="Decreased"
+              control={<Radio color="default" />}
+              label="Decreased"
+              onChange={(event) => setPeriod_volume(event.target.value)} />
+            <FormControlLabel
+              value="Unchanged"
+              control={<Radio color="default" />}
+              label="Unchanged"
+              onChange={(event) => setPeriod_volume(event.target.value)} />
+          </RadioGroup>
+          <StyledInputLabel required id="standard-required" component="legend">Your period length?</StyledInputLabel>
+          <RadioGroup>
+            <FormControlLabel
+              value="Additional days"
+              control={<Radio color="default" />}
+              label="Additional days"
+              onChange={(event) => setPeriod_length(event.target.value)} />
+            <FormControlLabel
+              value="Fewer days"
+              control={<Radio color="default" />}
+              label="Fewer days"
+              onChange={(event) => setPeriod_length(event.target.value)} />
+            <FormControlLabel
+              value="Unchanged"
+              control={<Radio color="default" />}
+              label="Unchanged"
+              onChange={(event) => setPeriod_length(event.target.value)} />
+          </RadioGroup>
+          <StyledInputLabel required id="standard-required" component="legend">Your period length?</StyledInputLabel>
+          <RadioGroup>
+            <FormControlLabel
+              value="Additional days"
+              control={<Radio color="default" />}
+              label="Additional days"
+              onChange={(event) => setPeriod_length(event.target.value)} />
+            <FormControlLabel
+              value="Fewer days"
+              control={<Radio color="default" />}
+              label="Fewer days"
+              onChange={(event) => setPeriod_length(event.target.value)} />
+            <FormControlLabel
+              value="Unchanged"
+              control={<Radio color="default" />}
+              label="Unchanged"
+              onChange={(event) => setPeriod_length(event.target.value)} />
+          </RadioGroup>
+          <StyledInputLabel required id="standard-required" component="legend">And your period pain?</StyledInputLabel>
+          <RadioGroup>
+            <FormControlLabel
+              value="Increased"
+              control={<Radio color="default" />}
+              label="Increased"
+              onChange={(event) => setPeriod_pain(event.target.value)} />
+            <FormControlLabel
+              value="Decreased"
+              control={<Radio color="default" />}
+              label="Decreased"
+              onChange={(event) => setPeriod_pain(event.target.value)} />
+            <FormControlLabel
+              value="Unchanged"
+              control={<Radio color="default" />}
+              label="Unchanged"
+              onChange={(event) => setPeriod_pain(event.target.value)} />
+          </RadioGroup>
+          <TextField
+            placeholder="Share your miscarriage testimony in more detail here..."
+            multiline
+            rows={40}
+            rowsMax={10}
             value={story}
-            // pattern={"/^(?!\s+$)[A-Za-zăâîșțĂÂÎȘȚ\s-]+$/^^^^^^^^"}
-            onChange={(event) => setStory(event.target.value)}
-            placeholder="Share your miscarriage testimony in more detail here..." />
+            onChange={(event) => setStory(event.target.value)} />
           <StyledButton
             type="submit"
             onClick={handleSubmit}
