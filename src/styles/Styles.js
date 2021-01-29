@@ -152,13 +152,9 @@ export const IconWrapper = styled.div`
   margin: 0 10px 50px 0;
 `
 export const DetailWrapper = styled.section`
-  max-width: 1000px;
-  height: 80vh;
+  max-width: 500px;
+  height: 100vh;
   margin: 0 auto;
-  background: linear-gradient(rgba(255,255,255,.2), rgba(255,255,255,.2)), url(${imgDetail});
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
 `
 export const Details = styled.div`
   box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
@@ -169,6 +165,13 @@ export const Details = styled.div`
   margin: 10px;
   padding: 20px;
 `
+export const Background = styled.div`
+  background: linear-gradient(rgba(255,255,255,.2), rgba(255,255,255,.2)), url(${imgDetail});
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+`
+
 export const DetailsTitle = styled.h2`
   font-size: 1.6em;
   text-align: center;
@@ -180,4 +183,26 @@ export const CreatedAt = styled.p`
 `
 
 export const Question = styled.p`
+  text-align: left
+`
+
+export const Answer = styled.p`
+  text-align: end;
+`
+
+export const WrapperAnswer = styled.div`
+  text-align: end;
+  border-radius: 25px;
+  background: #73AD21;
+  padding: 20px;
+  width: 200px;
+  height: auto;
+`
+
+// _________ModeratorInspect
+export const BackgroundMentor = styled.div`
+  background: linear-gradient(rgba(95,22,2,.2), rgba(2,255,255,.2)), url(${imgDetail});
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 `

@@ -12,9 +12,12 @@ import {
   Container,
   Svg,
   Details,
+  Background,
   DetailsTitle,
   CreatedAt,
-  Question
+  WrapperAnswer,
+  Question,
+  Answer
 } from '../styles/Styles'
 
 export const TestimonyDetails = () => {
@@ -25,45 +28,48 @@ export const TestimonyDetails = () => {
     fetch(`http://localhost:8080/testimonies/${id}`)
       .then((response) => response.json())
       .then((json) => setTestimony(json))
-    console.log(testimony)
     // eslint-disable-next-line
   }, [])
 
   return (
     <>
-      <DetailWrapper>
-        <IconWrapper>
-          <Route path='/testimonies/week/:week/:id'>
-            <Link to={`/testimonies/week/${testimony.when_weeks}`}>
-              <Svg />
-            </Link>
-          </Route>
-        </IconWrapper>
-        <Container>
-          <Details>
-            <DetailsTitle>{`${testimony.name}'s testimony`}</DetailsTitle>
-            <CreatedAt>{moment(testimony.createdAt).format('ll')}</CreatedAt>
-            <Question>When did you notice your miscarriage?</Question>
-            <p>{`Week ${testimony.when_weeks_noticed}`}</p>
-            <p>Describe your experienced physical pain level</p>
-            <p>{testimony.physical_pain}</p>
-            <p>And your experienced mental pain level?</p>
-            <p>{testimony.mental_pain}</p>
-            <p>Did you receive hospital care? </p>
-            <p>{testimony.hospital}</p>
-            <p>How was your period volume effected? </p>
-            <p>{testimony.period_volume}</p>
-            <p>Your period length? </p>
-            <p>{testimony.period_length}</p>
-            <p>Did your period pain increase? </p>
-            <p>{testimony.period_pain}</p>
-            <p>Share your story? </p>
-            <p>{testimony.story}</p>
-          </Details>
-        </Container>
-      </DetailWrapper>
+      <Background>
+        <DetailWrapper>
+          <IconWrapper>
+            <Route path='/testimonies/week/:week/:id'>
+              <Link to={`/testimonies/week/${testimony.when_weeks}`}>
+                <Svg />
+              </Link>
+            </Route>
+          </IconWrapper>
+          <Container>
+            <Details>
+              <DetailsTitle>{`${testimony.name}'s testimony`}</DetailsTitle>
+              <CreatedAt>{moment(testimony.createdAt).format('ll')}</CreatedAt>
+              <Question>When did you notice your miscarriage?</Question>
+              <WrapperAnswer>
+                <Answer>{`Week ${testimony.when_weeks_noticed}`}</Answer>
+              </WrapperAnswer>
+              <p>Describe your experienced physical pain level</p>
+              <p>{testimony.physical_pain}</p>
+              <p>And your experienced mental pain level?</p>
+              <p>{testimony.mental_pain}</p>
+              <p>Did you receive hospital care? </p>
+              <p>{String(testimony.hospital)}</p>
+              <p>How was your period volume effected? </p>
+              <p>{testimony.period_volume}</p>
+              <p>Your period length? </p>
+              <p>{testimony.period_length}</p>
+              <p>Did your period pain increase? </p>
+              <p>{String(testimony.period_pain)}</p>
+              <p>Share your story? </p>
+              <p>{testimony.story}</p>
+            </Details>
+          </Container>
+        </DetailWrapper>
+      </Background>
       {/* this does not look pretty on phone view */}
-      {/* <Footer /> */}
+      <Footer />
     </>
   )
 }

@@ -27,6 +27,7 @@ export const TestimoniesModerator = () => {
   }
 
   const TITLE = 'Posts'
+
   return (
     <>
       <Helmet>
@@ -34,15 +35,14 @@ export const TestimoniesModerator = () => {
       </Helmet>
       <GridLayout>
         {post.map((weeks, key) => (
-          <Link key={key} to={`/moderators/post/${weeks._id}`}>
+          <Link key={key} to={`/moderator/posts/${weeks._id}`}>
             <Card
               key={key}
               title={weeks.when_weeks}
               createdAt={moment(weeks.createdAt).format('ll')}
               secondaryText={`By ${weeks.name}`}
               story={weeks.story}
-              post={`Status: ${weeks.post}`}
-            />
+              post={`Status: ${weeks.post}`} />
           </Link>
         ))}
       </GridLayout>
