@@ -61,7 +61,7 @@ export const cardInfo = [
     Img: 'https://www.fillmurray.com/300/200'
   },
   {
-    Week: 'Unknown Week',
+    Week: 'Unknown',
     Img: 'https://www.fillmurray.com/300/200'
   }
 ]

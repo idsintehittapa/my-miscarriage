@@ -202,6 +202,14 @@ export const WrapperAnswer = styled.div`
   height: auto;
 `
 
+// _________Moderator
+export const SignOutWrapper = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0 20px 0 0;
+`
+
 // _________ModeratorInspect
 export const BackgroundMentor = styled.div`
   background: linear-gradient(rgba(95,22,2,.2), rgba(2,255,255,.2)), url(${imgDetail});

@@ -4,11 +4,15 @@ import moment from 'moment'
 import { Link } from 'react-router-dom'
 
 import { Card } from '../lib/Card'
-import { GridLayout } from '../styles/Styles'
+import { StyledButton, SignOutWrapper, GridLayout } from '../styles/Styles'
 
 export const TestimoniesModerator = () => {
   const [post, setPost] = useState([])
   const [page, setPage] = useState(1)
+
+  const handleSignOut = () => {
+    localStorage.clear()
+  }
 
   useEffect(() => {
     // the right posts - filter later
@@ -33,6 +37,16 @@ export const TestimoniesModerator = () => {
       <Helmet>
         <title>{TITLE}</title>
       </Helmet>
+      <SignOutWrapper>
+        <p>Logged in as XX</p>
+        <Link to="/moderator">
+          <StyledButton
+            type="submit"
+            signOut={handleSignOut}>
+            Sign out
+          </StyledButton>
+        </Link>
+      </SignOutWrapper>
       <GridLayout>
         {post.map((weeks, key) => (
           <Link key={key} to={`/moderator/posts/${weeks._id}`}>

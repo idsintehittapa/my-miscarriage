@@ -137,7 +137,7 @@ export const Share = () => {
             <MenuItem value={18}>Week 18</MenuItem>
             <MenuItem value={19}>Week 19</MenuItem>
             <MenuItem value={20}>Week 20</MenuItem>
-            <MenuItem value={5}>I do not know</MenuItem>
+            <MenuItem value={99}>Unknown</MenuItem>
           </Select>
           <StyledInputLabel required id="standard-required">When did you notice your miscarriage?</StyledInputLabel>
           <Select
@@ -165,7 +165,7 @@ export const Share = () => {
             <MenuItem value={22}>Week 22</MenuItem>
             <MenuItem value={23}>Week 23</MenuItem>
             <MenuItem value={24}>Week 24</MenuItem>
-            <MenuItem value={5}>I do not know</MenuItem>
+            <MenuItem value={99}>Unknown</MenuItem>
           </Select>
           {/* <Paragraph>Experienced Physical Pain level:</Paragraph> */}
           <div>
