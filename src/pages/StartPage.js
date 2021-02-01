@@ -1,6 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import { FullPage, Slide } from 'react-full-page';
+import { FullPage, Slide } from 'react-full-page'
 
 import { About } from './About'
 import {
@@ -19,8 +19,17 @@ export const StartPage = () => {
       </Helmet>
       <StarterWrapper>
         <Test>
-          <FullPage controls controlsProps={{ className: 'class-name' }}>
-            <Slide>
+          {/* <FullPage
+            controls
+          // controlsProps={{ className: 'options' }} 
+          >
+            <Slide
+              // style={{
+              //   backgroundColor: 'lime',
+              //   height: '180vh',
+              //   minwidth: '768px'
+              // }} >
+              > */}
               <Main>
                 <TitleStarterPage> miscarriage</TitleStarterPage>
                 <h2> noun [ˌmɪsˈkærɪdʒ] </h2>
@@ -36,12 +45,15 @@ export const StartPage = () => {
                 language that can be triggering.
                 </h4>
               </Main>
-            </Slide>
-            <Slide>
+              </Test>
+              <Main>
               <About />
+              </Main>
+            {/* </Slide> */}
+            {/* <Slide> */}
+              {/* <About />
             </Slide>
-          </FullPage>
-        </Test>
+          </FullPage> */}
       </StarterWrapper>
     </>
   )

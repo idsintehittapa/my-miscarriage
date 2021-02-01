@@ -9,11 +9,9 @@ import {
   RadioGroup,
   FormControlLabel
 } from '@material-ui/core'
+import styled from 'styled-components/macro'
+
 import { sendShare } from '../paths/Api-paths'
-
-// import { TextField, Select } from '@material-ui/core/TextField'
-// import MenuItem from '@material-ui/core/MenuItem';
-
 import {
   Container,
   Form,
@@ -21,8 +19,6 @@ import {
   // StyledSelectInput,
   StyledButton
 } from '../styles/Styles'
-
-import styled from 'styled-components/macro'
 
 const StyledInputLabel = styled(InputLabel)`
   margin: 10px 0 15px 0;
@@ -55,7 +51,7 @@ export const Share = () => {
   const handleSubmit = (event) => {
     event.preventDefault()
 
-      // I don't have any if/throw error messages - I need to add that
+    // I don't have any if/throw error messages - I need to add that
     fetch(sendShare, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -306,6 +302,7 @@ export const Share = () => {
             disabled={!when_weeks}>
             Submit
           </StyledButton>
+          {/* <ErrorMessage message={'Sign up failed'} /> */}
         </Form>
       </Container>
     </>

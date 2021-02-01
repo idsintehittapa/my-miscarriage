@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
 import {
   TextField,
@@ -27,7 +27,10 @@ export const SignIn = () => {
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
 
+  const history = useHistory()
+
   const handleClickShowPassword = () => setShowPassword(!showPassword)
+  console.log(token)
 
   // Form validation
   const minimumPasswordLength = { minLength: 5 }
@@ -69,7 +72,9 @@ export const SignIn = () => {
         console.log(error)
       }) // _________This needs to be looked at
   }
-
+  if (token) {
+    history.push('/moderator/posts')
+  }
   return (
     <>
       <Container>

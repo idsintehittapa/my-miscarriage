@@ -41,6 +41,7 @@ export const Title = styled.h2`
 
 export const HeaderContainer = styled.header`
   display: flex;
+  justify-content: center;
 `
 
 export const PlusMenu = styled.div`
@@ -97,7 +98,7 @@ export const Main = styled.main`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 80vh;
+  height: 100vh;
   justify-content: center;
   align-items: center;
 `

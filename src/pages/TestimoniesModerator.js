@@ -17,6 +17,10 @@ export const TestimoniesModerator = () => {
   useEffect(() => {
     // the right posts - filter later
     // fetch(`http://localhost:8080/testimonies?status=${post}`)
+
+    // so I need to change the path here later to the new defined one
+    // I need to add method, headers, etc.
+    // AND LOCAL STORAGE
     fetch('http://localhost:8080/testimonies?post=pending')
       .then((response) => response.json())
       .then((json) => setPost(json.allTestimonies))
@@ -42,7 +46,7 @@ export const TestimoniesModerator = () => {
         <Link to="/moderator">
           <StyledButton
             type="submit"
-            signOut={handleSignOut}>
+            onClick={handleSignOut}>
             Sign out
           </StyledButton>
         </Link>
