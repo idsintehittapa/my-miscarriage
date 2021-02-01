@@ -19,7 +19,7 @@ export const Testimonies = () => {
       <GridLayout>
         {cardInfo.map((weeks, key) => (
           <Link key={key} to={`/testimonies/week/${weeks.Week}`}>
-            <Card key={key} coverImg={weeks.Img} title={weeks.Week} secondaryText="2" />
+            <Card key={key} coverImg={weeks.Img} title={weeks.Week} />
           </Link>
         ))}
       </GridLayout>

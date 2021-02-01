@@ -39,6 +39,10 @@ const SecondaryText = styled.p`
 `
 const StoryText = styled.p`
   color: #000;
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 300px; 
 `
 const CoverImg = styled.img`
   width: 100%;

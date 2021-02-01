@@ -47,8 +47,8 @@ export const SignIn = () => {
       })
     })
       .then((res) => {
-        // setEmail('')
-        // setPassword('')
+        setEmail('')
+        setPassword('')
         if (res.status === 201) {
           return res.json()
         } else throw new Error('Unable to sign in. Please check that e-mail and password are correct')
@@ -100,7 +100,7 @@ export const SignIn = () => {
                 </IconButton>
               </InputAdornment>
             } />
-          <Link to={!token && signInOk && '/moderator/posts'}>
+          <Link to={signInOk && '/moderator/posts'}>
           {/* <Link to="/moderator/posts"> */}
             <StyledButton
               type="submit"

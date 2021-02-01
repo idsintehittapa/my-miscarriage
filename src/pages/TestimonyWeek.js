@@ -55,9 +55,6 @@ export const TestimonyWeek = (request) => {
                 detailTitle={`${weeks.name}'s testimony`}
                 createdAt={moment(weeks.createdAt).format('ll')}
                 story={weeks.story} />
-              {/* // secondaryText={weeks.name ? week.name : 'Anonymous'} /> */}
-              {/* <p tabIndex='0' className='time'>{message.name ? message.name : "Anonymous"}</p> */}
-              {/* // ADD ANONYMOUS for default in front-end */}
             </Link>
           ))}
         </GridLayout>

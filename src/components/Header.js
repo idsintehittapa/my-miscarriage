@@ -1,61 +1,49 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import styled from 'styled-components/macro'
+import React, { useState } from 'react'
+import {
+  Button,
+  Menu,
+  MenuItem
+} from '@material-ui/core'
 
-// Q: How making this update not inside the header? - check damien's video
-// it does so if you go into the path directly but not when clicking on links..
-// is it because it's outside of main
-
-const HeaderContainer = styled.header`
-`
-
-const PlusMenu = styled.div`
-  font-size: 1.5em;
-  margin: 15px;
-
-  @media (min-width: 768px) {
-    display: none;
-}
-`
-
-const Nav = styled.nav`
-  display: none;
-  position: -webkit-sticky;
-  position: sticky;
-
-  @media (min-width: 768px) {
-    display: flex;
-}
-`
-
-const Ul = styled.ul`
-  padding: 0;
-  margin: 20px;
-  list-style-type: none;
-`
-
-const Li = styled.li`
-  padding-left: 16px; 
-
-`
-
-const StyledLink = styled(Link)`
-text-decoration: none;
-
-  &:hover, &:focus {
-    background: #4dbfed;
-    cursor: pointer;
-  }
-
-  &:visited, &:link, &:active {
-    color: #000
-}
-`
+import {
+  HeaderContainer,
+  PlusMenu,
+  Nav,
+  Ul,
+  Li,
+  StyledLink
+} from '../styles/Styles'
 
 export const Header = () => {
+  const [anchorEl, setAnchorEl] = useState(null)
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
     <HeaderContainer>
-      <PlusMenu>+</PlusMenu>
+      <PlusMenu>
+        <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+          +
+        </Button>
+        <Menu
+          id="simple-menu"
+          anchorEl={anchorEl}
+          keepMounted
+          open={Boolean(anchorEl)}
+          onClose={handleClose}>
+          <MenuItem onClick={handleClose}><StyledLink to="/">Home</StyledLink></MenuItem>
+          <MenuItem onClick={handleClose}><StyledLink to="/testimonies">Testimonies</StyledLink></MenuItem>
+          <MenuItem onClick={handleClose}><StyledLink to="/share">Share</StyledLink></MenuItem>
+          <MenuItem onClick={handleClose}><StyledLink to="/contact">Contact</StyledLink></MenuItem>
+          <MenuItem onClick={handleClose}><StyledLink to="/moderator">Moderator</StyledLink></MenuItem>
+        </Menu>
+      </PlusMenu>
       <Nav>
         <Ul>
           <Li>

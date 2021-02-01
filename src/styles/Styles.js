@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro'
+import { Link } from 'react-router-dom'
 
 import img from '../assets/1.jpg'
 import imgDetail from '../assets/2.jpg'
@@ -36,6 +37,50 @@ export const H4 = styled(P)`
 
 export const Title = styled.h2`
   font-size: 2.8em;
+`
+
+export const HeaderContainer = styled.header`
+  display: flex;
+`
+
+export const PlusMenu = styled.div`
+  @media (min-width: 768px) {
+    display: none;
+}
+`
+
+export const Nav = styled.nav`
+  display: none;
+
+  @media (min-width: 768px) {
+    display: flex;
+}
+`
+
+export const Ul = styled.ul`
+  padding: 0;
+  margin: 20px;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1.1em;
+`
+
+export const Li = styled.li`
+  padding-left: 16px; 
+
+`
+
+export const StyledLink = styled(Link)`
+text-decoration: none;
+
+  &:hover, &:focus {
+    background: #4dbfed;
+    cursor: pointer;
+  }
+
+  &:visited, &:link, &:active {
+    color: #000
+}
 `
 
 // _________StarterPage

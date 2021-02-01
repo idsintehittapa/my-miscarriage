@@ -17,10 +17,8 @@ import { sendShare } from '../paths/Api-paths'
 import {
   Container,
   Form,
-  Paragraph,
   // StyledNameInput,
   // StyledSelectInput,
-  StyledTextArea,
   StyledButton
 } from '../styles/Styles'
 
@@ -85,11 +83,9 @@ export const Share = () => {
         setPeriod_length('')
         setPeriod_pain('')
         setStory('')
-        // success
         if (res.status === 201) {
           console.log(res.json)
           return res.json()
-          // fail
         } else throw new Error(res.status)
       })
       // _________This needs to be looked at
@@ -167,7 +163,6 @@ export const Share = () => {
             <MenuItem value={24}>Week 24</MenuItem>
             <MenuItem value={99}>Unknown</MenuItem>
           </Select>
-          {/* <Paragraph>Experienced Physical Pain level:</Paragraph> */}
           <div>
             <StyledInputLabel required id="standard-required" component="legend">Describe your experienced physical pain level</StyledInputLabel>
             <RadioGroup>
