@@ -15,12 +15,15 @@ import {
   Details,
   BackgroundMentor,
   DetailsTitle,
-  CreatedAt,
+  CreatedAt
 } from '../styles/Styles'
 
 export const ModeratorInspect = () => {
   const [testimony, setTestimony] = useState([])
+  const [name, setName] = useState('')
+  const [story, setStory] = useState('')
   const { id } = useParams()
+
 
   // I don't have any if/throw error messages - I need to add that
   // Also I guess I need to add these?
@@ -30,12 +33,16 @@ export const ModeratorInspect = () => {
   //   headers: { 'Content-Type': 'application/json' },
 
   useEffect(() => {
+    // I guess I have to change this later to the authenticated version - maybe?
     fetch(`http://localhost:8080/testimonies/${id}`)
       .then((response) => response.json())
-      .then((json) => setTestimony(json))
-    // eslint-disable-next-line
-  }, [])
-
+      .then((json) => {
+        setName(json.name)
+        setStory(json.story)
+        setTestimony(json)
+        // eslint-disable-next-line
+      })
+  }, [id])
   return (
     <>
       <BackgroundMentor>
@@ -53,16 +60,15 @@ export const ModeratorInspect = () => {
               <CreatedAt>{moment(testimony.createdAt).format('ll')}</CreatedAt>
               <Form onSubmit={(event) => event.preventDefault()}>
                 {/* not sure if this onSubmit is necessary */}
-                <input
-                  type="text"
-                  defaultValue={`${testimony.name}' INPut value`} />
                 <TextField
-                  defaultValue={`${testimony.name}'s testimony`} />
-                <TextField 
+                  value={name}
+                  onChange={(event) => setName(event.target.value)} />
+                <TextField
                   size="medium"
                   rows={40}
                   rowsMax={10}
-                  defaultValue={testimony.story} />
+                  value={story}
+                  onChange={(event) => setStory(event.target.value)} />
                 {/* // 'pending', 'approved', 'decline' */}
               </Form>
 

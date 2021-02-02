@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link, useHistory } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import {
   TextField,
@@ -27,10 +27,7 @@ export const SignIn = () => {
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
 
-  const history = useHistory()
-
   const handleClickShowPassword = () => setShowPassword(!showPassword)
-  console.log(token)
 
   // Form validation
   const minimumPasswordLength = { minLength: 5 }
@@ -72,9 +69,7 @@ export const SignIn = () => {
         console.log(error)
       }) // _________This needs to be looked at
   }
-  if (token) {
-    history.push('/moderator/posts')
-  }
+
   return (
     <>
       <Container>
@@ -105,7 +100,10 @@ export const SignIn = () => {
                 </IconButton>
               </InputAdornment>
             } />
+            {/* // so this is not working now, have to press twice */}
+            {/* But you cannot sign in with wrong user... */}
           <Link to={signInOk && '/moderator/posts'}>
+            {/* // Using this it looks like everything and everyone is signed in... */}
           {/* <Link to="/moderator/posts"> */}
             <StyledButton
               type="submit"
