@@ -23,9 +23,14 @@ export const TestimoniesModerator = () => {
       method: 'GET',
       headers: { 'Content-Type': 'application/json', Authorization: tokenFromStorage() }
     })
-      .then((response) => response.json())
-      .then((json) => console.log(json))
-  }, [page])
+      .then((response) => {
+        if (!response.ok) {
+          history.push('/moderator')
+        }
+        return response.json()
+      })
+      .then((json) => setPost(json))
+  }, [page, history])
 
   const pageForward = () => {
     setPage(page + 1)
@@ -36,10 +41,6 @@ export const TestimoniesModerator = () => {
   }
 
   const TITLE = 'Posts'
-
-  if (!tokenFromStorage) {
-    history.push('/moderator')
-  }
 
   return (
     <>
