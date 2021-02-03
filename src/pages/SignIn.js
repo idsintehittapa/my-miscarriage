@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
 import {
   TextField,
@@ -17,10 +17,9 @@ import {
   Form,
   StyledButton
 } from '../styles/Styles'
-import { SettingsBackupRestoreRounded } from '@material-ui/icons'
 
 export const SignIn = () => {
-  const tokenFromStorage = () => window.localStorage.getItem("tokenAuth") || ""
+  const tokenFromStorage = () => window.localStorage.getItem('tokenAuth') || ''
   const [token, setToken] = useState(tokenFromStorage)
   const [signInOk, setSignInOk] = useState()
   const [email, setEmail] = useState('')
@@ -28,6 +27,9 @@ export const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false)
 
   const handleClickShowPassword = () => setShowPassword(!showPassword)
+
+  const history = useHistory()
+  console.log(token)
 
   // Form validation
   const minimumPasswordLength = { minLength: 5 }
@@ -56,27 +58,25 @@ export const SignIn = () => {
       .then((data) => {
         setSignInOk(true)
         setToken(data.accessToken)
-        window.localStorage.setItem("tokenAuth", data.accessToken)
+        window.localStorage.setItem('tokenAuth', data.accessToken)
+        console.log(data.accessToken)
       })
-      // .then((data) => {
-      //   setLog(true)
-      //   setToken(data.accessToken)
-      //   window.localStorage.setItem('tokenAuth', data.accessToken)
-      //   console.log(log)
-      // })
       .catch((error) => {
         setSignInOk(false)
         console.log(error)
-      }) // _________This needs to be looked at
+      })
   }
-
+  if (token) {
+    history.push('/moderator/posts')
+  }
   return (
     <>
       <Container>
         <h2>Sign IN here</h2>
         <Form onSubmit={handleSubmit}>
           <TextField
-            required id='email'
+            required
+            id="email"
             label="Email"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
@@ -84,11 +84,11 @@ export const SignIn = () => {
             helperText={email === '' ? 'x@xxx.xx' : ' '} />
           <InputLabel htmlFor="password-signin">Password*</InputLabel>
           <Input
-            required={true}
+            required
             id="password-signin"
             type={showPassword ? 'text' : 'password'}
             value={password}
-            fullWidth={true}
+            fullWidth
             onChange={(event) => setPassword(event.target.value)}
             inputProps={minimumPasswordLength}
             endAdornment={
@@ -100,10 +100,7 @@ export const SignIn = () => {
                 </IconButton>
               </InputAdornment>
             } />
-            {/* // so this is not working now, have to press twice */}
-            {/* But you cannot sign in with wrong user... */}
           <Link to={signInOk && '/moderator/posts'}>
-            {/* // Using this it looks like everything and everyone is signed in... */}
           {/* <Link to="/moderator/posts"> */}
             <StyledButton
               type="submit"
