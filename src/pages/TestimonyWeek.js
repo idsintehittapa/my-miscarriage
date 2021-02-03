@@ -26,13 +26,12 @@ export const TestimonyWeek = (request) => {
   const { week } = request.match.params
 
   useEffect(() => {
-    // if ( moderator ) {
-    //   const url = `http://localhost:8080/testimonies?when_weeks=${week}`
-    // } else {
-    //   const url = `http://localhost:8080/testimonies?when_weeks=${week}&status=accepted`
-    // }
-    fetch(`http://localhost:8080/testimonies?when_weeks=${week}`)
-      .then((response) => response.json())
+    fetch(`http://localhost:8080/testimonies?when_weeks=${week}&post=approved`)
+      .then((response) => {
+        if (response.status === 201) {
+          return response.json()
+        } else throw new Error('Unable to verify user')
+      })
       .then((json) => setTestimony(json.allTestimonies))
   }, [week])
 

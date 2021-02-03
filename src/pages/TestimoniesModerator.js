@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet'
 import moment from 'moment'
-import { Link } from 'react-router-dom'
+import { useHistory, Link } from 'react-router-dom'
 
 import { Card } from '../lib/Card'
 import { StyledButton, SignOutWrapper, GridLayout } from '../styles/Styles'
@@ -10,20 +10,21 @@ export const TestimoniesModerator = () => {
   const [post, setPost] = useState([])
   const [page, setPage] = useState(1)
 
+  const history = useHistory()
+
   const handleSignOut = () => {
     localStorage.clear()
   }
 
-  useEffect(() => {
-    // the right posts - filter later
-    // fetch(`http://localhost:8080/testimonies?status=${post}`)
+  const tokenFromStorage = () => window.localStorage.getItem('tokenAuth') || ''
 
-    // so I need to change the path here later to the new defined one
-    // I need to add method, headers, etc.
-    // AND LOCAL STORAGE
-    fetch('http://localhost:8080/testimonies?post=pending')
+  useEffect(() => {
+    fetch('http://localhost:8080/moderator/pending', {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json', Authorization: tokenFromStorage() }
+    })
       .then((response) => response.json())
-      .then((json) => setPost(json.allTestimonies))
+      .then((json) => console.log(json))
   }, [page])
 
   const pageForward = () => {
@@ -35,6 +36,10 @@ export const TestimoniesModerator = () => {
   }
 
   const TITLE = 'Posts'
+
+  if (!tokenFromStorage) {
+    history.push('/moderator')
+  }
 
   return (
     <>
@@ -53,6 +58,7 @@ export const TestimoniesModerator = () => {
       </SignOutWrapper>
       <GridLayout>
         {post.map((weeks, key) => (
+          // eslint-disable-next-line no-underscore-dangle
           <Link key={key} to={`/moderator/posts/${weeks._id}`}>
             <Card
               key={key}
