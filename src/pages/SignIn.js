@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 import {
   TextField,
@@ -59,6 +59,7 @@ export const SignIn = () => {
         setSignInOk(true)
         setToken(data.accessToken)
         window.localStorage.setItem('tokenAuth', data.accessToken)
+        history.push('/moderator/posts')
         console.log(data.accessToken)
       })
       .catch((error) => {
@@ -100,15 +101,12 @@ export const SignIn = () => {
                 </IconButton>
               </InputAdornment>
             } />
-          <Link to={signInOk && '/moderator/posts'}>
-          {/* <Link to="/moderator/posts"> */}
-            <StyledButton
-              type="submit"
-              onClick={handleSignIn}
-              disabled={!email || !password}>
-              Sign in
-            </StyledButton>
-          </Link>
+          <StyledButton
+            type="submit"
+            onClick={handleSignIn}
+            disabled={!email || !password}>
+            Sign in
+          </StyledButton>
         </Form>
       </Container>
     </>
