@@ -28,9 +28,9 @@ export const TestimonyWeek = (request) => {
   useEffect(() => {
     fetch(`http://localhost:8080/testimonies?when_weeks=${week}&post=approved`)
       .then((response) => {
-        if (response.status === 201) {
+        if (response.status === 200) {
           return response.json()
-        } else throw new Error('Unable to verify user')
+        } else throw new Error('Unable to show testimonies')
       })
       .then((json) => setTestimony(json.allTestimonies))
   }, [week])

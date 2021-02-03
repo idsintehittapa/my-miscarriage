@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react'
-// import { Route } from 'react-router-dom'
-// import { Link } from 'react-router-dom'
+import {
+  Route,
+  Link,
+  useParams,
+  useHistory
+} from 'react-router-dom'
 import moment from 'moment'
-import { useParams, useHistory } from 'react-router-dom'
+// import { useParams, useHistory } from 'react-router-dom'
 
-import { TextField } from '@material-ui/core';
+import { TextField, Select, MenuItem } from '@material-ui/core';
 
 import {
   Form,
@@ -33,7 +37,6 @@ export const ModeratorInspect = () => {
   const tokenFromStorage = () => window.localStorage.getItem('tokenAuth') || ''
 
   useEffect(() => {
-    // I guess I have to change this later to the authenticated version - maybe?
     fetch(`http://localhost:8080/moderator/pending/${id}`, {
       method: 'GET',
       headers: { 'Content-Type': 'application/json', Authorization: tokenFromStorage() }
@@ -49,7 +52,6 @@ export const ModeratorInspect = () => {
         setStory(json.story)
         setStory(json.post)
         setTestimony(json)
-        // eslint-disable-next-line
       })
   }, [id, history])
   return (
@@ -59,28 +61,45 @@ export const ModeratorInspect = () => {
           <Container>
             <Details>
               <IconWrapper>
-                {/* <Route path='/testimonies/week/:week/:id'>
-              <Link to={`/testimonies/week/${testimony.when_weeks}`}> */}
-                <Svg />
-                {/* </Link>
-              </Route> */}
+                {/* // this is not working */}
+                <Route path="/moderator/posts/:id">
+                  <Link to="/moderator/pending">
+                    <Svg />
+                  </Link>
+                </Route>
               </IconWrapper>
               <DetailsTitle>{`${testimony.name}'s testimony`}</DetailsTitle>
               <CreatedAt>{moment(testimony.createdAt).format('ll')}</CreatedAt>
               <Form onSubmit={(event) => event.preventDefault()}>
                 {/* not sure if this onSubmit is necessary */}
+                <div>
+                  The name:
+                </div>
                 <TextField
                   value={name}
                   onChange={(event) => setName(event.target.value)} />
+                <div>
+                  The story:
+                </div>
                 <TextField
                   size="medium"
                   rows={40}
                   rowsMax={10}
                   value={story}
                   onChange={(event) => setStory(event.target.value)} />
-                {/* // 'pending', 'approved', 'decline' */}
+                <div>
+                  Change status:
+                </div>
+                <Select
+                  labelId="status"
+                  id="status"
+                  value={post}
+                  onChange={(event) => setPost(event.target.value)}>
+                  {/* <MenuItem value={"pending"}>pending</MenuItem> */}
+                  <MenuItem value="approved">approved</MenuItem>
+                  <MenuItem value="decline">decline</MenuItem>
+                </Select>
               </Form>
-
             </Details>
           </Container>
         </DetailWrapper>
