@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 // import { Route } from 'react-router-dom'
 // import { Link } from 'react-router-dom'
 import moment from 'moment'
-import { useParams } from 'react-router-dom'
+import { useParams, useHistory } from 'react-router-dom'
 
 import { TextField } from '@material-ui/core';
 
@@ -22,27 +22,36 @@ export const ModeratorInspect = () => {
   const [testimony, setTestimony] = useState([])
   const [name, setName] = useState('')
   const [story, setStory] = useState('')
+  const [post, setPost] = useState('')
   const { id } = useParams()
 
+  const history = useHistory()
 
-  // I don't have any if/throw error messages - I need to add that
-  // Also I guess I need to add these?
-  // fetch(SESSIONS_URL, {
-  //   method: 'POST',
-  //   body: JSON.stringify({ email, password }),
-  //   headers: { 'Content-Type': 'application/json' },
+  // what happens after post has changed status
+  // where do I go then?
+
+  const tokenFromStorage = () => window.localStorage.getItem('tokenAuth') || ''
 
   useEffect(() => {
     // I guess I have to change this later to the authenticated version - maybe?
-    fetch(`http://localhost:8080/testimonies/${id}`)
-      .then((response) => response.json())
+    fetch(`http://localhost:8080/moderator/pending/${id}`, {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json', Authorization: tokenFromStorage() }
+    })
+      .then((response) => {
+        if (!response.ok) {
+          history.push('/moderator')
+        }
+        return response.json()
+      })
       .then((json) => {
         setName(json.name)
         setStory(json.story)
+        setStory(json.post)
         setTestimony(json)
         // eslint-disable-next-line
       })
-  }, [id])
+  }, [id, history])
   return (
     <>
       <BackgroundMentor>
