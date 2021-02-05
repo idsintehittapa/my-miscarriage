@@ -38,6 +38,7 @@ export const Header = () => {
           open={Boolean(anchorEl)}
           onClose={handleClose}>
           <MenuItem onClick={handleClose}><StyledLink to="/">Home</StyledLink></MenuItem>
+          <MenuItem onClick={handleClose}><StyledLink to="/about">About</StyledLink></MenuItem>
           <MenuItem onClick={handleClose}><StyledLink to="/testimonies">Testimonies</StyledLink></MenuItem>
           <MenuItem onClick={handleClose}><StyledLink to="/share">Share</StyledLink></MenuItem>
           <MenuItem onClick={handleClose}><StyledLink to="/contact">Contact</StyledLink></MenuItem>
@@ -48,6 +49,9 @@ export const Header = () => {
         <Ul>
           <Li>
             <StyledLink to="/">Home</StyledLink>
+          </Li>
+          <Li>
+            <StyledLink to="/about">About</StyledLink>
           </Li>
           <Li>
             <StyledLink to="/testimonies">Testimonies</StyledLink>

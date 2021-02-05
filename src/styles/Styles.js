@@ -5,6 +5,7 @@ import img from '../assets/1.jpg'
 import imgDetail from '../assets/2.jpg'
 import { ReactComponent as Icon } from '../assets/X.svg'
 
+
 // _________Reusable styles
 export const Container = styled.section`
   display: flex;
@@ -12,25 +13,36 @@ export const Container = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
   max-width: 1000px;
 `
 
 export const H2 = styled.h2`
-  // font-size: 2em;
-  // text-align: center;
+  text-transform: uppercase;
+`
+
+export const H3 = styled.h3`
+  font-family: 'Roboto Mono', monospace;
+
+`
+export const H4 = styled.h4`
+  font-family: 'Barlow', sans-serif;
+  padding: 20px;
+  text-align: justify;
+`
+
+export const H5 = styled.h4`
+  font-family: 'Barlow', sans-serif;
+  padding: 20px;
+  text-align: justify;
 `
 
 export const Quote = styled.q`
-  // font-size: 1.8em;
-  // text-align: center;
-  // font-style: oblique;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5em;
+  text-align: center;
 `
 export const P = styled.p`
 text-align: justify;
-`
-
-export const H4 = styled(P)`
 `
 
 // _________Header
@@ -97,19 +109,21 @@ export const Test = styled.section`
 export const Main = styled.main`
   display: flex;
   flex-direction: column;
+  margin: 60px 0;
   width: 100%;
   height: 100vh;
   justify-content: center;
   align-items: center;
 `
 export const TitleStarterPage = styled.h1`
-  font-size: 3.5em;
+  font-size: 3em;
   text-align: center;
+  text-transform: uppercase;
 `
 
 export const StarterWrapper = styled.section`
 display: flex;
-min-height: 176vh;
+// min-height: 176vh;
 flex-direction: column;
 justify-content: space-between;
 `
@@ -118,6 +132,11 @@ export const ContainerText = styled(Container)`
   max-width: 800px;
 `
 
+export const AboutMain = styled(Main)`
+  height: auto;
+`
+
+// _________SHARE
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
@@ -200,7 +219,6 @@ export const IconWrapper = styled.div`
 `
 export const DetailWrapper = styled.section`
   max-width: 500px;
-  height: 100vh;
   margin: 0 auto;
 `
 export const Details = styled.div`
@@ -209,10 +227,9 @@ export const Details = styled.div`
   0px 1px 3px 0px rgba(0, 0, 0, 0.12);
   border-radius: 6px; 
   background: rgba(255, 255, 255, 0.9);
-  margin: 100px 0 0 0;
+  margin: 100px 0 40px 0;
   padding: 20px;
   max-width: 1000px;
-  width: 500px;
 `
 export const Background = styled.div`
   background: linear-gradient(rgba(255,255,255,.2), rgba(255,255,255,.2)), url(${imgDetail});
@@ -232,20 +249,50 @@ export const CreatedAt = styled.p`
 `
 
 export const Question = styled.p`
-  text-align: left
+  text-align: left;
+  font-size: 1em;
+  margin: 0 auto
 `
 
 export const Answer = styled.p`
-  text-align: end;
+  text-align: justify;
+  font-size: 1em;
+  // margin: 0 0 15px;
+  color: #ffff;
+  padding: 6px 10px;
+  border-radius: 6px 0 6px 0;
+  position: relative;
+  background: rgba(0, 0, 0, .9);
+  // border: 2px solid rgba(100, 170, 0, .1);
 `
 
-export const WrapperAnswer = styled.div`
-  text-align: end;
-  border-radius: 25px;
-  background: #73AD21;
-  padding: 20px;
-  width: 200px;
-  height: auto;
+export const AnswerHolder = styled.div`
+width: 100%;
+// margin: 0 0 15px;
+display: flex;
+flex-flow: column;
+align-items: flex-end;
+`
+
+export const ChatAnswer = styled.div`
+  border-top: 1px solid rgba(0, 0, 0, .05);
+  // padding: 10px;
+  overflow: auto;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+  flex: 1;
+`
+
+export const QuestionHolder = styled.div`
+  padding: 6px 10px;
+  border-radius: 6px 0 6px 0;
+  position: relative;
+  // background: rgba(255,114,65, .8);
+  // background: rgba(204,89,204, .5);
+  background: rgba(254,157,19, 0.5);
+  border: 1px solid rgba(255, 116, 14, .5);
+  // border: 1px solid rgba(204,89,204, .5);
 `
 
 // _________Moderator

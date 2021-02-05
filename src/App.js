@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 import { Header } from './components/Header'
 import { StartPage } from './pages/StartPage'
+import { About } from './pages/About'
 import { Testimonies } from './pages/Testimonies'
 import { TestimonyWeek } from './pages/TestimonyWeek'
 import { TestimonyDetails } from './pages/TestimonyDetails'
@@ -18,6 +19,7 @@ export const App = () => {
       <Header />
       <Switch>
         <Route component={StartPage} path="/" exact />
+        <Route component={About} path="/about" exact />
         <Route component={Testimonies} path="/testimonies" exact />
         <Route component={TestimonyWeek} path="/testimonies/week/:week" exact />
         <Route component={TestimonyDetails} path="/testimonies/week/:week/:id" exact />

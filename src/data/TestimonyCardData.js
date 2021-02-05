@@ -1,7 +1,7 @@
 export const cardInfo = [
   {
     Week: 6,
-    Img: require('../assets/isa1.png') // unsure this will work live? or that required is a good approach here
+    Img: require('../assets/n1115213.png') // unsure this will work live? or that required is a good approach here
   },
   {
     Week: 7,
