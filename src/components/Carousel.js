@@ -44,7 +44,7 @@ export const Carousel = () => {
       <StyledSlider {...settings}>
         {cardInfo.map((weeks, key) => (
           <Link key={key} to={`/testimonies/week/${weeks.Week}`}>
-            <Card key={key} carouselTitle={weeks.Week} />
+            <Card key={key} carouselTitle={weeks.Week === 99 ? 'Unknown' : weeks.Week} />
           </Link>
         ))}
 

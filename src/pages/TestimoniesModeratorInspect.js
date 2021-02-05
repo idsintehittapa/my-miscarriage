@@ -24,6 +24,7 @@ import {
 } from '../styles/Styles'
 
 export const ModeratorInspect = () => {
+  const [updateOk, setUpdateOk] = useState(false)
   const [testimony, setTestimony] = useState([])
   const [name, setName] = useState('')
   const [story, setStory] = useState('')
@@ -38,8 +39,7 @@ export const ModeratorInspect = () => {
   const tokenFromStorage = () => window.localStorage.getItem('tokenAuth') || ''
 
   const handleSubmit = () => {
-    // eslint-disable-next-line
-    fetch(`http://localhost:8080/moderator/pending/${id}`), {
+    fetch(`http://localhost:8080/moderator/pending/${id}`, {
       method: 'PATCH',
       body: JSON.stringify({
         name,
@@ -47,15 +47,14 @@ export const ModeratorInspect = () => {
         post
       }),
       headers: { 'Content-Type': 'application/json', Authorization: tokenFromStorage() }
-    }
+    })
       .then((response) => {
-        // setName('')
-        // setStory('')
-        // setPost('')
         if (response.status === 200) {
           console.log(response.json)
+          setUpdateOk(true)
           return response.json()
         } else {
+          setUpdateOk(false)
           throw new Error(response.status)
         }
       })
@@ -87,17 +86,13 @@ export const ModeratorInspect = () => {
           <Container>
             <Details>
               <IconWrapper>
-                {/* // this is not working */}
-                <Route path="/moderator/posts/:id">
-                  <Link to="/moderator/pending">
-                    <Svg />
-                  </Link>
-                </Route>
+                <Link to="/moderator/posts">
+                  <Svg />
+                </Link>
               </IconWrapper>
               <DetailsTitle>{`${testimony.name}'s testimony`}</DetailsTitle>
               <CreatedAt>{moment(testimony.createdAt).format('ll')}</CreatedAt>
               <Form onSubmit={(event) => event.preventDefault()}>
-                {/* not sure if this onSubmit is necessary */}
                 <div>
                   The name:
                 </div>
@@ -131,7 +126,9 @@ export const ModeratorInspect = () => {
                   disabled={!post}>
                   send
                 </StyledButton>
-
+                {updateOk && (
+                  <p>Successfully updated</p>
+                )}
               </Form>
             </Details>
           </Container>

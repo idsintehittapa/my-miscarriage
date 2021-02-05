@@ -62,7 +62,7 @@ export const Card = ({ title, carouselTitle,
     <CardContainer>
       {coverImg && <CoverImg src={coverImg} />}
       <Content>
-        {title && <CardTitle>Week {title}</CardTitle>}
+        {title && <CardTitle>Week {title === 99 ? 'Unknown' : title}</CardTitle>}
         {detailTitle && <DetailTitle>{detailTitle}</DetailTitle>}
         {carouselTitle && <CarouselTitle>Week {carouselTitle}</CarouselTitle>}
         {createdAt && <TimeStamp>{createdAt}</TimeStamp>}
