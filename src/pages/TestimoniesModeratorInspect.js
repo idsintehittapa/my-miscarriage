@@ -19,7 +19,8 @@ import {
   Details,
   BackgroundMentor,
   DetailsTitle,
-  CreatedAt
+  CreatedAt,
+  StyledButton
 } from '../styles/Styles'
 
 export const ModeratorInspect = () => {
@@ -35,6 +36,30 @@ export const ModeratorInspect = () => {
   // where do I go then?
 
   const tokenFromStorage = () => window.localStorage.getItem('tokenAuth') || ''
+
+  const handleSubmit = () => {
+    // eslint-disable-next-line
+    fetch(`http://localhost:8080/moderator/pending/${id}`), {
+      method: 'PATCH',
+      body: JSON.stringify({
+        name,
+        story,
+        post
+      }),
+      headers: { 'Content-Type': 'application/json', Authorization: tokenFromStorage() }
+    }
+      .then((response) => {
+        // setName('')
+        // setStory('')
+        // setPost('')
+        if (response.status === 200) {
+          console.log(response.json)
+          return response.json()
+        } else {
+          throw new Error(response.status)
+        }
+      })
+  }
 
   useEffect(() => {
     fetch(`http://localhost:8080/moderator/pending/${id}`, {
@@ -54,6 +79,7 @@ export const ModeratorInspect = () => {
         setTestimony(json)
       })
   }, [id, history])
+
   return (
     <>
       <BackgroundMentor>
@@ -95,10 +121,17 @@ export const ModeratorInspect = () => {
                   id="status"
                   value={post}
                   onChange={(event) => setPost(event.target.value)}>
-                  {/* <MenuItem value={"pending"}>pending</MenuItem> */}
+                  <MenuItem value="pending">pending</MenuItem>
                   <MenuItem value="approved">approved</MenuItem>
                   <MenuItem value="decline">decline</MenuItem>
                 </Select>
+                <StyledButton
+                  type="submit"
+                  onClick={handleSubmit}
+                  disabled={!post}>
+                  send
+                </StyledButton>
+
               </Form>
             </Details>
           </Container>
