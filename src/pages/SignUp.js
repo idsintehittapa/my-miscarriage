@@ -21,6 +21,7 @@ export const SignUp = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
+  const [signInOK, setSignInOK] = useState(true);
 
   const handleClickShowPassword = () => setShowPassword(!showPassword)
 
@@ -44,8 +45,12 @@ export const SignUp = () => {
         setPassword('')
         if (res.status === 201) {
           console.log(res.json)
+          setSignInOK(true);
           return res.json()
-        } else throw new Error(res.status)
+        } else {
+          setSignInOK(false);
+          throw new Error(res.status)
+        }
       })
       .catch((error) => console.log(error)) // _________This needs to be looked at
   }
@@ -86,6 +91,9 @@ export const SignUp = () => {
             disabled={!email || !password}>
             Sign Up
           </StyledButton>
+          {!signInOK && (
+            <p>Create was unsuccessful</p>
+          )}
         </Form>
       </Container>
     </>

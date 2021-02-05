@@ -21,7 +21,7 @@ import {
 export const SignIn = () => {
   const tokenFromStorage = () => window.localStorage.getItem('tokenAuth') || ''
   const [token, setToken] = useState(tokenFromStorage)
-  const [signInOk, setSignInOk] = useState()
+  const [signInOk, setSignInOk] = useState(true)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
@@ -107,6 +107,9 @@ export const SignIn = () => {
             disabled={!email || !password}>
             Sign in
           </StyledButton>
+          {!signInOk && (
+            <p>Could not sign in</p>
+          )}
         </Form>
       </Container>
     </>

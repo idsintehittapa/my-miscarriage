@@ -47,6 +47,7 @@ export const Share = () => {
   const [period_length, setPeriod_length] = useState(null)
   const [period_pain, setPeriod_pain] = useState(null)
   const [story, setStory] = useState('')
+  const [testimonyOK, setTestimonyOK] = useState(true);
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -81,8 +82,12 @@ export const Share = () => {
         setStory('')
         if (res.status === 201) {
           console.log(res.json)
+          setTestimonyOK(true)
           return res.json()
-        } else throw new Error(res.status)
+        } else {
+          setTestimonyOK(false)
+          throw new Error(res.status)
+        }
       })
       // _________This needs to be looked at
       .catch((error) => console.log(error))
@@ -299,10 +304,17 @@ export const Share = () => {
           <StyledButton
             type="submit"
             onClick={handleSubmit}
-            disabled={!when_weeks}>
+            disabled={!name || !when_weeks || !when_weeks_noticed || !physical_pain || 
+            !mental_pain || !hospital || !period_volume || !period_length || !period_pain
+            || !story}>
             Submit
           </StyledButton>
-          {/* <ErrorMessage message={'Sign up failed'} /> */}
+          {!testimonyOK && (
+            <p>Could not send testimony</p>
+          )}
+          {/* {testimonyOK && (
+            <p>Thank you!</p>
+          )} */}
         </Form>
       </Container>
     </>
