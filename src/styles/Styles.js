@@ -104,7 +104,7 @@ export const StyledLink = styled(Link)`
     padding: 5px;
 }
 @media (min-width: 1024px) {
-  font-size: 1.5em;
+  font-size: 1.3em;
 }
 `
 
@@ -193,9 +193,19 @@ export const StyledButton = styled.button`
 `
 // _________Testimonies
 
-export const BlackBackground = styled.section`
+export const TestimoniesWrapper = styled.section`
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+  max-width: 1100px;
+  margin: 0 auto;
+`
+
+export const BlackBackground = styled.div`
   background: rgba(25, 25, 25, 0.9);
   margin-top: 10px;
+  // max-width: 900px;
 `
 
 export const GridLayout = styled.section`

@@ -72,7 +72,7 @@ export const ModeratorInspect = () => {
       .then((json) => {
         setName(json.name)
         setStory(json.story)
-        setStory(json.post)
+        setPost(json.post)
         setTestimony(json)
       })
   }, [id, history])
@@ -101,11 +101,19 @@ export const ModeratorInspect = () => {
                   The story:
                 </div>
                 <TextField
+                  value={story}
+                  margin="normal"
+                  variant="outlined"
+                  autoComplete="on"
+                  multiline={true}
+                  rows={3}
+                  onChange={(event) => setStory(event.target.value)} />
+                {/* <TextField
                   size="medium"
                   rows={40}
                   rowsMax={10}
                   value={story}
-                  onChange={(event) => setStory(event.target.value)} />
+                  onChange={(event) => setStory(event.target.value)} /> */}
                 <div>
                   Change status:
                 </div>

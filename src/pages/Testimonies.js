@@ -4,10 +4,9 @@ import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
 import { Helmet } from 'react-helmet'
 import { Link } from 'react-router-dom'
 
-
 import { cardInfo } from '../data/TestimonyCardData'
 import { Card } from '../lib/Card'
-import { BlackBackground, GridLayout } from '../styles/Styles'
+import { TestimoniesWrapper, BlackBackground, GridLayout } from '../styles/Styles'
 
 export const Testimonies = () => {
 
@@ -17,20 +16,22 @@ export const Testimonies = () => {
       <Helmet>
         <title>{TITLE}</title>
       </Helmet>
-      <BlackBackground>
-        <ResponsiveMasonry
-          columnsCountBreakPoints={{ 350: 1, 450: 2, 750: 2, 900: 3 }}>
-          <Masonry>
-            {/* <GridLayout> */}
-            {cardInfo.map((weeks, key) => (
-              <Link key={key} to={`/testimonies/week/${weeks.Week}`}>
-                <Card key={key} coverImg={weeks.Img} title={weeks.Week} />
-              </Link>
-            ))}
-          </Masonry>
-        </ResponsiveMasonry>
-        {/* </GridLayout> */}
-      </BlackBackground>
+      <TestimoniesWrapper>
+        <BlackBackground>
+          <ResponsiveMasonry
+            columnsCountBreakPoints={{ 350: 1, 450: 2, 750: 2, 900: 3 }}>
+            <Masonry>
+              {/* <GridLayout> */}
+              {cardInfo.map((weeks, key) => (
+                <Link key={key} to={`/testimonies/week/${weeks.Week}`}>
+                  <Card key={key} coverImg={weeks.Img} title={weeks.Week} />
+                </Link>
+              ))}
+            </Masonry>
+          </ResponsiveMasonry>
+          {/* </GridLayout> */}
+        </BlackBackground>
+      </TestimoniesWrapper>
     </>
   )
 }

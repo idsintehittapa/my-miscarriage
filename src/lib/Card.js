@@ -9,6 +9,12 @@ const CardContainer = styled.div`
   background: #fff;
   // background: rgba(254,157,19, 0.5);
   margin: 10px;
+  &:hover, &:focus {
+    background: #474747;
+    cursor: pointer;
+    color: #fff;
+  }
+  
 `
 
 const CardTitle = styled.h3`
@@ -53,6 +59,12 @@ const Content = styled.div`
   color: #000;
   text-align: center;
   text-transform: uppercase;
+  &:hover, &:focus {
+    // background: #474747;
+    // cursor: pointer;
+    color: #fff;
+  }
+  
 `
 
 export const Card = ({ title, carouselTitle,

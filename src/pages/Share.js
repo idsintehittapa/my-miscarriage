@@ -291,7 +291,10 @@ export const Share = () => {
           </RadioGroup>
           <TextField
             placeholder="Share your miscarriage testimony in more detail here..."
-            multiline
+            multiline={true}
+            margin="normal"
+            variant="outlined"
+            autoComplete="on"
             rows={40}
             rowsMax={10}
             value={story}
