@@ -60,8 +60,6 @@ const Content = styled.div`
   text-align: center;
   text-transform: uppercase;
   &:hover, &:focus {
-    // background: #474747;
-    // cursor: pointer;
     color: #fff;
   }
   

@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import moment from 'moment'
 import { Link } from 'react-router-dom'
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
 
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
@@ -46,17 +47,22 @@ export const TestimonyWeek = (request) => {
     <>
       <Container>
         <Title> Week {week} </Title>
-        <GridLayout>
-          {testimony.map((weeks, key) => (
-            <Link key={key} to={`/testimonies/week/${weeks.when_weeks}/${weeks._id}`}>
-              <Card
-                key={key}
-                detailTitle={`${weeks.name}'s testimony`}
-                createdAt={moment(weeks.createdAt).format('ll')}
-                story={weeks.story} />
-            </Link>
-          ))}
-        </GridLayout>
+        {/* <GridLayout> */}
+        <ResponsiveMasonry
+          columnsCountBreakPoints={{ 350: 1, 450: 2, 750: 2, 900: 3 }}>
+          <Masonry>
+            {testimony.map((weeks, key) => (
+              <Link key={key} to={`/testimonies/week/${weeks.when_weeks}/${weeks._id}`}>
+                <Card
+                  key={key}
+                  detailTitle={`${weeks.name}'s testimony`}
+                  createdAt={moment(weeks.createdAt).format('ll')}
+                  story={weeks.story} />
+              </Link>
+            ))}
+          </Masonry>
+        </ResponsiveMasonry>
+        {/* </GridLayout> */}
         <div>
           <p>{`Page ${page} / ${page}`}</p>
           <button type="button" onClick={pageBackward} disabled={page === 1}>Previous Page</button>
