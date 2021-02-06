@@ -1,5 +1,5 @@
 import React from 'react'
-// import { Helmet } from 'react-helmet'
+import { Helmet } from 'react-helmet'
 
 import {
   AboutMain,
@@ -11,8 +11,14 @@ import {
 } from '../styles/Styles'
 
 export const About = () => {
+
+  const TITLE = 'About'
+
   return (
     <>
+      <Helmet>
+        <title>{TITLE}</title>
+      </Helmet>
       {/* <Black> */}
         <AboutMain>
           <Container>

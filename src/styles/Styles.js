@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 import img from '../assets/1.jpg'
 import imgDetail from '../assets/2.jpg'
+import imgShare from '../assets/pngegg.png'
 import { ReactComponent as Icon } from '../assets/X.svg'
 
 // _________Reusable styles
@@ -13,6 +14,14 @@ export const Container = styled.section`
   justify-content: center;
   align-items: center;
   max-width: 1000px;
+`
+export const TestimoniesWrapper = styled.section`
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+  max-width: 1100px;
+  margin: 0 auto;
 `
 
 export const H2 = styled.h2`
@@ -48,6 +57,7 @@ text-align: justify;
 
 export const Title = styled.h2`
   font-size: 2.8em;
+  text-transform: uppercase;
 `
 
 export const HeaderContainer = styled.header`
@@ -149,10 +159,23 @@ export const AboutMain = styled(Main)`
 `
 
 // _________SHARE
+
+export const BackgroundImg = styled.div`
+  background: linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.5)), url(${imgShare});
+  // background-image: url(${imgShare});
+  background-repeat: no-repeat;
+  background-size: cover;
+`
+
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
   // background-color: coral;
+`
+export const Center = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `
 
 export const StyledNameInput = styled.input`
@@ -192,15 +215,6 @@ export const StyledButton = styled.button`
   box-shadow: 1px 1px 2px black;
 `
 // _________Testimonies
-
-export const TestimoniesWrapper = styled.section`
-  display: flex;
-  flex-direction: column;
-  /* align-items: center; */
-  justify-content: center;
-  max-width: 1100px;
-  margin: 0 auto;
-`
 
 export const BlackBackground = styled.div`
   background: rgba(25, 25, 25, 0.9);
