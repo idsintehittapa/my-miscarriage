@@ -20,6 +20,7 @@
     "react-dom": "^16.14.0",
     "react-full-page": "^0.1.11",
     "react-helmet": "^6.1.0",
+    "react-responsive-masonry": "^2.1.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.4",
     "react-slick": "^0.28.0",

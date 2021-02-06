@@ -5,7 +5,6 @@ import img from '../assets/1.jpg'
 import imgDetail from '../assets/2.jpg'
 import { ReactComponent as Icon } from '../assets/X.svg'
 
-
 // _________Reusable styles
 export const Container = styled.section`
   display: flex;
@@ -82,17 +81,30 @@ export const Li = styled.li`
   padding-left: 16px; 
 
 `
-
 export const StyledLink = styled(Link)`
-text-decoration: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: 'Roboto Mono', monospace;
+  color: #000;
 
+  @media (min-width: 768px) {
+    font-size: 1.2em;
   &:hover, &:focus {
-    background: #4dbfed;
+    text-decoration: overline;
+    text-decoration-thickness: 2px;
+    color: #000;
     cursor: pointer;
+    padding: 5px;
   }
 
-  &:visited, &:link, &:active {
-    color: #000
+  &:active {
+    text-decoration: overline;
+    text-decoration-thickness: 2px;
+    color: #000;
+    padding: 5px;
+}
+@media (min-width: 1024px) {
+  font-size: 1.5em;
 }
 `
 
@@ -163,29 +175,29 @@ export const StyledTextArea = styled.textarea`
 export const StyledButton = styled.button`
   font-family: Roboto, sans-serif;
   margin: 30px 0 40px 0;
-  width: 64px;
-  height: 44px;
+  width: auto;
+  height: 38px;
   border-radius: 4px;
   border: none;
-  outline: none;
   padding: 0 8px 0 8px;
   box-sizing: content-box;
-  -webkit-font-smoothing: antialiased;
   font-size: .875em;
   font-weight: 500;
   letter-spacing: .0892857143em;
   text-transform: uppercase;
   justify-content: center;
   line-height: inherit;
-  -webkit-writing-mode: horizontal-tb !important;
-  text-rendering: auto;
-  text-indent: 0px;
-  text-shadow: none;
   text-align: center;
   cursor: default;
-  box-shadow: 5px 5px 2px black;
+  box-shadow: 1px 1px 2px black;
 `
 // _________Testimonies
+
+export const BlackBackground = styled.section`
+  background: rgba(25, 25, 25, 0.9);
+  margin-top: 10px;
+`
+
 export const GridLayout = styled.section`
   display: grid;
   grid-template-columns: 1fr;
@@ -309,4 +321,19 @@ export const BackgroundMentor = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+`
+
+// _________Footer
+
+export const FooterContainer = styled.footer`
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  position: absolute;
+  // left:0;
+  // bottom:0;
+  // right:0;
+`
+export const FooterP = styled.p`
+
 `

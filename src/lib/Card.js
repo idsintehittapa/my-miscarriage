@@ -6,7 +6,8 @@ const CardContainer = styled.div`
   0px 1px 1px 0px rgba(0, 0, 0, 0.14),
   0px 1px 3px 0px rgba(0, 0, 0, 0.12);
   border-radius: 6px; 
-  background: rgba(254,157,19, 0.5);
+  background: #fff;
+  // background: rgba(254,157,19, 0.5);
   margin: 10px;
 `
 
@@ -49,6 +50,9 @@ const CoverImg = styled.img`
 `
 const Content = styled.div`
   padding: 20px;
+  color: #000;
+  text-align: center;
+  text-transform: uppercase;
 `
 
 export const Card = ({ title, carouselTitle,

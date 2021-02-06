@@ -1,12 +1,13 @@
 import React from 'react'
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
+
 import { Helmet } from 'react-helmet'
 import { Link } from 'react-router-dom'
 
+
 import { cardInfo } from '../data/TestimonyCardData'
 import { Card } from '../lib/Card'
-import { GridLayout } from '../styles/Styles'
-
-// all images has to be tha same size, so I need a wrapper later
+import { BlackBackground, GridLayout } from '../styles/Styles'
 
 export const Testimonies = () => {
 
@@ -16,13 +17,20 @@ export const Testimonies = () => {
       <Helmet>
         <title>{TITLE}</title>
       </Helmet>
-      <GridLayout>
-        {cardInfo.map((weeks, key) => (
-          <Link key={key} to={`/testimonies/week/${weeks.Week}`}>
-            <Card key={key} coverImg={weeks.Img} title={weeks.Week} />
-          </Link>
-        ))}
-      </GridLayout>
+      <BlackBackground>
+        <ResponsiveMasonry
+          columnsCountBreakPoints={{ 350: 1, 450: 2, 750: 2, 900: 3 }}>
+          <Masonry>
+            {/* <GridLayout> */}
+            {cardInfo.map((weeks, key) => (
+              <Link key={key} to={`/testimonies/week/${weeks.Week}`}>
+                <Card key={key} coverImg={weeks.Img} title={weeks.Week} />
+              </Link>
+            ))}
+          </Masonry>
+        </ResponsiveMasonry>
+        {/* </GridLayout> */}
+      </BlackBackground>
     </>
   )
 }

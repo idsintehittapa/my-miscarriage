@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Helmet } from 'react-helmet'
+
 import {
   TextField,
   Select,
@@ -9,6 +10,7 @@ import {
   RadioGroup,
   FormControlLabel
 } from '@material-ui/core'
+
 import styled from 'styled-components/macro'
 
 import { sendShare } from '../paths/Api-paths'
@@ -29,8 +31,6 @@ const StyledInputLabel = styled(InputLabel)`
 
 // to do
 // - fix camel/not-camel toe
-// Display error messages based on validation!
-// .catch((error)
 // empty radio buttons after submitting - not working
 
 // _________Testimony POST
@@ -52,7 +52,6 @@ export const Share = () => {
   const handleSubmit = (event) => {
     event.preventDefault()
 
-    // I don't have any if/throw error messages - I need to add that
     fetch(sendShare, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -70,8 +69,8 @@ export const Share = () => {
       })
     })
       .then((res) => {
-        setName('') // this is stupid, it has to be a smarter way of doing this
-        setWhen_weeks('') // mapping?
+        setName('')
+        setWhen_weeks('')
         setWhen_weeks_noticed('')
         setPhysical_pain('')
         setMental_pain('')
@@ -89,11 +88,7 @@ export const Share = () => {
           throw new Error(res.status)
         }
       })
-      // _________This needs to be looked at
       .catch((error) => console.log(error))
-    // .catch((error) => {
-    //   error.json({ message: 'LOGIN_FAILED', errors: error })
-    // })
   }
 
   return (

@@ -9,59 +9,59 @@ export const cardInfo = [
   },
   {
     Week: 8,
-    Img: 'https://www.fillmurray.com/300/200'
+    Img: require('../assets/615738.png')
   },
   {
     Week: 9,
-    Img: 'https://www.fillmurray.com/300/200'
+    Img: require('../assets/1165784.jpg')
   },
   {
     Week: 10,
-    Img: 'https://www.fillmurray.com/300/200'
+    Img: require('../assets/195202.png')
   },
   {
     Week: 11,
-    Img: 'https://www.fillmurray.com/300/200'
+    Img: require('../assets/975205.png')
   },
   {
     Week: 12,
-    Img: 'https://www.fillmurray.com/300/200'
+    Img: require('../assets/pT58jEyjc.png')
   },
   {
     Week: 13,
-    Img: 'https://www.fillmurray.com/300/200'
+    Img: require('../assets/120berry.png')
   },
   {
     Week: 14,
-    Img: 'https://www.fillmurray.com/300/200'
+    Img: require('../assets/815080.png')
   },
   {
     Week: 15,
-    Img: 'https://www.fillmurray.com/300/200'
+    Img: require('../assets/815079.png')
   },
   {
     Week: 16,
-    Img: 'https://www.fillmurray.com/300/200',
-    Alt: 'Img of...'
+    Img: require('../assets/n716609.png')
+    // Alt: 'Images of rhubarb leaves'
   },
   {
     Week: 17,
-    Img: 'https://www.fillmurray.com/300/200'
+    Img: require('../assets/1164134.png')
   },
   {
     Week: 18,
-    Img: 'https://www.fillmurray.com/300/200'
+    Img: require('../assets/404120.png')
   },
   {
     Week: 19,
-    Img: 'https://www.fillmurray.com/300/200'
+    Img: require('../assets/570935.png')
   },
   {
     Week: 20,
-    Img: 'https://www.fillmurray.com/300/200'
+    Img: require('../assets/rcnGnedKi.png')
   },
   {
     Week: 99,
-    Img: 'https://www.fillmurray.com/300/200'
+    Img: require('../assets/531350.png')
   }
 ]

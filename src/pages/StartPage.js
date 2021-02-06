@@ -2,7 +2,6 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 // import { FullPage, Slide } from 'react-full-page'
 
-import { About } from './About'
 import {
   Main,
   TitleStarterPage,
