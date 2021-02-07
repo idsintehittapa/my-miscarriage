@@ -66,6 +66,15 @@ export const Quote = styled.q`
   font-family: 'BLACK BRUSH'; 
   font-size: 1.5em;
   text-align: center;
+
+  @media (min-width: 768px) {
+    font-size: 1.7em;
+  }
+
+  @media (min-width: 1224px) {
+    font-size: 2em;
+  }
+
 `
 export const P = styled.p`
 text-align: justify;
@@ -127,7 +136,6 @@ export const StyledLink = styled(Link)`
     text-decoration-thickness: 2px;
     color: #000;
     cursor: pointer;
-    padding: 5px;
   }
 
   &:active {
@@ -186,6 +194,40 @@ export const AboutMain = styled(Main)`
   height: auto;
 `
 
+export const AboutSubTitle = styled.p`
+  font-family: 'Ostrich Sans Sans Black';
+  margin: 50px 0 0 0;
+  font-size: 1.5em;
+
+  @media (min-width: 768px) {
+    font-size: 2em;
+  }
+
+  @media (min-width: 1224px) {
+    font-size: 1.7em;
+  }
+`
+
+// this cannot be this font
+export const AboutP = styled.p`
+  // font-family: 'Ostrich Sans Sans Medium';
+  font-size: 1.2em;
+  text-align: justify;
+  letter-spacing: 2px;
+  padding: 10px;
+  margin: 10px 0 0 0;
+
+
+  @media (min-width: 768px) {
+    font-size: 1.5em;
+  }
+
+  // @media (min-width: 1224px) {
+    
+  // }
+
+`
+
 // _________SHARE
 
 export const BackgroundImg = styled.div`
@@ -224,7 +266,7 @@ export const StyledTextArea = styled.textarea`
 `
 // check this later https://material.io/components/buttons#text-button
 export const StyledButton = styled.button`
-  font-family: Roboto, sans-serif;
+  font-family: 'Ostrich Sans Sans Black';
   margin: 30px 0 40px 0;
   width: auto;
   height: 38px;
@@ -236,7 +278,6 @@ export const StyledButton = styled.button`
   font-weight: 500;
   letter-spacing: .0892857143em;
   text-transform: uppercase;
-  justify-content: center;
   line-height: inherit;
   text-align: center;
   cursor: default;
@@ -323,18 +364,20 @@ export const CreatedAt = styled.p`
 export const Question = styled.p`
   text-align: left;
   font-size: 1em;
-  margin: 0 auto
+  margin: 0 auto;
+  letter-spacing: 2px;
 `
 
 export const Answer = styled.p`
   text-align: justify;
   font-size: 1em;
+  letter-spacing: 2px;
   // margin: 0 0 15px;
   color: #ffff;
   padding: 6px 10px;
   border-radius: 6px 0 6px 0;
   position: relative;
-  background: rgba(0, 0, 0, .9);
+  background: rgba(25, 25, 25, 0.9);
   // border: 2px solid rgba(100, 170, 0, .1);
 `
 
@@ -375,6 +418,41 @@ export const SignOutWrapper = styled.div`
   margin: 0 20px 0 0;
 `
 
+// _________Sign
+
+export const SignTitle = styled.h2`
+  font-family: 'Ostrich Sans Sans Black';
+  font-size: 2.8em;
+  text-transform: uppercase;
+`
+
+export const FormSign = styled.form`
+  margin: 50px 0;
+  display: flex;
+  flex-direction: column;
+  // background-color: coral;
+`
+
+export const PSign = styled.p`
+  font-family: 'Ostrich Sans Sans Medium';
+  font-size: 1.7em;
+  color: #000;
+
+  @media (min-width: 768px) {
+    font-size: 2em;
+}
+
+`
+
+export const StyledLinkSign = styled(Link)`
+  &:hover, &:focus {
+    color: #000;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    cursor: pointer;
+  }
+`
+
 // _________ModeratorInspect
 export const BackgroundMentor = styled.div`
   background: linear-gradient(rgba(95,22,2,.2), rgba(2,255,255,.2)), url(${imgDetail});
@@ -390,6 +468,7 @@ export const FooterContainer = styled.footer`
   flex-direction: column;
   padding: 20px;
   position: absolute;
+  background: rgba(25, 25, 25, 0.9);
   // left:0;
   // bottom:0;
   // right:0;

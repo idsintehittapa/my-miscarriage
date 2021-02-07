@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { Alert, AlertTitle } from '@material-ui/lab'
 
 import {
   TextField,
@@ -12,8 +14,10 @@ import VisibilityOff from '@material-ui/icons/VisibilityOff'
 
 import { signUp } from '../paths/Api-paths'
 import {
+  TestimoniesWrapper,
+  SignTitle,
   Container,
-  Form,
+  FormSign,
   StyledButton
 } from '../styles/Styles'
 
@@ -22,7 +26,8 @@ export const SignUp = () => {
   const [password, setPassword] = useState('')
   const [key, setKey] = useState('')
   const [showPassword, setShowPassword] = useState(false)
-  const [signInOK, setSignInOK] = useState(true);
+  const [signInOK, setSignInOK] = useState(false)
+  const [signInFail, setSignInFail] = useState(false)
 
   const handleClickShowPassword = () => setShowPassword(!showPassword)
 
@@ -48,64 +53,73 @@ export const SignUp = () => {
         setKey('')
         if (res.status === 201) {
           console.log(res.json)
-          setSignInOK(true);
+          setSignInOK(true)
+          setSignInFail(false)
           return res.json()
         } else {
-          setSignInOK(false);
+          setSignInOK(false)
+          setSignInFail(true)
           throw new Error(res.status)
         }
       })
-      .catch((error) => console.log(error)) // _________This needs to be looked at
+      .catch((error) => console.log(error))
   }
   return (
     <>
-      <Container>
-        <h2>Sign up here</h2>
-        <p>To sign up you need to have been verified as a moderator</p>
-        <Form onSubmit={(event) => event.preventDefault()}>
-          <TextField
-            required
-            id="ValidationKey"
-            label="Moderator Key"
-            value={key}
-            onChange={(event) => setKey(event.target.value)} />
-          <TextField
-            required
-            id="Email"
-            label="Email"
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
-            inputProps={validEmail}
-            helperText={email === '' ? 'x@xxx.xx' : ' '} />
-          <InputLabel htmlFor="standard-adornment-password">Password*</InputLabel>
-          <Input
-            required={true}
-            id="standard-adornment-password"
-            type={showPassword ? 'text' : 'password'}
-            value={password}
-            fullWidth={true}
-            onChange={(event) => setPassword(event.target.value)}
-            inputProps={minimumPasswordLength}
-            endAdornment={
-              <InputAdornment position="end">
-                <IconButton
-                  aria-label="toggle password visibility"
-                  onClick={handleClickShowPassword}>
-                  {showPassword ? <Visibility /> : <VisibilityOff />}
-                </IconButton>
-              </InputAdornment>
-            } />
-          <StyledButton
-            type="submit"
-            onClick={handleSubmit}
-            disabled={!email || !password}>
-            Sign Up
+      <TestimoniesWrapper>
+        <Container>
+          <SignTitle>Sign up here</SignTitle>
+          <p>To sign up you need to have been verified as a moderator</p>
+          <FormSign onSubmit={(event) => event.preventDefault()}>
+            <TextField
+              required
+              id="ValidationKey"
+              label="Moderator Key"
+              value={key}
+              onChange={(event) => setKey(event.target.value)} />
+            <TextField
+              required
+              id="Email"
+              label="Email"
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
+              inputProps={validEmail}
+              helperText={email === '' ? 'x@xxx.xx' : ' '} />
+            <InputLabel htmlFor="standard-adornment-password">Password*</InputLabel>
+            <Input
+              required={true}
+              id="standard-adornment-password"
+              type={showPassword ? 'text' : 'password'}
+              value={password}
+              fullWidth={true}
+              onChange={(event) => setPassword(event.target.value)}
+              inputProps={minimumPasswordLength}
+              endAdornment={
+                <InputAdornment position="end">
+                  <IconButton
+                    aria-label="toggle password visibility"
+                    onClick={handleClickShowPassword}>
+                    {showPassword ? <Visibility /> : <VisibilityOff />}
+                  </IconButton>
+                </InputAdornment>
+              } />
+            <StyledButton
+              type="submit"
+              onClick={handleSubmit}
+              disabled={!email || !password}>
+              Sign Up
           </StyledButton>
-          {!signInOK && (
-            <p>Create was unsuccessful</p>
-          )}
-        </Form>
-      </Container>
+            {signInFail && (
+              <Alert severity="error"><AlertTitle>Error</AlertTitle>Creating a moderator was unsuccessful</Alert>
+            )}
+            {signInOK && (
+              <Link to="/moderator">
+                <Alert severity="success">Create was Successful, back to login?</Alert>
+              </Link>
+            )}
+          </FormSign>
+        </Container>
+      </TestimoniesWrapper>
     </>
   )
 }

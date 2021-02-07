@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Helmet } from 'react-helmet'
+import { Alert, AlertTitle } from '@material-ui/lab'
 
 import {
   TextField,
@@ -21,8 +22,6 @@ import {
   Container,
   Form,
   Center,
-  // StyledNameInput,
-  // StyledSelectInput,
   StyledButton
 } from '../styles/Styles'
 
@@ -50,7 +49,8 @@ export const Share = () => {
   const [period_length, setPeriod_length] = useState(null)
   const [period_pain, setPeriod_pain] = useState(null)
   const [story, setStory] = useState('')
-  const [testimonyOK, setTestimonyOK] = useState(true);
+  const [testimonyOK, setTestimonyOK] = useState(false)
+  const [testimonyFail, setTestimonyFail] = useState(false)
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -85,9 +85,11 @@ export const Share = () => {
         if (res.status === 201) {
           console.log(res.json)
           setTestimonyOK(true)
+          setTestimonyFail(false)
           return res.json()
         } else {
           setTestimonyOK(false)
+          setTestimonyFail(true)
           throw new Error(res.status)
         }
       })
@@ -335,12 +337,12 @@ export const Share = () => {
                   || !story}>
                 Submit
               </StyledButton>
-              {!testimonyOK && (
-                <p>Could not send testimony</p>
+              {testimonyFail && (
+                <Alert severity="error"><AlertTitle>Error</AlertTitle>Could not send testimony</Alert>
               )}
-              {/* {testimonyOK && (
-            <p>Thank you!</p>
-          )} */}
+              {testimonyOK && (
+                <Alert severity="success">Thank you for sharing! Your testimony will be published after it’s been reviewed.</Alert>
+              )}
             </Form>
           </BackgroundImg>
         </Container>

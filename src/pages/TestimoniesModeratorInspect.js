@@ -5,6 +5,7 @@ import {
   useHistory
 } from 'react-router-dom'
 import moment from 'moment'
+import { Alert } from '@material-ui/lab'
 
 import { TextField, Select, MenuItem } from '@material-ui/core';
 
@@ -105,15 +106,9 @@ export const ModeratorInspect = () => {
                   margin="normal"
                   variant="outlined"
                   autoComplete="on"
-                  multiline={true}
+                  multiline
                   rows={3}
                   onChange={(event) => setStory(event.target.value)} />
-                {/* <TextField
-                  size="medium"
-                  rows={40}
-                  rowsMax={10}
-                  value={story}
-                  onChange={(event) => setStory(event.target.value)} /> */}
                 <div>
                   Change status:
                 </div>
@@ -133,7 +128,7 @@ export const ModeratorInspect = () => {
                   send
                 </StyledButton>
                 {updateOk && (
-                  <p>Successfully updated</p>
+                  <Alert severity="success">Successfully updated!</Alert>
                 )}
               </Form>
             </Details>

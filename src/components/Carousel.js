@@ -32,14 +32,14 @@ export const Carousel = () => {
   }
   return (
     <>
-    <CarouselWrapper>
-      <StyledSlider {...settings}>
-        {cardInfo.map((weeks, key) => (
-          <Link key={key} to={`/testimonies/week/${weeks.Week}`}>
-            <Card key={key} carouselTitle={weeks.Week === 99 ? 'Unknown' : weeks.Week} />
-          </Link>
-        ))}
-      </StyledSlider>
+      <CarouselWrapper>
+        <StyledSlider {...settings}>
+          {cardInfo.map((weeks, key) => (
+            <Link key={key} to={`/testimonies/week/${weeks.Week}`}>
+              <Card key={key} carouselTitle={weeks.Week === 99 ? 'Unknown' : weeks.Week} />
+            </Link>
+          ))}
+        </StyledSlider>
       </CarouselWrapper>
     </>
   )
@@ -53,7 +53,7 @@ const StyledSlider = styled(Slider)`
   color: rgba(25, 25, 25, 0.9);
 }
   .slick-arrow {
-    margin: 50px 118px;
+    margin: 60px 118px;
     z-index: 1;
 }
   .slick-dots li button:before {
@@ -64,5 +64,9 @@ const StyledSlider = styled(Slider)`
 `
 
 const CarouselWrapper = styled.section`
-  margin: 150px 0;
+  margin: 50px 0;
+
+  @media (min-width: 768px) {
+    margin: 70px 0;
+}
 `

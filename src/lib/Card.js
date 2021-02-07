@@ -34,10 +34,6 @@ const CarouselTitle = styled.p`
   color: #000;
   font-family: 'Ostrich Sans Sans Medium';
 
-  @media (min-width: 768px) {
-    font-size: 2em;
-}
-
   @media (min-width: 1024px) {
   font-size: 1.5em;
 }

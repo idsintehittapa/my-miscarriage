@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useHistory, Link } from 'react-router-dom'
+import { Alert, AlertTitle } from '@material-ui/lab'
 
 import {
   TextField,
@@ -13,9 +14,12 @@ import VisibilityOff from '@material-ui/icons/VisibilityOff'
 
 import { signIn } from '../paths/Api-paths'
 import {
+  SignTitle,
   Container,
-  Form,
-  StyledButton
+  FormSign,
+  StyledButton,
+  StyledLinkSign,
+  PSign
 } from '../styles/Styles'
 
 export const SignIn = () => {
@@ -73,8 +77,8 @@ export const SignIn = () => {
   return (
     <>
       <Container>
-        <h2>Sign IN here</h2>
-        <Form onSubmit={handleSubmit}>
+        <SignTitle>Sign in here</SignTitle>
+        <FormSign onSubmit={handleSubmit}>
           <TextField
             required
             id="email"
@@ -108,9 +112,12 @@ export const SignIn = () => {
             Sign in
           </StyledButton>
           {!signInOk && (
-            <p>Could not sign in</p>
+            <Alert severity="error"><AlertTitle>Error</AlertTitle>Could not sign in</Alert>
           )}
-        </Form>
+        </FormSign>
+        <StyledLinkSign to="/moderator/signup">
+          <PSign>Sign up as a moderator?</PSign>
+        </StyledLinkSign>
       </Container>
     </>
   )
