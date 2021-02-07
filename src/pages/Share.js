@@ -162,7 +162,6 @@ export const Share = () => {
                 <MenuItem value={24}>Week 24</MenuItem>
                 <MenuItem value={99}>Unknown</MenuItem>
               </Select>
-
               <StyledInputLabel required id="standard-required" component="legend">Describe your experienced physical pain level</StyledInputLabel>
               <Center>
                 <RadioGroup row aria-label="position" name="position" defaultValue="bottom">
@@ -243,6 +242,11 @@ export const Share = () => {
                   control={<Radio color="default" />}
                   label="Unchanged"
                   onChange={(event) => setPeriod_volume(event.target.value)} />
+                <FormControlLabel
+                  value="Don't know yet"
+                  control={<Radio color="default" />}
+                  label="Don't know yet"
+                  onChange={(event) => setPeriod_volume(event.target.value)} />
               </RadioGroup>
               <StyledInputLabel required id="standard-required" component="legend">Your period length?</StyledInputLabel>
               <RadioGroup>
@@ -261,6 +265,11 @@ export const Share = () => {
                   control={<Radio color="default" />}
                   label="Unchanged"
                   onChange={(event) => setPeriod_length(event.target.value)} />
+                <FormControlLabel
+                  value="Don't know yet"
+                  control={<Radio color="default" />}
+                  label="Don't know yet"
+                  onChange={(event) => setPeriod_length(event.target.value)} />
               </RadioGroup>
               <StyledInputLabel required id="standard-required" component="legend">Your period length?</StyledInputLabel>
               <RadioGroup>
@@ -278,31 +287,36 @@ export const Share = () => {
                   value="Unchanged"
                   control={<Radio color="default" />}
                   label="Unchanged"
+                  onChange={(event) => setPeriod_length(event.target.value)} />
+                <FormControlLabel
+                  value="Don't know yet"
+                  control={<Radio color="default" />}
+                  label="Don't know yet"
                   onChange={(event) => setPeriod_length(event.target.value)} />
               </RadioGroup>
               <StyledInputLabel required id="standard-required" component="legend">And your period pain?</StyledInputLabel>
-              <Center>
-                <RadioGroup row aria-label="position" name="position" defaultValue="top">
-                  <FormControlLabel
-                    value="Increased"
-                    control={<Radio color="default" />}
-                    label="Increased"
-                    labelPlacement="bottom"
-                    onChange={(event) => setPeriod_pain(event.target.value)} />
-                  <FormControlLabel
-                    value="Decreased"
-                    control={<Radio color="default" />}
-                    label="Decreased"
-                    labelPlacement="bottom"
-                    onChange={(event) => setPeriod_pain(event.target.value)} />
-                  <FormControlLabel
-                    value="Unchanged"
-                    control={<Radio color="default" />}
-                    label="Unchanged"
-                    labelPlacement="bottom"
-                    onChange={(event) => setPeriod_pain(event.target.value)} />
-                </RadioGroup>
-              </Center>
+              <RadioGroup>
+                <FormControlLabel
+                  value="Increased"
+                  control={<Radio color="default" />}
+                  label="Increased"
+                  onChange={(event) => setPeriod_pain(event.target.value)} />
+                <FormControlLabel
+                  value="Decreased"
+                  control={<Radio color="default" />}
+                  label="Decreased"
+                  onChange={(event) => setPeriod_pain(event.target.value)} />
+                <FormControlLabel
+                  value="Unchanged"
+                  control={<Radio color="default" />}
+                  label="Unchanged"
+                  onChange={(event) => setPeriod_pain(event.target.value)} />
+                <FormControlLabel
+                  value="Don't know yet"
+                  control={<Radio color="default" />}
+                  label="Don't know yet"
+                  onChange={(event) => setPeriod_pain(event.target.value)} />
+              </RadioGroup>
               <TextField
                 placeholder="Share your miscarriage testimony in more detail here..."
                 multiline={true}
@@ -320,7 +334,7 @@ export const Share = () => {
                   !mental_pain || !hospital || !period_volume || !period_length || !period_pain
                   || !story}>
                 Submit
-            </StyledButton>
+              </StyledButton>
               {!testimonyOK && (
                 <p>Could not send testimony</p>
               )}

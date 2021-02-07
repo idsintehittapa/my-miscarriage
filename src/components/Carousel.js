@@ -11,19 +11,9 @@ import { cardInfo } from '../data/TestimonyCardData'
 import { Card } from '../lib/Card'
 // import { StyledSlider } from '../styles/Styles'
 
-const StyledSlider = styled(Slider)`
-  .slick-list {
-    padding: 0 !important;
-  }
-  .slick-track {
-    padding: 0 !important;
-    // top: 35px;
-  }
-  .slick-dots {
-    // bottom: 5px;
-    margin: 10px;
-  }
-`;
+const Wrapper = styled.section`
+  margin-bottom: 20px;
+`
 
 export const Carousel = () => {
   const settings = {
@@ -33,22 +23,57 @@ export const Carousel = () => {
     slidesToShow: 4,
     slidesToScroll: 1,
     arrow: true, // this is not working
-    afterChange(index) {
-      console.log(
-        `Slider Changed to: ${index + 1}, background: #222; color: #bada55`
-      ) // remove this later
-    }
+    responsive: [
+      {
+        breakpoint: 408,
+        settings: {
+          slidesToShow: 3,
+          arrow: true
+        }
+      },
+      {
+        breakpoint: 915,
+        settings: {
+          slidesToShow: 4
+        }
+      },
+      // {
+      //   breakpoint: 1024,
+      //   settings: {
+      //     slidesToShow: 5
+      //   }
+      // }
+    ]
   }
   return (
     <>
+      {/* <Wrapper> */}
       <StyledSlider {...settings}>
         {cardInfo.map((weeks, key) => (
           <Link key={key} to={`/testimonies/week/${weeks.Week}`}>
             <Card key={key} carouselTitle={weeks.Week === 99 ? 'Unknown' : weeks.Week} />
           </Link>
         ))}
-
       </StyledSlider>
+      {/* </Wrapper> */}
     </>
   )
 }
+
+const StyledSlider = styled(Slider)`
+.slick-prev:before {
+  color: rgba(25, 25, 25, 0.9);
+}
+.slick-next:before {
+  color: rgba(25, 25, 25, 0.9);
+}
+  .slick-arrow {
+    margin: 50px 118px;
+    z-index: 1;
+}
+  .slick-dots li button:before {
+    color: rgba(25, 25, 25, 0.9);
+    font-size: 10px;
+    margin: 50px 0;
+  }
+`

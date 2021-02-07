@@ -25,7 +25,7 @@ const CarouselTitle = styled.p`
   margin: 0;
   position: relative;
   text-align: center;
-  font-size: 1.2em;
+  font-size: 0.8em;
   color: #000;
 `
 
