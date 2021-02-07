@@ -20,6 +20,7 @@ import {
 export const SignUp = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [key, setKey] = useState('')
   const [showPassword, setShowPassword] = useState(false)
   const [signInOK, setSignInOK] = useState(true);
 
@@ -37,12 +38,14 @@ export const SignUp = () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         email,
-        password
+        password,
+        key
       })
     })
       .then((res) => {
         setEmail('')
         setPassword('')
+        setKey('')
         if (res.status === 201) {
           console.log(res.json)
           setSignInOK(true);
@@ -61,7 +64,14 @@ export const SignUp = () => {
         <p>To sign up you need to have been verified as a moderator</p>
         <Form onSubmit={(event) => event.preventDefault()}>
           <TextField
-            required id='standard-default'
+            required
+            id="ValidationKey"
+            label="Moderator Key"
+            value={key}
+            onChange={(event) => setKey(event.target.value)} />
+          <TextField
+            required
+            id="Email"
             label="Email"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
