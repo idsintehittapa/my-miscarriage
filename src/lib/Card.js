@@ -19,20 +19,43 @@ const CardContainer = styled.div`
 
 const CardTitle = styled.h3`
   margin: 0;
-  font-size: 2.2em;
+  font-size: 2.5em;
+  font-family: 'Ostrich Sans Sans Medium';
+
+  @media (min-width: 768px) {
+    font-size: 3.5em;
+}
 `
 const CarouselTitle = styled.p`
   margin: 0;
   position: relative;
   text-align: center;
-  font-size: 0.8em;
+  font-size: 1.2em;
   color: #000;
+  font-family: 'Ostrich Sans Sans Medium';
+
+  @media (min-width: 768px) {
+    font-size: 2em;
+}
+
+  @media (min-width: 1024px) {
+  font-size: 1.5em;
+}
 `
 
 const DetailTitle = styled.h3`
   font-size: 1.2em;
   color: #000;
   text-transform: uppercase;
+  font-family: 'Ostrich Sans Sans Black';
+
+  @media (min-width: 768px) {
+    font-size: 2em;
+}
+
+  @media (min-width: 1024px) {
+  font-size: 1.5em;
+}
 `
 
 const TimeStamp = styled.p`
@@ -44,6 +67,9 @@ const SecondaryText = styled.p`
   margin: 0;
 `
 const StoryText = styled.p`
+  font-family: 'BLACK BRUSH';
+  font-weight: 100;
+  text-transform: lowercase;
   color: #000;
   white-space: nowrap; 
   overflow: hidden;
@@ -62,14 +88,18 @@ const Content = styled.div`
   &:hover, &:focus {
     color: #fff;
   }
-  
 `
 
-export const Card = ({ title, carouselTitle,
+export const Card = ({
+  title,
+  carouselTitle,
   detailTitle,
-  secondaryText, coverImg,
-  name, createdAt,
-  post, story
+  secondaryText,
+  coverImg,
+  name,
+  createdAt,
+  post,
+  story
 }) => {
   return (
     <CardContainer>

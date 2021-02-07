@@ -2,18 +2,9 @@ import React from 'react'
 import Slider from 'react-slick'
 import { Link } from 'react-router-dom'
 
-// do these do anything?
-// import 'slick-carousel/slick/slick.css'
-// import 'slick-carousel/slick/slick-theme.css'
-
 import styled from 'styled-components/macro'
 import { cardInfo } from '../data/TestimonyCardData'
 import { Card } from '../lib/Card'
-// import { StyledSlider } from '../styles/Styles'
-
-const Wrapper = styled.section`
-  margin-bottom: 20px;
-`
 
 export const Carousel = () => {
   const settings = {
@@ -21,8 +12,8 @@ export const Carousel = () => {
     infinite: true,
     speed: 500,
     slidesToShow: 4,
-    slidesToScroll: 1,
-    arrow: true, // this is not working
+    slidesToScroll: 2,
+    arrow: true,
     responsive: [
       {
         breakpoint: 408,
@@ -36,18 +27,12 @@ export const Carousel = () => {
         settings: {
           slidesToShow: 4
         }
-      },
-      // {
-      //   breakpoint: 1024,
-      //   settings: {
-      //     slidesToShow: 5
-      //   }
-      // }
+      }
     ]
   }
   return (
     <>
-      {/* <Wrapper> */}
+    <CarouselWrapper>
       <StyledSlider {...settings}>
         {cardInfo.map((weeks, key) => (
           <Link key={key} to={`/testimonies/week/${weeks.Week}`}>
@@ -55,7 +40,7 @@ export const Carousel = () => {
           </Link>
         ))}
       </StyledSlider>
-      {/* </Wrapper> */}
+      </CarouselWrapper>
     </>
   )
 }
@@ -74,6 +59,10 @@ const StyledSlider = styled(Slider)`
   .slick-dots li button:before {
     color: rgba(25, 25, 25, 0.9);
     font-size: 10px;
-    margin: 50px 0;
+    margin: 20px 0;
   }
+`
+
+const CarouselWrapper = styled.section`
+  margin: 150px 0;
 `

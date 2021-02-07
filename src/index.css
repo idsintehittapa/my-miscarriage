@@ -5,6 +5,21 @@
   scroll-behavior: smooth;
 }
 
+@font-face {
+  font-family: 'BLACK BRUSH';
+  src: url('./assets/BLACK_BRUSH.woff') format('woff')
+}
+
+@font-face {
+  font-family: 'Ostrich Sans Sans Black';
+  src: url('./assets/ostrich-sans.sans-black.ttf') format('woff')
+}
+
+@font-face {
+  font-family: 'Ostrich Sans Sans Medium';
+  src: url('./assets/ostrich-sans.sans-medium.ttf') format('woff')
+}
+
 
 body {
   margin: 0 auto;

@@ -12,6 +12,7 @@ import { Carousel } from '../components/Carousel'
 import { Card } from '../lib/Card'
 
 import {
+  BackgroundImgTestimony,
   Container,
   TestimoniesWrapper,
   GridLayout,
@@ -45,28 +46,30 @@ export const TestimonyWeek = (request) => {
   }
   return (
     <>
-      <TestimoniesWrapper>
-        <Container>
-          <Title> Week {week} </Title>
-          <GridLayout>
-            {testimony.map((weeks, key) => (
-              <Link key={key} to={`/testimonies/week/${weeks.when_weeks}/${weeks._id}`}>
-                <Card
-                  key={key}
-                  detailTitle={`${weeks.name}'s testimony`}
-                  createdAt={moment(weeks.createdAt).format('ll')}
-                  story={weeks.story} />
-              </Link>
-            ))}
-          </GridLayout>
-          <div>
-            <p>{`Page ${page} / ${page}`}</p>
-            <button type="button" onClick={pageBackward} disabled={page === 1}>Previous Page</button>
-            <button type="button" onClick={pageForward} disabled={page === 10}>Next Page</button>
-          </div>
-          <h3>Jump to another Week of testimonies</h3>
-        </Container>
-      </TestimoniesWrapper>
+        <TestimoniesWrapper>
+          <Container>
+          {/* // check this */}
+            <Title> Week {week === 99 ? 'Unknown' : week} </Title> 
+            <BackgroundImgTestimony>
+            <GridLayout>
+              {testimony.map((weeks, key) => (
+                <Link key={key} to={`/testimonies/week/${weeks.when_weeks}/${weeks._id}`}>
+                  <Card
+                    key={key}
+                    detailTitle={`${weeks.name}'s testimony`}
+                    createdAt={moment(weeks.createdAt).format('ll')}
+                    story={weeks.story} />
+                </Link>
+              ))}
+            </GridLayout>
+            <div>
+              <p>{`Page ${page} / ${page}`}</p>
+              <button type="button" onClick={pageBackward} disabled={page === 1}>Previous Page</button>
+              <button type="button" onClick={pageForward} disabled={page === 10}>Next Page</button>
+            </div>
+            </BackgroundImgTestimony>
+          </Container>
+        </TestimoniesWrapper>
       <Carousel />
     </>
   )

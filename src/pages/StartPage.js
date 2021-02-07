@@ -25,7 +25,7 @@ export const StartPage = () => {
         <Test>
           <Main>
             <TitleStarterPage> miscarriage</TitleStarterPage>
-            <H2> noun  </H2>
+            <H2> noun </H2>
             <H3>[ˌmɪsˈkærɪdʒ]</H3>
             <H4> The spontaneous or unplanned expulsion of a fetus from the
             womb before it is able to survive independently.

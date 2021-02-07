@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 import img from '../assets/1.jpg'
 import imgDetail from '../assets/2.jpg'
+import imgTestimonyWeek from '../assets/RorschachTest.jpg'
 import imgShare from '../assets/pngegg.png'
 import { ReactComponent as Icon } from '../assets/X.svg'
 
@@ -26,26 +27,43 @@ export const TestimoniesWrapper = styled.section`
 
 export const H2 = styled.h2`
   text-transform: uppercase;
+  font-family: 'Roboto';
+  font-weight: 500;
+
+  @media (min-width: 768px) {
+    font-size: 2em;
+}
+
 `
 
 export const H3 = styled.h3`
   font-family: 'Roboto Mono', monospace;
+  font-weight: 500;
+
+  @media (min-width: 768px) {
+    font-size: 1.7em;
+}
 
 `
 export const H4 = styled.h4`
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Roboto Mono', monospace;
   padding: 20px;
   text-align: justify;
+  font-weight: 500;
+
+  @media (min-width: 768px) {
+    font-size: 1.4em;
+}
 `
 
-export const H5 = styled.h4`
-  font-family: 'Barlow', sans-serif;
-  padding: 20px;
-  text-align: justify;
-`
+// export const H5 = styled.h4`
+//   font-family: 'Barlow', sans-serif;
+//   padding: 20px;
+//   text-align: justify;
+// `
 
 export const Quote = styled.q`
-  font-family: 'Dancing Script', cursive;
+  font-family: 'BLACK BRUSH'; 
   font-size: 1.5em;
   text-align: center;
 `
@@ -56,8 +74,13 @@ text-align: justify;
 // _________Header
 
 export const Title = styled.h2`
+  font-family: 'Ostrich Sans Sans Black';
   font-size: 2.8em;
   text-transform: uppercase;
+
+  @media (min-width: 768px) {
+    font-size: 3.8em;
+}
 `
 
 export const HeaderContainer = styled.header`
@@ -138,9 +161,14 @@ export const Main = styled.main`
   align-items: center;
 `
 export const TitleStarterPage = styled.h1`
-  font-size: 3em;
+  font-family: 'Ostrich Sans Sans Black';
+  font-size: 3.5em;
   text-align: center;
   text-transform: uppercase;
+
+  @media (min-width: 768px) {
+    font-size: 4.5em;
+}
 `
 
 export const StarterWrapper = styled.section`
@@ -240,6 +268,14 @@ export const GridLayout = styled.section`
 export const GridLayoutSmall = styled.section`
 display: grid;
 grid-template-columns: 1fr repeat(5, 1fr);
+`
+// _________TestimonyWeek
+export const BackgroundImgTestimony = styled.div`
+  // background: linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.5)), url(${imgTestimonyWeek});
+  background-image: url(${imgTestimonyWeek});
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 `
 
 // _________TestimonyDetails

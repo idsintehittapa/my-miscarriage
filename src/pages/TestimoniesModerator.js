@@ -65,7 +65,7 @@ export const TestimoniesModerator = () => {
               key={key}
               title={weeks.when_weeks}
               createdAt={moment(weeks.createdAt).format('ll')}
-              secondaryText={`By ${weeks.name}`}
+              secondaryText={`By: ${weeks.name}`}
               story={weeks.story}
               post={`Status: ${weeks.post}`} />
           </Link>
