@@ -38,7 +38,6 @@ const CarouselTitle = styled.p`
   font-size: 1.5em;
 }
 `
-
 const DetailTitle = styled.h3`
   font-size: 1.7em;
   color: #000;
@@ -53,12 +52,10 @@ const DetailTitle = styled.h3`
   font-size: 1.5em;
 }
 `
-
 const TimeStamp = styled.p`
   font-size: 0.8em;
   color: rgba(67, 67, 67, 0.8)
 `
-
 const SecondaryText = styled.p`
   margin: 0;
 `
@@ -93,6 +90,7 @@ export const Card = ({
   detailTitle,
   secondaryText,
   coverImg,
+  alt,
   name,
   createdAt,
   post,
@@ -100,7 +98,8 @@ export const Card = ({
 }) => {
   return (
     <CardContainer>
-      {coverImg && <CoverImg src={coverImg} />}
+      {/* // ok so this generates an alt.. */}
+      {coverImg && <CoverImg src={coverImg} alt="test" />}
       <Content>
         {title && <CardTitle>Week {title === 99 ? 'Unknown' : title}</CardTitle>}
         {detailTitle && <DetailTitle>{detailTitle}</DetailTitle>}

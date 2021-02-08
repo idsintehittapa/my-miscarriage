@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet'
 import moment from 'moment'
 import { useHistory, Link } from 'react-router-dom'
 
+import { moderatorTestimonies } from '../paths/Api-paths'
 import { Card } from '../lib/Card'
 import { StyledButton, SignOutWrapper, GridLayout } from '../styles/Styles'
 
@@ -19,7 +20,7 @@ export const TestimoniesModerator = () => {
   const tokenFromStorage = () => window.localStorage.getItem('tokenAuth') || ''
 
   useEffect(() => {
-    fetch('http://localhost:8080/moderator/pending', {
+    fetch(moderatorTestimonies, {
       method: 'GET',
       headers: { 'Content-Type': 'application/json', Authorization: tokenFromStorage() }
     })

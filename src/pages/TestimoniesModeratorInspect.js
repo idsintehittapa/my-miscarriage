@@ -6,7 +6,6 @@ import {
 } from 'react-router-dom'
 import moment from 'moment'
 import { Alert } from '@material-ui/lab'
-
 import { TextField, Select, MenuItem } from '@material-ui/core';
 
 import {
@@ -22,6 +21,8 @@ import {
   StyledButton
 } from '../styles/Styles'
 
+import { moderatorTestimonies } from '../paths/Api-paths'
+
 export const ModeratorInspect = () => {
   const [updateOk, setUpdateOk] = useState(false)
   const [testimony, setTestimony] = useState([])
@@ -32,13 +33,10 @@ export const ModeratorInspect = () => {
 
   const history = useHistory()
 
-  // what happens after post has changed status
-  // where do I go then?
-
   const tokenFromStorage = () => window.localStorage.getItem('tokenAuth') || ''
 
   const handleSubmit = () => {
-    fetch(`http://localhost:8080/moderator/pending/${id}`, {
+    fetch(`${moderatorTestimonies}/${id}`, {
       method: 'PATCH',
       body: JSON.stringify({
         name,

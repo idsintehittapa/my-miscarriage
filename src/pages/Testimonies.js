@@ -6,7 +6,9 @@ import { Link } from 'react-router-dom'
 
 import { cardInfo } from '../data/TestimonyCardData'
 import { Card } from '../lib/Card'
-import { TestimoniesWrapper, BlackBackground } from '../styles/Styles'
+import {
+  TestimoniesWrapper,
+  BlackBackground } from '../styles/Styles'
 
 export const Testimonies = () => {
 
@@ -21,7 +23,6 @@ export const Testimonies = () => {
           <ResponsiveMasonry
             columnsCountBreakPoints={{ 350: 1, 450: 2, 750: 2, 900: 3 }}>
             <Masonry>
-              {/* <GridLayout> */}
               {cardInfo.map((weeks, key) => (
                 <Link key={key} to={`/testimonies/week/${weeks.Week}`}>
                   <Card key={key} coverImg={weeks.Img} title={weeks.Week} />
@@ -29,7 +30,6 @@ export const Testimonies = () => {
               ))}
             </Masonry>
           </ResponsiveMasonry>
-          {/* </GridLayout> */}
         </BlackBackground>
       </TestimoniesWrapper>
     </>

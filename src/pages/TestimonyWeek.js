@@ -1,13 +1,9 @@
 
 import React, { useEffect, useState } from 'react'
 import moment from 'moment'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
-// import { Link } from 'react-router-dom'
-
-// import { importTestimonies } from '../paths/Api-paths'
+import { importTestimonies } from '../paths/Api-paths'
 import { Carousel } from '../components/Carousel'
 import { Card } from '../lib/Card'
 
@@ -21,14 +17,15 @@ import {
 
 // opening a card to read it!
 
-export const TestimonyWeek = (request) => {
+export const TestimonyWeek = () => {
   const [testimony, setTestimony] = useState([])
   const [page, setPage] = useState(1)
 
-  const { week } = request.match.params
+  const { week } = useParams()
 
   useEffect(() => {
-    fetch(`http://localhost:8080/testimonies?when_weeks=${week}&post=approved`)
+    // fetch(`http://localhost:8080/testimonies?when_weeks=${week}&post=approved`)
+    fetch(`${importTestimonies}?when_weeks=${week}&post=approved`)
       .then((response) => {
         if (response.status === 200) {
           return response.json()
@@ -46,11 +43,11 @@ export const TestimonyWeek = (request) => {
   }
   return (
     <>
-        <TestimoniesWrapper>
-          <Container>
+      <TestimoniesWrapper>
+        <Container>
           {/* // check this */}
-            <Title> Week {week === 99 ? 'Unknown' : week} </Title> 
-            <BackgroundImgTestimony>
+          <Title> Week {week === 99 ? 'Unknown' : week} </Title>
+          <BackgroundImgTestimony>
             <GridLayout>
               {testimony.map((weeks, key) => (
                 <Link key={key} to={`/testimonies/week/${weeks.when_weeks}/${weeks._id}`}>
@@ -67,9 +64,9 @@ export const TestimonyWeek = (request) => {
               <button type="button" onClick={pageBackward} disabled={page === 1}>Previous Page</button>
               <button type="button" onClick={pageForward} disabled={page === 10}>Next Page</button>
             </div>
-            </BackgroundImgTestimony>
-          </Container>
-        </TestimoniesWrapper>
+          </BackgroundImgTestimony>
+        </Container>
+      </TestimoniesWrapper>
       <Carousel />
     </>
   )

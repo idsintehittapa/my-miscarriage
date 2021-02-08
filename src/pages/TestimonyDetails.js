@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import moment from 'moment'
 
+import { importTestimonies } from 'paths/Api-paths'
 import { Footer } from '../components/Footer'
 
 import {
@@ -25,7 +26,8 @@ export const TestimonyDetails = () => {
   const { id } = useParams()
 
   useEffect(() => {
-    fetch(`http://localhost:8080/testimonies/${id}`)
+    // fetch(`http://localhost:8080/testimonies/${id}`)
+    fetch(`${importTestimonies}/${id}`)
       .then((response) => response.json())
       .then((json) => setTestimony(json))
     // eslint-disable-next-line
@@ -51,7 +53,7 @@ export const TestimonyDetails = () => {
               </ChatAnswer>
               <ChatAnswer>
                 <AnswerHolder>
-                  <Answer>{`Week ${testimony.when_weeks_noticed}`}</Answer>
+                  <Answer>{`Week ${testimony.when_weeks_noticed === 99 ? 'Unknown' : testimony.when_weeks_noticed}`}</Answer>
                 </AnswerHolder>
               </ChatAnswer>
               <ChatAnswer>

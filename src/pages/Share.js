@@ -1,7 +1,8 @@
+/* eslint-disable camelcase */
 import React, { useState } from 'react'
 import { Helmet } from 'react-helmet'
 import { Alert, AlertTitle } from '@material-ui/lab'
-
+import styled from 'styled-components/macro'
 import {
   TextField,
   Select,
@@ -12,9 +13,7 @@ import {
   FormControlLabel
 } from '@material-ui/core'
 
-import styled from 'styled-components/macro'
-
-import { sendShare } from '../paths/Api-paths'
+import { importTestimonies } from '../paths/Api-paths'
 import {
   BackgroundImg,
   Title,
@@ -55,7 +54,7 @@ export const Share = () => {
   const handleSubmit = (event) => {
     event.preventDefault()
 
-    fetch(sendShare, {
+    fetch(importTestimonies, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -103,16 +102,18 @@ export const Share = () => {
       </Helmet>
       <TestimoniesWrapper>
         <Container>
-          <Title>This is the sharing part</Title>
+          <Title>Share a testimony</Title>
           <BackgroundImg>
             <Form onSubmit={(event) => event.preventDefault()}>
               <TextField
                 size="medium"
-                required id="standard-required"
+                required
+                id="name"
                 label="NAME/ALIAS"
+                margin="normal"
                 value={name}
                 onChange={(event) => setName(event.target.value)} />
-              <StyledInputLabel required id="standard-required">When did you have your miscarriage?</StyledInputLabel>
+              <StyledInputLabel required id="when-miscarriage">When did you have your miscarriage?</StyledInputLabel>
               <Select
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
@@ -136,10 +137,10 @@ export const Share = () => {
                 <MenuItem value={20}>Week 20</MenuItem>
                 <MenuItem value={99}>Unknown</MenuItem>
               </Select>
-              <StyledInputLabel required id="standard-required">When did you notice your miscarriage?</StyledInputLabel>
+              <StyledInputLabel required id="when-noticed">When did you notice your miscarriage?</StyledInputLabel>
               <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
+                labelId="noticed"
+                id="noticed"
                 required
                 value={when_weeks_noticed}
                 onChange={(event) => setWhen_weeks_noticed(event.target.value)}>
@@ -164,9 +165,9 @@ export const Share = () => {
                 <MenuItem value={24}>Week 24</MenuItem>
                 <MenuItem value={99}>Unknown</MenuItem>
               </Select>
-              <StyledInputLabel required id="standard-required" component="legend">Describe your experienced physical pain level</StyledInputLabel>
+              <StyledInputLabel required id="physical-pain" component="legend">Describe your experienced physical pain level</StyledInputLabel>
               <Center>
-                <RadioGroup row aria-label="position" name="position" defaultValue="bottom">
+                <RadioGroup row aria-label="physical-pain-radio" name="physical-pain-radio" defaultValue="bottom">
                   <FormControlLabel
                     value="Painless"
                     control={<Radio color="default" />}
@@ -187,9 +188,9 @@ export const Share = () => {
                     onChange={(event) => setPhysical_pain(event.target.value)} />
                 </RadioGroup>
               </Center>
-              <StyledInputLabel required id="standard-required" component="legend">And your experienced mental pain level?</StyledInputLabel>
+              <StyledInputLabel required id="mental-pain" component="legend">And your experienced mental pain level?</StyledInputLabel>
               <Center>
-                <RadioGroup row aria-label="position" name="position" defaultValue="top">
+                <RadioGroup row aria-label="mental-pain-radio" name="mental-pain-radio" defaultValue="top">
                   <FormControlLabel
                     value="Painless"
                     control={<Radio color="default" />}
@@ -210,9 +211,9 @@ export const Share = () => {
                     onChange={(event) => setMental_pain(event.target.value)} />
                 </RadioGroup>
               </Center>
-              <StyledInputLabel required id="standard-required" component="legend">Did you get help from the hospital?</StyledInputLabel>
+              <StyledInputLabel required id="help-hospital" component="legend">Did you get help from the hospital?</StyledInputLabel>
               <Center>
-                <RadioGroup row aria-label="position" name="position" defaultValue="top">
+                <RadioGroup row aria-label="hospital-help" name="hospital-help" defaultValue="top">
                   <FormControlLabel
                     value="yes"
                     control={<Radio color="default" />}
@@ -227,8 +228,8 @@ export const Share = () => {
                     onChange={(event) => setHospital(event.target.value)} />
                 </RadioGroup>
               </Center>
-              <StyledInputLabel required id="standard-required" component="legend">How was your period volume effected?</StyledInputLabel>
-              <RadioGroup >
+              <StyledInputLabel required id="period-volume" component="legend">How was your period volume effected?</StyledInputLabel>
+              <RadioGroup>
                 <FormControlLabel
                   value="Increased"
                   control={<Radio color="default" />}
@@ -250,7 +251,7 @@ export const Share = () => {
                   label="Don't know yet"
                   onChange={(event) => setPeriod_volume(event.target.value)} />
               </RadioGroup>
-              <StyledInputLabel required id="standard-required" component="legend">Your period length?</StyledInputLabel>
+              <StyledInputLabel required id="period-length" component="legend">Your period length?</StyledInputLabel>
               <RadioGroup>
                 <FormControlLabel
                   value="Additional days"
