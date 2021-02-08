@@ -87,11 +87,11 @@ export const SignUp = () => {
               helperText={email === '' ? 'x@xxx.xx' : ' '} />
             <InputLabel htmlFor="standard-adornment-password">Password*</InputLabel>
             <Input
-              required={true}
+              required
               id="standard-adornment-password"
               type={showPassword ? 'text' : 'password'}
               value={password}
-              fullWidth={true}
+              fullWidth
               onChange={(event) => setPassword(event.target.value)}
               inputProps={minimumPasswordLength}
               endAdornment={
@@ -108,7 +108,7 @@ export const SignUp = () => {
               onClick={handleSubmit}
               disabled={!email || !password}>
               Sign Up
-          </StyledButton>
+            </StyledButton>
             {signInFail && (
               <Alert severity="error"><AlertTitle>Error</AlertTitle>Creating a moderator was unsuccessful</Alert>
             )}

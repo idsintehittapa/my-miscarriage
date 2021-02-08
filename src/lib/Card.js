@@ -40,7 +40,7 @@ const CarouselTitle = styled.p`
 `
 
 const DetailTitle = styled.h3`
-  font-size: 1.2em;
+  font-size: 1.7em;
   color: #000;
   text-transform: uppercase;
   font-family: 'Ostrich Sans Sans Black';
@@ -64,6 +64,7 @@ const SecondaryText = styled.p`
 `
 const StoryText = styled.p`
   font-family: 'BLACK BRUSH';
+  font-size
   font-weight: 100;
   text-transform: lowercase;
   color: #000;

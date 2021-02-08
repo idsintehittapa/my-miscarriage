@@ -1,4 +1,4 @@
-import styled from 'styled-components/macro'
+import styled, {keyframes} from 'styled-components/macro'
 import { Link } from 'react-router-dom'
 
 import img from '../assets/1.jpg'
@@ -55,12 +55,6 @@ export const H4 = styled.h4`
     font-size: 1.4em;
 }
 `
-
-// export const H5 = styled.h4`
-//   font-family: 'Barlow', sans-serif;
-//   padding: 20px;
-//   text-align: justify;
-// `
 
 export const Quote = styled.q`
   font-family: 'BLACK BRUSH'; 
@@ -216,16 +210,6 @@ export const AboutP = styled.p`
   letter-spacing: 2px;
   padding: 10px;
   margin: 10px 0 0 0;
-
-
-  @media (min-width: 768px) {
-    font-size: 1.5em;
-  }
-
-  // @media (min-width: 1224px) {
-    
-  // }
-
 `
 
 // _________SHARE
@@ -352,9 +336,14 @@ export const Background = styled.div`
 `
 
 export const DetailsTitle = styled.h2`
-  font-size: 1.6em;
+  font-size: 1.7em;
   text-align: center;
   text-transform: uppercase;
+  font-family: 'Ostrich Sans Sans Black';
+
+  @media (min-width: 768px) {
+    font-size: 2em;
+}
 `
 export const CreatedAt = styled.p`
   font-size: 0.8em;
@@ -364,6 +353,7 @@ export const CreatedAt = styled.p`
 export const Question = styled.p`
   text-align: left;
   font-size: 1em;
+  color: rgba(25, 25, 25, 0.9);
   margin: 0 auto;
   letter-spacing: 2px;
 `
@@ -373,7 +363,7 @@ export const Answer = styled.p`
   font-size: 1em;
   letter-spacing: 2px;
   // margin: 0 0 15px;
-  color: #ffff;
+  color: #F4F4F4;
   padding: 6px 10px;
   border-radius: 6px 0 6px 0;
   position: relative;
@@ -405,8 +395,8 @@ export const QuestionHolder = styled.div`
   position: relative;
   // background: rgba(255,114,65, .8);
   // background: rgba(204,89,204, .5);
-  background: rgba(254,157,19, 0.5);
-  border: 1px solid rgba(255, 116, 14, .5);
+  background: rgba(160,132,78,0.9);
+  border: 1px solid rgba(160,132,78,0.9);
   // border: 1px solid rgba(204,89,204, .5);
 `
 
@@ -424,6 +414,7 @@ export const SignTitle = styled.h2`
   font-family: 'Ostrich Sans Sans Black';
   font-size: 2.8em;
   text-transform: uppercase;
+  text-align: center;
 `
 
 export const FormSign = styled.form`
@@ -441,7 +432,6 @@ export const PSign = styled.p`
   @media (min-width: 768px) {
     font-size: 2em;
 }
-
 `
 
 export const StyledLinkSign = styled(Link)`
@@ -452,6 +442,31 @@ export const StyledLinkSign = styled(Link)`
     cursor: pointer;
   }
 `
+
+// _________Contact
+
+export const LogosWrapper = styled.div`
+  display: flex;
+`
+
+const animation = keyframes`
+  0% { top: -1.125em; }
+  100% { top: -1.125em;}
+  0% { top: -10px; }
+  100% { top: -10px;}
+`
+
+export const ContactImg = styled.img`
+  height: 40px;
+  width: 40px;
+  margin: 50px 10px;
+  &:hover, &:focus {
+    cursor: pointer;
+    position: relative;
+    animation: ${animation};
+    animation-duration: 10s;
+  }
+  `
 
 // _________ModeratorInspect
 export const BackgroundMentor = styled.div`
