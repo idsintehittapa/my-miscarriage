@@ -59,7 +59,7 @@ export const ModeratorInspect = () => {
   }
 
   useEffect(() => {
-    fetch(`http://localhost:8080/moderator/pending/${id}`, {
+    fetch(`${moderatorTestimonies}/${id}`, {
       method: 'GET',
       headers: { 'Content-Type': 'application/json', Authorization: tokenFromStorage() }
     })
