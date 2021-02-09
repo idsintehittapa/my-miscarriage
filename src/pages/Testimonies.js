@@ -25,7 +25,7 @@ export const Testimonies = () => {
             <Masonry>
               {cardInfo.map((weeks, key) => (
                 <Link key={key} to={`/testimonies/week/${weeks.Week}`}>
-                  <Card key={key} coverImg={weeks.Img} title={weeks.Week} />
+                  <Card key={key} coverImg={weeks.Img} alt={weeks.alt} title={weeks.Week} />
                 </Link>
               ))}
             </Masonry>

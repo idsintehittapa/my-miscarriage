@@ -49,7 +49,6 @@ export const TestimoniesModerator = () => {
         <title>{TITLE}</title>
       </Helmet>
       <SignOutWrapper>
-        <p>Logged in as XX</p>
         <Link to="/moderator">
           <StyledButton
             type="submit"

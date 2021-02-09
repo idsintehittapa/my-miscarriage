@@ -99,7 +99,7 @@ export const Card = ({
   return (
     <CardContainer>
       {/* // ok so this generates an alt.. */}
-      {coverImg && <CoverImg src={coverImg} alt="test" />}
+      {coverImg && <CoverImg src={coverImg} alt={alt} />}
       <Content>
         {title && <CardTitle>Week {title === 99 ? 'Unknown' : title}</CardTitle>}
         {detailTitle && <DetailTitle>{detailTitle}</DetailTitle>}
