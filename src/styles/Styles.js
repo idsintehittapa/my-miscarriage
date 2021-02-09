@@ -24,7 +24,6 @@ export const TestimoniesWrapper = styled.section`
   max-width: 1100px;
   margin: 0 auto;
 `
-
 export const H2 = styled.h2`
   text-transform: uppercase;
   font-family: 'Roboto';
@@ -33,9 +32,7 @@ export const H2 = styled.h2`
   @media (min-width: 768px) {
     font-size: 2em;
 }
-
 `
-
 export const H3 = styled.h3`
   font-family: 'Roboto Mono', monospace;
   font-weight: 500;
@@ -43,7 +40,6 @@ export const H3 = styled.h3`
   @media (min-width: 768px) {
     font-size: 1.7em;
 }
-
 `
 export const H4 = styled.h4`
   font-family: 'Roboto Mono', monospace;
@@ -55,7 +51,6 @@ export const H4 = styled.h4`
     font-size: 1.4em;
 }
 `
-
 export const Quote = styled.q`
   font-family: 'BLACK BRUSH'; 
   font-size: 1.5em;
@@ -68,14 +63,12 @@ export const Quote = styled.q`
   @media (min-width: 1224px) {
     font-size: 2em;
   }
-
 `
 export const P = styled.p`
 text-align: justify;
 `
 
 // _________Header
-
 export const Title = styled.h2`
   font-family: 'Ostrich Sans Sans Black';
   font-size: 2.8em;
@@ -85,18 +78,15 @@ export const Title = styled.h2`
     font-size: 3.8em;
 }
 `
-
 export const HeaderContainer = styled.header`
   display: flex;
   justify-content: center;
 `
-
 export const PlusMenu = styled.div`
   @media (min-width: 768px) {
     display: none;
 }
 `
-
 export const Nav = styled.nav`
   display: none;
 
@@ -104,7 +94,6 @@ export const Nav = styled.nav`
     display: flex;
 }
 `
-
 export const Ul = styled.ul`
   padding: 0;
   margin: 20px;
@@ -112,10 +101,8 @@ export const Ul = styled.ul`
   justify-content: flex-end;
   font-size: 1.1em;
 `
-
 export const Li = styled.li`
-  padding-left: 16px; 
-
+  padding-left: 16px;
 `
 export const StyledLink = styled(Link)`
   text-decoration: none;
@@ -144,7 +131,6 @@ export const StyledLink = styled(Link)`
 `
 
 // _________StarterPage
-
 export const Test = styled.section`
   background: linear-gradient(rgba(255,255,255,.8), rgba(255,255,255,.7)), url(${img});
   // background-image: url(${img});
@@ -152,7 +138,6 @@ export const Test = styled.section`
   background-size: cover;
   background-position: center;
 `
-
 export const Main = styled.main`
   display: flex;
   flex-direction: column;
@@ -179,15 +164,14 @@ display: flex;
 flex-direction: column;
 justify-content: space-between;
 `
+
 // _________ABOUT
 export const ContainerText = styled(Container)`
   max-width: 800px;
 `
-
 export const AboutMain = styled(Main)`
   height: auto;
 `
-
 export const AboutSubTitle = styled.p`
   font-family: 'Ostrich Sans Sans Black';
   margin: 50px 0 0 0;
@@ -213,14 +197,12 @@ export const AboutP = styled.p`
 `
 
 // _________SHARE
-
 export const BackgroundImg = styled.div`
   background: linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.5)), url(${imgShare});
   // background-image: url(${imgShare});
   background-repeat: no-repeat;
   background-size: cover;
 `
-
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
@@ -231,18 +213,15 @@ export const Center = styled.div`
   flex-direction: column;
   align-items: center;
 `
-
 export const StyledNameInput = styled.input`
   width: 200px;
 `
 export const Paragraph = styled.p`
   font-weight: 900
 `
-
 export const StyledSelectInput = styled.select`
   width: 210px;
 `
-
 export const StyledTextArea = styled.textarea`
   width: 350px;
   height: 300px;
@@ -267,14 +246,13 @@ export const StyledButton = styled.button`
   cursor: default;
   box-shadow: 1px 1px 2px black;
 `
-// _________Testimonies
 
+// _________Testimonies
 export const BlackBackground = styled.div`
   background: rgba(25, 25, 25, 0.9);
   margin-top: 10px;
   // max-width: 900px;
 `
-
 export const GridLayout = styled.section`
   display: grid;
   grid-template-columns: 1fr;
@@ -289,11 +267,11 @@ export const GridLayout = styled.section`
     grid-template-columns: 1fr 1fr 1fr;
   }
 `
-
 export const GridLayoutSmall = styled.section`
 display: grid;
 grid-template-columns: 1fr repeat(5, 1fr);
 `
+
 // _________TestimonyWeek
 export const BackgroundImgTestimony = styled.div`
   // background: linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.5)), url(${imgTestimonyWeek});
@@ -304,7 +282,6 @@ export const BackgroundImgTestimony = styled.div`
 `
 
 // _________TestimonyDetails
-
 export const Svg = styled(Icon)`
   width: 24px; 
   height: 24px;
@@ -334,7 +311,6 @@ export const Background = styled.div`
   background-size: cover;
   background-position: center;
 `
-
 export const DetailsTitle = styled.h2`
   font-size: 1.7em;
   text-align: center;
@@ -349,7 +325,6 @@ export const CreatedAt = styled.p`
   font-size: 0.8em;
   color: rgba(67, 67, 67, 0.8)
 `
-
 export const Question = styled.p`
   text-align: left;
   font-size: 1em;
@@ -357,7 +332,6 @@ export const Question = styled.p`
   margin: 0 auto;
   letter-spacing: 2px;
 `
-
 export const Answer = styled.p`
   text-align: justify;
   font-size: 1em;
@@ -370,7 +344,6 @@ export const Answer = styled.p`
   background: rgba(25, 25, 25, 0.9);
   // border: 2px solid rgba(100, 170, 0, .1);
 `
-
 export const AnswerHolder = styled.div`
 width: 100%;
 // margin: 0 0 15px;
@@ -378,7 +351,6 @@ display: flex;
 flex-flow: column;
 align-items: flex-end;
 `
-
 export const ChatAnswer = styled.div`
   border-top: 1px solid rgba(0, 0, 0, .05);
   // padding: 10px;
@@ -388,16 +360,12 @@ export const ChatAnswer = styled.div`
   align-content: flex-start;
   flex: 1;
 `
-
 export const QuestionHolder = styled.div`
   padding: 6px 10px;
   border-radius: 6px 0 6px 0;
   position: relative;
-  // background: rgba(255,114,65, .8);
-  // background: rgba(204,89,204, .5);
   background: rgba(160,132,78,0.9);
   border: 1px solid rgba(160,132,78,0.9);
-  // border: 1px solid rgba(204,89,204, .5);
 `
 
 // _________Moderator
@@ -409,21 +377,17 @@ export const SignOutWrapper = styled.div`
 `
 
 // _________Sign
-
 export const SignTitle = styled.h2`
   font-family: 'Ostrich Sans Sans Black';
   font-size: 2.8em;
   text-transform: uppercase;
   text-align: center;
 `
-
 export const FormSign = styled.form`
   margin: 50px 0;
   display: flex;
   flex-direction: column;
-  // background-color: coral;
 `
-
 export const PSign = styled.p`
   font-family: 'Ostrich Sans Sans Medium';
   font-size: 1.7em;
@@ -433,7 +397,6 @@ export const PSign = styled.p`
     font-size: 2em;
 }
 `
-
 export const StyledLinkSign = styled(Link)`
   &:hover, &:focus {
     color: #000;
@@ -444,18 +407,15 @@ export const StyledLinkSign = styled(Link)`
 `
 
 // _________Contact
-
 export const LogosWrapper = styled.div`
   display: flex;
 `
-
 const animation = keyframes`
   0% { top: -1.125em; }
   100% { top: -1.125em;}
   0% { top: -10px; }
   100% { top: -10px;}
 `
-
 export const ContactImg = styled.img`
   height: 40px;
   width: 40px;
@@ -466,7 +426,7 @@ export const ContactImg = styled.img`
     animation: ${animation};
     animation-duration: 10s;
   }
-  `
+`
 
 // _________ModeratorInspect
 export const BackgroundMentor = styled.div`
@@ -477,7 +437,6 @@ export const BackgroundMentor = styled.div`
 `
 
 // _________Footer
-
 export const FooterContainer = styled.footer`
   display: flex;
   flex-direction: column;
@@ -489,5 +448,4 @@ export const FooterContainer = styled.footer`
   // right:0;
 `
 export const FooterP = styled.p`
-
 `
