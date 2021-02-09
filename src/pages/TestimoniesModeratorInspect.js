@@ -21,7 +21,7 @@ import {
   StyledButton
 } from '../styles/Styles'
 
-import { moderatorTestimonies } from '../paths/Api-paths'
+// import { moderatorTestimonies } from '../paths/Api-paths'
 
 export const ModeratorInspect = () => {
   const [updateOk, setUpdateOk] = useState(false)
