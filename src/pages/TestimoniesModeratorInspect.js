@@ -36,7 +36,8 @@ export const ModeratorInspect = () => {
   const tokenFromStorage = () => window.localStorage.getItem('tokenAuth') || ''
 
   const handleSubmit = () => {
-    fetch(`${moderatorTestimonies}/${id}`, {
+    fetch(`https://mymiscarriage.herokuapp.com/moderator/pending/${id}`, {
+    // fetch(`${moderatorTestimonies}/${id}`, {
       method: 'PATCH',
       body: JSON.stringify({
         name,
