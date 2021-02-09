@@ -21,7 +21,7 @@ import {
   StyledButton
 } from '../styles/Styles'
 
-// import { moderatorTestimonies } from '../paths/Api-paths'
+import { moderatorTestimonies } from '../paths/Api-paths'
 
 export const ModeratorInspect = () => {
   const [updateOk, setUpdateOk] = useState(false)
@@ -36,8 +36,7 @@ export const ModeratorInspect = () => {
   const tokenFromStorage = () => window.localStorage.getItem('tokenAuth') || ''
 
   const handleSubmit = () => {
-    fetch(`https://mymiscarriage.herokuapp.com/moderator/pending/${id}`, {
-    // fetch(`${moderatorTestimonies}/${id}`, {
+    fetch(`${moderatorTestimonies}/${id}`, {
       method: 'PATCH',
       body: JSON.stringify({
         name,
