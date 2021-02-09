@@ -36,6 +36,7 @@ export const ModeratorInspect = () => {
   const tokenFromStorage = () => window.localStorage.getItem('tokenAuth') || ''
 
   const handleSubmit = () => {
+    // fetch(`http://localhost:8080/testimonies?when_weeks=${week}&post=approved`)
     fetch(`${moderatorTestimonies}/${id}`, {
       method: 'PATCH',
       body: JSON.stringify({
