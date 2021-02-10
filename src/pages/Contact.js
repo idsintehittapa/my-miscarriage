@@ -8,7 +8,7 @@ import {
   TestimoniesWrapper,
   SignTitle,
   Container,
-  AboutP,
+  P,
   AboutSubTitle,
   ContactImg,
   LogosWrapper
@@ -21,16 +21,16 @@ export const Contact = () => {
         <SignTitle>
           Get in touch
         </SignTitle>
-        <AboutP>
+        <P>
           This is an open source project created with the hope of helping in sharing
           experienced miscarriage testimonies. It was created (although it will never be
           finished and will be updated indefinitely) as the final project of the Technigo
           front-end developer boot camp.
-        </AboutP>
+        </P>
 
-        <AboutP> I am happy to answer questions or request, please contact me
+        <P> I am happy to answer questions or request, please contact me
         below <span role="img" aria-label="happy face">😊</span>
-        </AboutP>
+        </P>
         <LogosWrapper>
           <a href="https://github.com/idsintehittapa">
             <ContactImg src={githubImg} alt="Github Logo" />
@@ -45,34 +45,34 @@ export const Contact = () => {
         <SignTitle>
           Want to contribute?
         </SignTitle>
-        <AboutP> First of all, thank you for considering to contribute to this project!
-        </AboutP>
+        <P> First of all, thank you for considering to contribute to this project!
+        </P>
 
         <AboutSubTitle>
         Spreading the word
         </AboutSubTitle>
-        <AboutP> Even if you aren’t in the position that you can contribute your time to
+        <P> Even if you aren’t in the position that you can contribute your time to
           this project, it still helpful if you spread the word about the project.
           It could be just a short notice in social media or a discussion you have
           with your friends. As more people become aware of the project there’s a
           better chance that we reach people who are able to contribute or share testimonies.
-        </AboutP>
+        </P>
         <AboutSubTitle>
         Suggesting new features
         </AboutSubTitle>
-        <AboutP>
+        <P>
         It could be that you are aware of something that would be great
         to have and feature requests is always welcome.
         Make sure you explain in what scenario your suggested feature would be useful.
-        </AboutP>
+        </P>
         <AboutSubTitle>
         Reporting bugs
         </AboutSubTitle>
-        <AboutP>
+        <P>
         When you are <a href="https://github.com/idsintehittapa/my-miscarriage/issues">reporting bugs</a>, make sure that you give a explanation
         about the outcome that you expect and what you are seeing.
         The bugs which are hardest to fix are the ones which cannot be reproduced.
-        </AboutP>
+        </P>
       </Container>
     </TestimoniesWrapper>
   )

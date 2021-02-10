@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 export const cardInfo = [
   {
     Week: 6,
@@ -51,7 +52,7 @@ export const cardInfo = [
   },
   {
     Week: 16,
-    Img: require('../assets/n716609.png'),
+    Img: require('../assets/rcnGnedKi.png'),
     alt: ''
   },
   {
@@ -71,7 +72,17 @@ export const cardInfo = [
   },
   {
     Week: 20,
-    Img: require('../assets/rcnGnedKi.png'),
+    Img: require('../assets/891252.png'),
+    alt: ''
+  },
+  {
+    Week: 21,
+    Img: require('../assets/n716609.png'),
+    alt: ''
+  },
+  {
+    Week: 22,
+    Img: require('../assets/6cpo8Eari2.png'),
     alt: ''
   },
   {

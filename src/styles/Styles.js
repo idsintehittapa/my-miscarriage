@@ -1,10 +1,10 @@
-import styled, {keyframes} from 'styled-components/macro'
+import styled, { keyframes } from 'styled-components/macro'
 import { Link } from 'react-router-dom'
 
-import img from '../assets/1.jpg'
+import img from '../assets/rflow.png'
 import imgDetail from '../assets/2.jpg'
 import imgTestimonyWeek from '../assets/RorschachTest.jpg'
-import imgShare from '../assets/pngegg.png'
+import imgShare from '../assets/inkblot102.png'
 import { ReactComponent as Icon } from '../assets/X.svg'
 
 // _________Reusable styles
@@ -46,6 +46,7 @@ export const H4 = styled.h4`
   padding: 20px;
   text-align: justify;
   font-weight: 500;
+  line-height: 1.5;
 
   @media (min-width: 768px) {
     font-size: 1.4em;
@@ -65,7 +66,12 @@ export const Quote = styled.q`
   }
 `
 export const P = styled.p`
-text-align: justify;
+  font-size: 1.2em;
+  text-align: left;
+  line-height: 1.2;
+  letter-spacing: 2px;
+  padding: 10px;
+  margin: 10px 0 0 0;
 `
 
 // _________Header
@@ -102,7 +108,7 @@ export const Ul = styled.ul`
   font-size: 1.1em;
 `
 export const Li = styled.li`
-  padding-left: 16px;
+  padding: 0px 16px;
 `
 export const StyledLink = styled(Link)`
   text-decoration: none;
@@ -132,6 +138,7 @@ export const StyledLink = styled(Link)`
 
 // _________StarterPage
 export const Test = styled.section`
+  // background: linear-gradient(rgba(255,255,255,.8), rgba(255,255,255,.7)), url(${img});
   background: linear-gradient(rgba(255,255,255,.8), rgba(255,255,255,.7)), url(${img});
   // background-image: url(${img});
   background-repeat: no-repeat;
@@ -157,7 +164,6 @@ export const TitleStarterPage = styled.h1`
     font-size: 4.5em;
 }
 `
-
 export const StarterWrapper = styled.section`
 display: flex;
 // min-height: 176vh;
@@ -176,6 +182,7 @@ export const AboutSubTitle = styled.p`
   font-family: 'Ostrich Sans Sans Black';
   margin: 50px 0 0 0;
   font-size: 1.5em;
+  text-align: center;
 
   @media (min-width: 768px) {
     font-size: 2em;
@@ -186,27 +193,18 @@ export const AboutSubTitle = styled.p`
   }
 `
 
-// this cannot be this font
-export const AboutP = styled.p`
-  // font-family: 'Ostrich Sans Sans Medium';
-  font-size: 1.2em;
-  text-align: justify;
-  letter-spacing: 2px;
-  padding: 10px;
-  margin: 10px 0 0 0;
-`
-
 // _________SHARE
 export const BackgroundImg = styled.div`
   background: linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.5)), url(${imgShare});
   // background-image: url(${imgShare});
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 `
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
-  // background-color: coral;
+  background-color: #fff;
 `
 export const Center = styled.div`
   display: flex;
@@ -215,9 +213,6 @@ export const Center = styled.div`
 `
 export const StyledNameInput = styled.input`
   width: 200px;
-`
-export const Paragraph = styled.p`
-  font-weight: 900
 `
 export const StyledSelectInput = styled.select`
   width: 210px;
@@ -438,14 +433,24 @@ export const BackgroundMentor = styled.div`
 
 // _________Footer
 export const FooterContainer = styled.footer`
-  display: flex;
-  flex-direction: column;
+  color: #F4F4F4;
   padding: 20px;
   position: absolute;
   background: rgba(25, 25, 25, 0.9);
-  // left:0;
-  // bottom:0;
-  // right:0;
+  left:0;
+  right:0;
 `
 export const FooterP = styled.p`
+  font-size: 0.8em;
+  text-align: center;
+  line-height: 1.2;
+  letter-spacing: 2px;
+
+  @media (min-width: 768px) {
+    font-size: 1em;
+}
+
+@media (min-width: 1024px) {
+  font-size: 0.8em;
+}
 `

@@ -2,7 +2,6 @@ import React from 'react'
 
 import { FooterContainer, FooterP } from '../styles/Styles'
 
-
 export const Footer = () => {
   return (
     <FooterContainer>

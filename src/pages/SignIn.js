@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import { Alert, AlertTitle } from '@material-ui/lab'
 import {
@@ -70,9 +70,11 @@ export const SignIn = () => {
         console.log(error)
       })
   }
-  if (token) {
-    history.push('/moderator/posts')
-  }
+  useEffect(() => {
+    if (token) {
+      history.push('/moderator/posts');
+    }
+  }, [token, history])
   return (
     <>
       <Container>

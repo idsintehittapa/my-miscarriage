@@ -17,6 +17,7 @@ import {
   TestimoniesWrapper,
   SignTitle,
   Container,
+  P,
   FormSign,
   StyledButton
 } from '../styles/Styles'
@@ -69,7 +70,7 @@ export const SignUp = () => {
       <TestimoniesWrapper>
         <Container>
           <SignTitle>Sign up here</SignTitle>
-          <p>To sign up you need to have been verified as a moderator</p>
+          <P>To sign up you need to have been verified as a moderator</P>
           <FormSign onSubmit={(event) => event.preventDefault()}>
             <TextField
               required

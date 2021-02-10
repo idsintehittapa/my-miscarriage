@@ -1,5 +1,5 @@
 import React from 'react'
-import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
+import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 
 import { Helmet } from 'react-helmet'
 import { Link } from 'react-router-dom'
@@ -11,7 +11,6 @@ import {
   BlackBackground } from '../styles/Styles'
 
 export const Testimonies = () => {
-
   const TITLE = 'Testimonies'
   return (
     <>

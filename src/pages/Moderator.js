@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet'
 import { SignIn } from './SignIn'
 
 import {
-  TestimoniesWrapper,
+  TestimoniesWrapper
 } from '../styles/Styles'
 
 export const Moderator = () => {

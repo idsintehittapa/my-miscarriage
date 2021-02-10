@@ -101,9 +101,9 @@ export const Share = () => {
         <title>{TITLE}</title>
       </Helmet>
       <TestimoniesWrapper>
+      <BackgroundImg>
         <Container>
           <Title>Share a testimony</Title>
-          <BackgroundImg>
             <Form onSubmit={(event) => event.preventDefault()}>
               <TextField
                 size="medium"
@@ -274,29 +274,6 @@ export const Share = () => {
                   label="Don't know yet"
                   onChange={(event) => setPeriod_length(event.target.value)} />
               </RadioGroup>
-              <StyledInputLabel required id="standard-required" component="legend">Your period length?</StyledInputLabel>
-              <RadioGroup>
-                <FormControlLabel
-                  value="Additional days"
-                  control={<Radio color="default" />}
-                  label="Additional days"
-                  onChange={(event) => setPeriod_length(event.target.value)} />
-                <FormControlLabel
-                  value="Fewer days"
-                  control={<Radio color="default" />}
-                  label="Fewer days"
-                  onChange={(event) => setPeriod_length(event.target.value)} />
-                <FormControlLabel
-                  value="Unchanged"
-                  control={<Radio color="default" />}
-                  label="Unchanged"
-                  onChange={(event) => setPeriod_length(event.target.value)} />
-                <FormControlLabel
-                  value="Don't know yet"
-                  control={<Radio color="default" />}
-                  label="Don't know yet"
-                  onChange={(event) => setPeriod_length(event.target.value)} />
-              </RadioGroup>
               <StyledInputLabel required id="standard-required" component="legend">And your period pain?</StyledInputLabel>
               <RadioGroup>
                 <FormControlLabel
@@ -345,8 +322,8 @@ export const Share = () => {
                 <Alert severity="success">Thank you for sharing! Your testimony will be published after it’s been reviewed.</Alert>
               )}
             </Form>
-          </BackgroundImg>
         </Container>
+        </BackgroundImg>
       </TestimoniesWrapper>
     </>
   )
