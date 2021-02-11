@@ -9,13 +9,14 @@ import { Card } from '../lib/Card'
 
 import {
   BackgroundImgTestimony,
-  Container,
   TestimoniesWrapper,
+  Container,
+  Title,
   GridLayout,
-  Title
+  PageWrapper,
+  StyledButton,
+  P
 } from '../styles/Styles'
-
-// opening a card to read it!
 
 export const TestimonyWeek = () => {
   const [testimony, setTestimony] = useState([])
@@ -24,7 +25,6 @@ export const TestimonyWeek = () => {
   const { week } = useParams()
 
   useEffect(() => {
-    // fetch(`http://localhost:8080/testimonies?when_weeks=${week}&post=approved`)
     fetch(`${importTestimonies}?when_weeks=${week}&post=approved`)
       .then((response) => {
         if (response.status === 200) {
@@ -59,11 +59,13 @@ export const TestimonyWeek = () => {
                 </Link>
               ))}
             </GridLayout>
-            <div>
-              <p>{`Page ${page} / ${page}`}</p>
-              <button type="button" onClick={pageBackward} disabled={page === 1}>Previous Page</button>
-              <button type="button" onClick={pageForward} disabled={page === 10}>Next Page</button>
-            </div>
+            <Container>
+              <PageWrapper>
+                <StyledButton type="button" onClick={pageBackward} disabled={page === 1}>Previous Page</StyledButton>
+                <StyledButton type="button" onClick={pageForward} disabled={page === 10}>Next Page </StyledButton>
+              </PageWrapper>
+              <P>{`Page ${page} / 1`}</P>
+            </Container>
           </BackgroundImgTestimony>
         </Container>
       </TestimoniesWrapper>

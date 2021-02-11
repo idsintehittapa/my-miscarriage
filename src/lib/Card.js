@@ -69,7 +69,17 @@ const StoryText = styled.p`
   overflow: hidden;
   text-overflow: ellipsis;
   width: 300px; 
+
+//   @media (min-width: 768px) {
+//     width: 410px;
+// }
+
+//   @media (min-width: 1024px) {
+//     width: 600px;
+// }
+
 `
+
 const CoverImg = styled.img`
   width: 100%;
   border-radius: 6px 6px 0 0;
@@ -98,7 +108,6 @@ export const Card = ({
 }) => {
   return (
     <CardContainer>
-      {/* // ok so this generates an alt.. */}
       {coverImg && <CoverImg src={coverImg} alt={alt} />}
       <Content>
         {title && <CardTitle>Week {title === 99 ? 'Unknown' : title}</CardTitle>}

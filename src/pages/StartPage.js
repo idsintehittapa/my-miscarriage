@@ -4,12 +4,12 @@ import { Helmet } from 'react-helmet'
 
 import {
   Main,
+  StartBackground,
   TitleStarterPage,
   H2,
   H3,
   H4,
   StarterWrapper,
-  Test
 } from '../styles/Styles'
 
 import { Footer } from '../components/Footer'
@@ -22,7 +22,7 @@ export const StartPage = () => {
         <title>{TITLE}</title>
       </Helmet>
       <StarterWrapper>
-        <Test>
+        <StartBackground>
           <Main>
             <TitleStarterPage> miscarriage</TitleStarterPage>
             <H2> noun </H2>
@@ -31,7 +31,7 @@ export const StartPage = () => {
             womb before it is able to survive independently.
             </H4>
           </Main>
-        </Test>
+        </StartBackground>
         {/* <Main>
           <About />
         </Main> */}

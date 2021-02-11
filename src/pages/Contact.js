@@ -11,7 +11,8 @@ import {
   P,
   AboutSubTitle,
   ContactImg,
-  LogosWrapper
+  LogosWrapper,
+  A
 } from '../styles/Styles'
 
 export const Contact = () => {
@@ -69,7 +70,7 @@ export const Contact = () => {
         Reporting bugs
         </AboutSubTitle>
         <P>
-        When you are <a href="https://github.com/idsintehittapa/my-miscarriage/issues">reporting bugs</a>, make sure that you give a explanation
+        When you are <A href="https://github.com/idsintehittapa/my-miscarriage/issues"> reporting bugs</A>, make sure that you give a explanation
         about the outcome that you expect and what you are seeing.
         The bugs which are hardest to fix are the ones which cannot be reproduced.
         </P>

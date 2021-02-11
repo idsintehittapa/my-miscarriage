@@ -4,13 +4,12 @@ import { Link } from 'react-router-dom'
 import img from '../assets/rflow.png'
 import imgDetail from '../assets/2.jpg'
 import imgTestimonyWeek from '../assets/RorschachTest.jpg'
-import imgShare from '../assets/inkblot102.png'
 import { ReactComponent as Icon } from '../assets/X.svg'
 
 // _________Reusable styles
 export const Container = styled.section`
   display: flex;
-  margin: 10px;
+  margin: 0 auto;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -74,11 +73,16 @@ export const P = styled.p`
   margin: 10px 0 0 0;
 `
 
+export const PageWrapper = styled.div`
+  display: flex;
+`
+
 // _________Header
 export const Title = styled.h2`
   font-family: 'Ostrich Sans Sans Black';
   font-size: 2.8em;
   text-transform: uppercase;
+  text-align: center;
 
   @media (min-width: 768px) {
     font-size: 3.8em;
@@ -137,10 +141,8 @@ export const StyledLink = styled(Link)`
 `
 
 // _________StarterPage
-export const Test = styled.section`
-  // background: linear-gradient(rgba(255,255,255,.8), rgba(255,255,255,.7)), url(${img});
+export const StartBackground = styled.section`
   background: linear-gradient(rgba(255,255,255,.8), rgba(255,255,255,.7)), url(${img});
-  // background-image: url(${img});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -166,7 +168,6 @@ export const TitleStarterPage = styled.h1`
 `
 export const StarterWrapper = styled.section`
 display: flex;
-// min-height: 176vh;
 flex-direction: column;
 justify-content: space-between;
 `
@@ -195,8 +196,7 @@ export const AboutSubTitle = styled.p`
 
 // _________SHARE
 export const BackgroundImg = styled.div`
-  background: linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.5)), url(${imgShare});
-  // background-image: url(${imgShare});
+  background: linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.5)), url(${img});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -205,6 +205,8 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   background-color: #fff;
+  max-width: 500px;
+  padding: 30px;
 `
 export const Center = styled.div`
   display: flex;
@@ -222,7 +224,6 @@ export const StyledTextArea = styled.textarea`
   height: 300px;
   margin-bottom: 20px;
 `
-// check this later https://material.io/components/buttons#text-button
 export const StyledButton = styled.button`
   font-family: 'Ostrich Sans Sans Black';
   margin: 30px 0 40px 0;
@@ -246,12 +247,13 @@ export const StyledButton = styled.button`
 export const BlackBackground = styled.div`
   background: rgba(25, 25, 25, 0.9);
   margin-top: 10px;
-  // max-width: 900px;
 `
 export const GridLayout = styled.section`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 10px;
+  min-height: 400px;
+  min-width: 300px;
 
   @media (min-width: 768px) {
     grid-template-columns: 1fr 1fr;
@@ -331,24 +333,20 @@ export const Answer = styled.p`
   text-align: justify;
   font-size: 1em;
   letter-spacing: 2px;
-  // margin: 0 0 15px;
   color: #F4F4F4;
   padding: 6px 10px;
   border-radius: 6px 0 6px 0;
   position: relative;
   background: rgba(25, 25, 25, 0.9);
-  // border: 2px solid rgba(100, 170, 0, .1);
 `
 export const AnswerHolder = styled.div`
 width: 100%;
-// margin: 0 0 15px;
 display: flex;
 flex-flow: column;
 align-items: flex-end;
 `
 export const ChatAnswer = styled.div`
   border-top: 1px solid rgba(0, 0, 0, .05);
-  // padding: 10px;
   overflow: auto;
   display: flex;
   flex-flow: row wrap;
@@ -420,6 +418,13 @@ export const ContactImg = styled.img`
     position: relative;
     animation: ${animation};
     animation-duration: 10s;
+  }
+`
+export const A = styled.a`
+  text-decoration: underline;
+  color: #000;
+  &:hover, &:focus {
+    cursor: pointer;
   }
 `
 

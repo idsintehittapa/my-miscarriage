@@ -30,10 +30,6 @@ const StyledInputLabel = styled(InputLabel)`
   text-align: left;
 `
 
-// to do
-// - fix camel/not-camel toe
-// empty radio buttons after submitting - not working
-
 // _________Testimony POST
 export const Share = () => {
   const TITLE = 'Share'
@@ -101,9 +97,9 @@ export const Share = () => {
         <title>{TITLE}</title>
       </Helmet>
       <TestimoniesWrapper>
-      <BackgroundImg>
-        <Container>
-          <Title>Share a testimony</Title>
+        <BackgroundImg>
+          <Container>
+            <Title>Share a testimony</Title>
             <Form onSubmit={(event) => event.preventDefault()}>
               <TextField
                 size="medium"
@@ -322,7 +318,7 @@ export const Share = () => {
                 <Alert severity="success">Thank you for sharing! Your testimony will be published after it’s been reviewed.</Alert>
               )}
             </Form>
-        </Container>
+          </Container>
         </BackgroundImg>
       </TestimoniesWrapper>
     </>

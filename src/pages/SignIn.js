@@ -13,7 +13,7 @@ import VisibilityOff from '@material-ui/icons/VisibilityOff'
 
 import { signIn } from '../paths/Api-paths'
 import {
-  SignTitle,
+  Title,
   Container,
   FormSign,
   StyledButton,
@@ -78,17 +78,18 @@ export const SignIn = () => {
   return (
     <>
       <Container>
-        <SignTitle>Sign in here</SignTitle>
+        <Title>Sign in</Title>
         <FormSign onSubmit={handleSubmit}>
           <TextField
             required
+            margin="normal"
             id="email"
             label="Email"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
             inputProps={validEmail}
             helperText={email === '' ? 'x@xxx.xx' : ' '} />
-          <InputLabel htmlFor="password-signin">Password*</InputLabel>
+          <InputLabel htmlFor="password-signin">Password* (min. 5 characters)</InputLabel>
           <Input
             required
             id="password-signin"

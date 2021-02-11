@@ -16,6 +16,7 @@ import {
   Svg,
   Details,
   BackgroundMentor,
+  P,
   DetailsTitle,
   CreatedAt,
   StyledButton
@@ -36,7 +37,6 @@ export const ModeratorInspect = () => {
   const tokenFromStorage = () => window.localStorage.getItem('tokenAuth') || ''
 
   const handleSubmit = () => {
-    // fetch(`http://localhost:8080/testimonies?when_weeks=${week}&post=approved`)
     fetch(`${moderatorTestimonies}/${id}`, {
       method: 'PATCH',
       body: JSON.stringify({
@@ -91,15 +91,15 @@ export const ModeratorInspect = () => {
               <DetailsTitle>{`${testimony.name}'s testimony`}</DetailsTitle>
               <CreatedAt>{moment(testimony.createdAt).format('ll')}</CreatedAt>
               <Form onSubmit={(event) => event.preventDefault()}>
-                <div>
+                <P>
                   The name:
-                </div>
+                </P>
                 <TextField
                   value={name}
                   onChange={(event) => setName(event.target.value)} />
-                <div>
+                <P>
                   The story:
-                </div>
+                </P>
                 <TextField
                   value={story}
                   margin="normal"
@@ -108,9 +108,9 @@ export const ModeratorInspect = () => {
                   multiline
                   rows={3}
                   onChange={(event) => setStory(event.target.value)} />
-                <div>
+                <P>
                   Change status:
-                </div>
+                </P>
                 <Select
                   labelId="status"
                   id="status"

@@ -15,7 +15,7 @@ import VisibilityOff from '@material-ui/icons/VisibilityOff'
 import { signUp } from '../paths/Api-paths'
 import {
   TestimoniesWrapper,
-  SignTitle,
+  Title,
   Container,
   P,
   FormSign,
@@ -69,7 +69,7 @@ export const SignUp = () => {
     <>
       <TestimoniesWrapper>
         <Container>
-          <SignTitle>Sign up here</SignTitle>
+          <Title>Sign up</Title>
           <P>To sign up you need to have been verified as a moderator</P>
           <FormSign onSubmit={(event) => event.preventDefault()}>
             <TextField
