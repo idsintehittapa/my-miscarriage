@@ -84,8 +84,7 @@ export const SignUp = () => {
               label="Email"
               value={email}
               onChange={(event) => setEmail(event.target.value)}
-              inputProps={validEmail}
-              helperText={email === '' ? 'x@xxx.xx' : ' '} />
+              inputProps={validEmail} />
             <InputLabel htmlFor="standard-adornment-password">Password*</InputLabel>
             <Input
               required
@@ -93,6 +92,7 @@ export const SignUp = () => {
               type={showPassword ? 'text' : 'password'}
               value={password}
               fullWidth
+              placeholder="(min. 5 characters)"
               onChange={(event) => setPassword(event.target.value)}
               inputProps={minimumPasswordLength}
               endAdornment={

@@ -77,6 +77,24 @@ export const PageWrapper = styled.div`
   display: flex;
 `
 
+export const LoadingSpinner = styled.div`
+  border: 1.3em solid;
+  border-radius: 50%;
+  border-top: 1.56em solid #fff;
+  width: 8.750em;
+  height: 8.750em;
+  animation: spin 2s linear infinite;
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+`
+
 // _________Header
 export const Title = styled.h2`
   font-family: 'Ostrich Sans Sans Black';

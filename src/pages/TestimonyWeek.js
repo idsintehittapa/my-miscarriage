@@ -5,6 +5,7 @@ import { Link, useParams } from 'react-router-dom'
 
 import { importTestimonies } from '../paths/Api-paths'
 import { Carousel } from '../components/Carousel'
+import { Loading } from '../components/Loading'
 import { Card } from '../lib/Card'
 
 import {
@@ -21,6 +22,7 @@ import {
 export const TestimonyWeek = () => {
   const [testimony, setTestimony] = useState([])
   const [page, setPage] = useState(1)
+  const [loading, setLoading] = useState(true)
 
   const { week } = useParams()
 
@@ -28,6 +30,7 @@ export const TestimonyWeek = () => {
     fetch(`${importTestimonies}?when_weeks=${week}&post=approved`)
       .then((response) => {
         if (response.status === 200) {
+          setLoading(false)
           return response.json()
         } else throw new Error('Unable to show testimonies')
       })
@@ -45,9 +48,11 @@ export const TestimonyWeek = () => {
     <>
       <TestimoniesWrapper>
         <Container>
-          {/* // check this */}
           <Title> Week {week === 99 ? 'Unknown' : week} </Title>
           <BackgroundImgTestimony>
+            {loading && (
+              <Loading />
+            )}
             <GridLayout>
               {testimony.map((weeks, key) => (
                 <Link key={key} to={`/testimonies/week/${weeks.when_weeks}/${weeks._id}`}>

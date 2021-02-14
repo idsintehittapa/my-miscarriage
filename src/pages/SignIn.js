@@ -89,7 +89,7 @@ export const SignIn = () => {
             onChange={(event) => setEmail(event.target.value)}
             inputProps={validEmail}
             helperText={email === '' ? 'x@xxx.xx' : ' '} />
-          <InputLabel htmlFor="password-signin">Password* (min. 5 characters)</InputLabel>
+          <InputLabel htmlFor="password-signin">Password*</InputLabel>
           <Input
             required
             id="password-signin"
