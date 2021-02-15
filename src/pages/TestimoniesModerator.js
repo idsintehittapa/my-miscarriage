@@ -5,7 +5,10 @@ import { useHistory, Link } from 'react-router-dom'
 
 import { moderatorTestimonies } from '../paths/Api-paths'
 import { Card } from '../lib/Card'
-import { StyledButton, SignOutWrapper, GridLayout } from '../styles/Styles'
+import {
+  StyledButton,
+  SignOutWrapper,
+  GridLayout } from '../styles/Styles'
 
 export const TestimoniesModerator = () => {
   const [post, setPost] = useState([])

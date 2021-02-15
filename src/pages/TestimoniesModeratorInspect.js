@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom'
 import moment from 'moment'
 import { Alert } from '@material-ui/lab'
-import { TextField, Select, MenuItem } from '@material-ui/core';
+import { TextField, Select, MenuItem } from '@material-ui/core'
 
 import {
   Form,
@@ -15,13 +15,12 @@ import {
   Container,
   Svg,
   Details,
-  BackgroundMentor,
+  BackgroundModerator,
   P,
   DetailsTitle,
   CreatedAt,
   StyledButton
 } from '../styles/Styles'
-
 import { moderatorTestimonies } from '../paths/Api-paths'
 
 export const ModeratorInspect = () => {
@@ -48,7 +47,6 @@ export const ModeratorInspect = () => {
     })
       .then((response) => {
         if (response.status === 200) {
-          console.log(response.json)
           setUpdateOk(true)
           return response.json()
         } else {
@@ -79,7 +77,7 @@ export const ModeratorInspect = () => {
 
   return (
     <>
-      <BackgroundMentor>
+      <BackgroundModerator>
         <DetailWrapper>
           <Container>
             <Details>
@@ -133,7 +131,7 @@ export const ModeratorInspect = () => {
             </Details>
           </Container>
         </DetailWrapper>
-      </BackgroundMentor>
+      </BackgroundModerator>
     </>
   )
 }

@@ -1,13 +1,12 @@
 
 import React, { useEffect, useState } from 'react'
-import moment from 'moment'
 import { Link, useParams } from 'react-router-dom'
+import moment from 'moment'
 
 import { importTestimonies } from '../paths/Api-paths'
 import { Carousel } from '../components/Carousel'
 import { Loading } from '../components/Loading'
 import { Card } from '../lib/Card'
-
 import {
   BackgroundImgTestimony,
   TestimoniesWrapper,
@@ -40,10 +39,10 @@ export const TestimonyWeek = () => {
   const pageForward = () => {
     setPage(page + 1)
   }
-
   const pageBackward = () => {
     setPage(page - 1)
   }
+
   return (
     <>
       <TestimoniesWrapper>

@@ -72,11 +72,9 @@ export const P = styled.p`
   padding: 10px;
   margin: 10px 0 0 0;
 `
-
 export const PageWrapper = styled.div`
   display: flex;
 `
-
 export const LoadingSpinner = styled.div`
   border: 1.3em solid;
   border-radius: 50%;
@@ -231,17 +229,6 @@ export const Center = styled.div`
   flex-direction: column;
   align-items: center;
 `
-export const StyledNameInput = styled.input`
-  width: 200px;
-`
-export const StyledSelectInput = styled.select`
-  width: 210px;
-`
-export const StyledTextArea = styled.textarea`
-  width: 350px;
-  height: 300px;
-  margin-bottom: 20px;
-`
 export const StyledButton = styled.button`
   font-family: 'Ostrich Sans Sans Black';
   margin: 30px 0 40px 0;
@@ -253,7 +240,7 @@ export const StyledButton = styled.button`
   box-sizing: content-box;
   font-size: .875em;
   font-weight: 500;
-  letter-spacing: .0892857143em;
+  letter-spacing: .1em;
   text-transform: uppercase;
   line-height: inherit;
   text-align: center;
@@ -281,10 +268,6 @@ export const GridLayout = styled.section`
   @media (min-width: 1224px) {
     grid-template-columns: 1fr 1fr 1fr;
   }
-`
-export const GridLayoutSmall = styled.section`
-display: grid;
-grid-template-columns: 1fr repeat(5, 1fr);
 `
 
 // _________TestimonyWeek
@@ -379,21 +362,7 @@ export const QuestionHolder = styled.div`
   border: 1px solid rgba(160,132,78,0.9);
 `
 
-// _________Moderator
-export const SignOutWrapper = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin: 0 20px 0 0;
-`
-
 // _________Sign
-export const SignTitle = styled.h2`
-  font-family: 'Ostrich Sans Sans Black';
-  font-size: 2.8em;
-  text-transform: uppercase;
-  text-align: center;
-`
 export const FormSign = styled.form`
   margin: 50px 0;
   display: flex;
@@ -447,11 +416,18 @@ export const A = styled.a`
 `
 
 // _________ModeratorInspect
-export const BackgroundMentor = styled.div`
+export const BackgroundModerator = styled.div`
   background: linear-gradient(rgba(95,22,2,.2), rgba(2,255,255,.2)), url(${imgDetail});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+`
+
+export const SignOutWrapper = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0 20px 0 0;
 `
 
 // _________Footer

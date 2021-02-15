@@ -24,12 +24,6 @@ import {
   StyledButton
 } from '../styles/Styles'
 
-const StyledInputLabel = styled(InputLabel)`
-  margin: 20px 0;
-  text-transform: uppercase;
-  text-align: left;
-`
-
 // _________Testimony POST
 export const Share = () => {
   const TITLE = 'Share'
@@ -78,7 +72,6 @@ export const Share = () => {
         setPeriod_pain('')
         setStory('')
         if (res.status === 201) {
-          console.log(res.json)
           setTestimonyOK(true)
           setTestimonyFail(false)
           return res.json()
@@ -324,3 +317,9 @@ export const Share = () => {
     </>
   )
 }
+
+const StyledInputLabel = styled(InputLabel)`
+  margin: 20px 0;
+  text-transform: uppercase;
+  text-align: left;
+`

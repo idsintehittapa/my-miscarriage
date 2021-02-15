@@ -3,10 +3,9 @@ import React from 'react'
 import githubImg from '../assets/github-logo.png'
 import linkedinImg from '../assets/linkedin.png'
 import emailImg from '../assets/email.png'
-
 import {
   TestimoniesWrapper,
-  SignTitle,
+  Title,
   Container,
   P,
   AboutSubTitle,
@@ -19,9 +18,9 @@ export const Contact = () => {
   return (
     <TestimoniesWrapper>
       <Container>
-        <SignTitle>
+        <Title>
           Get in touch
-        </SignTitle>
+        </Title>
         <P>
           This is an open source project created with the hope of helping in sharing
           experienced miscarriage testimonies. It was created (although it will never be
@@ -43,9 +42,9 @@ export const Contact = () => {
             <ContactImg src={emailImg} alt="Email symbol" />
           </a>
         </LogosWrapper>
-        <SignTitle>
+        <Title>
           Want to contribute?
-        </SignTitle>
+        </Title>
         <P> First of all, thank you for considering to contribute to this project!
         </P>
 

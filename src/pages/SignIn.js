@@ -32,7 +32,6 @@ export const SignIn = () => {
   const handleClickShowPassword = () => setShowPassword(!showPassword)
 
   const history = useHistory()
-  console.log(token)
 
   // Form validation
   const minimumPasswordLength = { minLength: 5 }
@@ -63,7 +62,6 @@ export const SignIn = () => {
         setToken(data.accessToken)
         window.localStorage.setItem('tokenAuth', data.accessToken)
         history.push('/moderator/posts')
-        console.log(data.accessToken)
       })
       .catch((error) => {
         setSignInOk(false)
@@ -72,7 +70,7 @@ export const SignIn = () => {
   }
   useEffect(() => {
     if (token) {
-      history.push('/moderator/posts');
+      history.push('/moderator/posts')
     }
   }, [token, history])
   return (
@@ -87,8 +85,7 @@ export const SignIn = () => {
             label="Email"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
-            inputProps={validEmail}
-            helperText={email === '' ? 'x@xxx.xx' : ' '} />
+            inputProps={validEmail} />
           <InputLabel htmlFor="password-signin">Password*</InputLabel>
           <Input
             required

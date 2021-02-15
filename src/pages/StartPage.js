@@ -1,6 +1,5 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-// import { FullPage, Slide } from 'react-full-page'
 
 import {
   Main,
@@ -11,7 +10,6 @@ import {
   H4,
   StarterWrapper,
 } from '../styles/Styles'
-
 import { Footer } from '../components/Footer'
 
 export const StartPage = () => {
@@ -32,9 +30,6 @@ export const StartPage = () => {
             </H4>
           </Main>
         </StartBackground>
-        {/* <Main>
-          <About />
-        </Main> */}
       </StarterWrapper>
       <Footer />
     </>

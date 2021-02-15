@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Alert, AlertTitle } from '@material-ui/lab'
-
 import {
   TextField,
   IconButton,
@@ -53,7 +52,6 @@ export const SignUp = () => {
         setPassword('')
         setKey('')
         if (res.status === 201) {
-          console.log(res.json)
           setSignInOK(true)
           setSignInFail(false)
           return res.json()

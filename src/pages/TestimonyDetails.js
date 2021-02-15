@@ -3,8 +3,6 @@ import { Link, useParams } from 'react-router-dom'
 import moment from 'moment'
 
 import { importTestimonies } from 'paths/Api-paths'
-import { Footer } from '../components/Footer'
-
 import {
   DetailWrapper,
   IconWrapper,
@@ -20,18 +18,17 @@ import {
   Question,
   Answer
 } from '../styles/Styles'
+import { Footer } from '../components/Footer'
 
 export const TestimonyDetails = () => {
   const [testimony, setTestimony] = useState([])
   const { id } = useParams()
 
   useEffect(() => {
-    // fetch(`http://localhost:8080/testimonies/${id}`)
     fetch(`${importTestimonies}/${id}`)
       .then((response) => response.json())
       .then((json) => setTestimony(json))
-    // eslint-disable-next-line
-  }, [])
+  }, [id])
 
   return (
     <>

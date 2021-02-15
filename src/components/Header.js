@@ -18,11 +18,11 @@ export const Header = () => {
   const [anchorEl, setAnchorEl] = useState(null)
 
   const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
+    setAnchorEl(event.currentTarget)
   }
 
   const handleClose = () => {
-    setAnchorEl(null);
+    setAnchorEl(null)
   }
 
   return (

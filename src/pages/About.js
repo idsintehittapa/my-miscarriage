@@ -9,11 +9,9 @@ import {
   P,
   ContainerText
 } from '../styles/Styles'
-
 import { Footer } from '../components/Footer'
 
 export const About = () => {
-
   const TITLE = 'About'
 
   return (
@@ -21,7 +19,6 @@ export const About = () => {
       <Helmet>
         <title>{TITLE}</title>
       </Helmet>
-      {/* <Black> */}
       <AboutMain>
         <Container>
           <Quote>If you do not mention it yourself, nobody talks about miscarriage.
