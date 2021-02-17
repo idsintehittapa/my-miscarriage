@@ -12,6 +12,7 @@ import Visibility from '@material-ui/icons/Visibility'
 import VisibilityOff from '@material-ui/icons/VisibilityOff'
 
 import { signIn } from '../paths/Api-paths'
+import { Loading } from '../components/Loading'
 import {
   Title,
   Container,
@@ -28,6 +29,7 @@ export const SignIn = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
+  const [loading, setLoading] = useState(false)
 
   const handleClickShowPassword = () => setShowPassword(!showPassword)
 
@@ -54,6 +56,7 @@ export const SignIn = () => {
         setEmail('')
         setPassword('')
         if (res.status === 201) {
+          setLoading(true)
           return res.json()
         } else throw new Error('Unable to sign in. Please check that e-mail and password are correct')
       })
@@ -104,6 +107,9 @@ export const SignIn = () => {
                 </IconButton>
               </InputAdornment>
             } />
+          {loading && (
+            <Loading />
+          )}
           <StyledButton
             type="submit"
             onClick={handleSignIn}
