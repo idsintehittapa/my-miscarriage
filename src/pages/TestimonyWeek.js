@@ -47,7 +47,7 @@ export const TestimonyWeek = () => {
     <>
       <TestimoniesWrapper>
         <Container>
-          <Title> Week {week === 99 ? 'Unknown' : week} </Title>
+          <Title> Week {week === '99' ? 'Unknown' : week} </Title>
           <BackgroundImgTestimony>
             {loading && (
               <Loading />
